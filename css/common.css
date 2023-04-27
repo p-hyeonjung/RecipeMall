@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* 초기화 */
+ html, body, div, header, section, footer, figure, figcaption,fieldset,
+legend, ul, ol, li, dl, dt, dd, h1, h2, h3, p, img{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+/* 기본스타일 */
+@font-face {
+    font-family: "NotoSansL";
+    src: url("../font/NotoSansKR-Light.otf")format("truetype");
+}
+@font-face {
+    font-family: "NotoSansR";
+    src: url("../font/NotoSansKR-Regular.otf")format("truetype");
+}
+@font-face {
+    font-family: "NotoSansM";
+    src: url("../font/NotoSansKR-Medium.otf")format("truetype");
+}
+@font-face {
+    font-family: "NotoSansBl";
+    src: url("../font/NotoSansKR-Black.otf")format("truetype");
+}
+@font-face {
+    font-family: "NotoSansBo";
+    src: url("../font/NotoSansKR-Bold.otf")format("truetype");
+}
+@font-face {
+    font-family: "NotoSansTh";
+    src: url("../font/NotoSansKR-Thin.otf")format("truetype");
+}
+a:link{
+    color: #222629;
+    text-decoration: none;
+ }
+ a:visited{
+    color: #8a8e91;
+    text-decoration: none;
+ }
+ a:hover, a:focus{
+    color: #036c44;
+    text-decoration: none;
+ }
+ body{
+    font-family: "NotoSansL";
+    background-color: #f9f9f9;
+    color: #222629;
+    font-size: 0.75em;
+    line-height: 1.2;
+ }
+ /* 건너뛰기 링크 */
+ #skipNav{
+    position: absolute;
+    left: -9999px;
+ }
+ #skipNav:focus{
+    left: 0;
+    padding: 5px 15px;
+    background-color: #000;
+    color: #fff;
+    z-index: 10;
+ }
+ /* 전체적인 레이아웃 설계 */
+ header, #main_content, footer{
+    width: calc(100% - 130px);
+    max-width: 1200px;
+    min-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+ }
+ section{
+    margin: 80px 0;
+ }
+ h1{
+    height: 80px;
+    line-height: 40px;
+    font-family: "NotoSansR";
+ }
+
+ /*Header 영역 */
+ header{
+    
+ }
+ /* main content  영역 */
+#main_content{
+    position: relative;
+    height: auto;
+}
+/* footer  영역 */
+footer{
+
+}

@@ -1,0 +1,154 @@
+/* main_content  영역 */
+.btn_more{
+    position: absolute;
+    right: 0px;
+    font-size: 1.3em;
+}
+.btn_more a {
+    color: #036c44;
+    font-family: "NotoSansM";
+}
+.btn_more a:hover {
+    color: #8bb0a3;
+    
+}
+
+      /* rsb= rows pace between */
+.flex_area_rsb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+/* 이미지 슬라이더 영역 */
+.main_imageslider{
+    position: relative;
+}
+    /* 버튼영역 */
+    .control_panel{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100000;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 8px 30px;
+        border-radius: 20px;
+        
+    }
+    .control_panel .on{
+        background: #000;
+    }
+    .control_panel .control_btn{
+        float: left;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin: 0 8px;
+        cursor: pointer;
+        
+        
+    }
+    .control_panel .stop{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 28px ;
+        height: 28px ;
+        border: none;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+    .control_panel .stop i {
+        color: #fff;
+        font-size: 1.6em;
+        margin: 5px 5px 5px 9px;
+
+    }
+/* 레시피 바로가기 영역 */
+.direct_recipe{
+    height: 200px;
+    position: relative;
+}
+.direct_menu_area{
+    position: relative;
+}
+.direct_menu{
+    height: 150px;
+    position: relative;
+}
+.direct_menu img{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+}
+.direct_menu p{
+    position: absolute;
+    width: 100%;
+    top: 55%;
+    text-align: center;
+    font-family: "NotoSansM";
+    font-size: 1.5em;
+}
+
+
+
+/* 오늘의 레시피 영역 */
+.today_recipe{
+    
+}
+.recipe_content_area{
+    margin-top: 30px;
+
+}
+.recipe_content{
+    width: 265px;
+    height: 220px;
+    border: 1px solid #000;
+}
+/* 자유게시판+광고 영역 */
+.board_advertise{
+    height: 250px;
+    
+}
+.board{
+    width: 45%;
+    position: relative;
+}
+.advertise{
+    width: 50%;
+    border: 1px solid #000;
+}
+/* 인기레시피 영역 */
+.ranking{
+    
+}
+.rank_recipe_content{
+    width: 200px;
+    height: 230px;
+    border: 1px solid #000;
+}
+.ranking h1{
+    text-align: center;
+}
+/* 베스트상품 영역 */
+.best_product{
+
+}
+.btn_product_category_area{
+
+}
+.btn_product_category_area button{
+    border-radius: 20px;
+    border: none;
+    background-color: #036c44;
+    color: #fffdf7;
+    font-family: "NotoSansTh";
+}
+.best_product_content{
+    width: 315px;
+    height: 280px;
+    margin-top: 40px;
+    border: 1px solid #000;
+}
