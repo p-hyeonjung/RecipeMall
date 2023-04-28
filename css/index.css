@@ -86,10 +86,14 @@
 .direct_menu p{
     position: absolute;
     width: 100%;
-    top: 55%;
+    top: 56%;
     text-align: center;
-    font-family: "NotoSansM";
-    font-size: 1.5em;
+    font-family: "malssami";
+    
+    font-size: 1.6em;
+}
+.direct_menu p:hover{
+   color: #036c44;
 }
 
 
@@ -145,6 +149,7 @@
     background-color: #036c44;
     color: #fffdf7;
     font-family: "NotoSansTh";
+    margin-left: 7px;
 }
 .best_product_content{
     width: 315px;
