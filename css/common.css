@@ -90,6 +90,10 @@ body {
     font-size: 0.75em;
     line-height: 1.2;
 }
+fieldset{
+    border: 0;
+    height: 100%;
+}
 
 /* 건너뛰기 링크 */
 #skipNav {
@@ -109,10 +113,11 @@ body {
 header,
 #main_content,
 .f_container {
-    width: calc(100% - 130px);
+    width: 100%;
     max-width: 1200px;
     min-width: 1100px;
     margin: 0 auto;
+    padding: 0 50px;
     position: relative;
     height: auto;
     box-sizing: border-box;
@@ -129,6 +134,14 @@ h1 {
     font-family: "NotoSansR";
 }
 
+/* rsb= rows pace between */
+.flex_area_rsb{
+display: flex;
+flex-direction: row;
+justify-content: space-between; 
+}
+
+/* 광고배너 영역 */
 .adbanner {
     font-size: 1.7em;
     font-weight: bold;
@@ -234,14 +247,14 @@ h1 {
 footer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    background-color: #d7e9e2;
+    background-color: #eef3f1;
     height: 350px;
     font-family: "NotoSansL";
     font-style: normal;
     color: #4d5250;
 }
 .f_container{
-    padding: 40px 0;
+    padding: 40px 50px;
 }
 /*footer left  영역 & 안내 영역   */
 .information {
@@ -287,6 +300,7 @@ footer {
 .f_middle {
     display: flex;
     font-size: 1.1em;
+
 }
 .f_middle > ul >li{
     margin: 0 0 30px 20px;

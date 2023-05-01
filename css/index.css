@@ -1,7 +1,7 @@
 /* main_content  영역 */
 .btn_more{
     position: absolute;
-    right: 0px;
+    right: 50px;
     font-size: 1.3em;
 }
 .btn_more a {
@@ -13,15 +13,14 @@
     
 }
 
-      /* rsb= rows pace between */
-.flex_area_rsb{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-}
+
 /* 이미지 슬라이더 영역 */
 .main_imageslider{
+    height: 350px;
+    background: url(../image/temp_imgslider.gif);
     position: relative;
+    margin: 40px 0;
+    border: 1px solid #000;
 }
     /* 버튼영역 */
     .control_panel{
@@ -81,12 +80,12 @@
 .direct_menu img{
     width: 150px;
     height: 150px;
-    padding: 20px;
+    padding: 10px;
 }
 .direct_menu p{
     position: absolute;
     width: 100%;
-    top: 56%;
+    top: 50%;
     text-align: center;
     font-family: "malssami";
     
