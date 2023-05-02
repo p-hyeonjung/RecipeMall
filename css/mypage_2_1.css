@@ -44,7 +44,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 18px
+    font-size: 18px;
+    font-style: normal;
 }
 /*진행중인 주문 영역끝*/
 
@@ -93,6 +94,9 @@
 /*조회기간 영역끝*/
 
 /*주문목록 조회내역 영역시작*/
+.mypage_content_lately_info_result{
+    height: 200px;
+}
 .mypage_content_lately_info_result span {
     display: block;
     padding: 20px 0 10px 0;

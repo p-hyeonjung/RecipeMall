@@ -1,0 +1,48 @@
+/*my_page content 영역 시작*/
+.mypage_content>h3 {
+    padding: 35px 0 35px 0;
+}
+/*취소 / 반품 /교환 영역 시작*/
+.mypage_content_lately_info_header{
+    padding: 0 0 20px 0;
+}
+.date_check_box {
+    margin: 0 0 35px 0;
+    padding: 20px 40px 20px 40px;
+    border: 3px solid #ccc;
+}
+.date_check_box form {
+    display: flex;
+    flex-direction: row;
+}
+.date_check_list {
+    padding: 0 10px 0 0;
+}
+.date_check_list button {
+    width: 54px;
+    height: 31px;
+    margin: 0 0 0 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+.date_check_calendar { 
+    margin: 0 20px 0 20px;
+}
+.date_check_calendar input {
+    height: 31px;
+    margin: 0 5px 0 5px;
+}
+.btn_date_check {
+    width: 100px;
+    height: 33px;
+    border: 1px solid #46AE4F;
+    background-color: #46AE4F;
+    text-align: center;
+    border-radius: 3px;
+}
+.btn_date_check em{
+    font-weight: bold;
+    color: #fff;
+}
+/*취소 / 반품 /교환 영역 끝*/
+/*my_page content 영역 끝*/
