@@ -12,6 +12,7 @@
     padding: 0 0 0 10px;
 }
 .mypage_content_order{
+    width: 900px;
     margin: 0 0 30px 0;
     padding: 35px 0 35px 0;
     border: 1px solid #ccc;
@@ -54,8 +55,9 @@
     padding: 0 0 20px 0;
 }
 .date_check_box {
+    width: 900px;
     margin: 0 0 35px 0;
-    padding: 20px 40px 20px 40px;
+    padding: 10px 0 10px 0px;
     border: 3px solid #ccc;
 }
 .date_check_box form {
@@ -63,7 +65,7 @@
     flex-direction: row;
 }
 .date_check_list {
-    padding: 0 10px 0 0;
+    padding: 0 10px 0 40px;
 }
 .date_check_list button {
     width: 54px;
@@ -95,7 +97,8 @@
 
 /*주문목록 조회내역 영역시작*/
 .mypage_content_lately_info_result{
-    height: 200px;
+    height: 300px;
+    width: 900px;
 }
 .mypage_content_lately_info_result span {
     display: block;
