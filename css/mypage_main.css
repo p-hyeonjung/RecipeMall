@@ -1,0 +1,16 @@
+#main_content{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+#mypage{
+    display: flex;
+    flex-direction: row;
+}
+.side_bar { 
+    width: 200px;
+}
+.mypage_content{
+    width: 960px;
+    padding: 0 0 0 40px;
+}
