@@ -1,11 +1,13 @@
 /*mypage_content 영역시작*/
 .mypage_content>h3 {
-    padding: 35px 0 35px 0;
+    padding: 35px 0 8px 0;
     width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 /*진행중인 주문 영역시작*/
 .mypage_content_order_header {
-    padding: 0 0 20px 0;
+    padding: 20px 0 20px 0;
     width: 100%;
 }
 .mypage_content_order_header span {
