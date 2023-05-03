@@ -1,95 +1,70 @@
 @charset "utf-8";
-
 /* 초기화 */
-html,body,div,header,section,footer,figure,figcaption,fieldset,legend,
-ul,ol,li,dl,dt,dd,h1,h2,h3,p,img {
+ html, body, div, header, section, footer, figure, figcaption,fieldset,
+legend, ul, ol, li, dl, dt, dd, h1, h2, h3, p, img{
     margin: 0;
     padding: 0;
 }
-ul {
+ul{
     list-style: none;
 }
-
 /* 기본스타일 */
 @font-face {
     font-family: "NotoSansL";
     src: url("../font/NotoSansKR-Light.otf")format("truetype");
 }
-
 @font-face {
     font-family: "NotoSansR";
     src: url("../font/NotoSansKR-Regular.otf")format("truetype");
 }
-
 @font-face {
     font-family: "NotoSansM";
     src: url("../font/NotoSansKR-Medium.otf")format("truetype");
 }
-
 @font-face {
     font-family: "NotoSansBl";
     src: url("../font/NotoSansKR-Black.otf")format("truetype");
 }
-
 @font-face {
     font-family: "NotoSansBo";
     src: url("../font/NotoSansKR-Bold.otf")format("truetype");
 }
-
 @font-face {
     font-family: "NotoSansTh";
     src: url("../font/NotoSansKR-Thin.otf")format("truetype");
 }
-@font-face {
-    font-family: "malssami";
-    src: url("../font/malssami815.ttf")format("truetype");
-}
-
-a:link {
+a:link{
     color: #222629;
     text-decoration: none;
-}
-
-a:visited {
-    color: #000000;
-    /*원래 컬러가 잘 안 보여서 바꿨어요 나중에 수정 고우-> #8a8e91*/
+ }
+ a:visited{
+    color: #8a8e91;
     text-decoration: none;
-}
-
-
-a:hover,
-a:focus {
+ }
+ a:hover, a:focus{
     color: #036c44;
     text-decoration: none;
-}
-
-body {
+ }
+ body{
     font-family: "NotoSansL";
     background-color: #f9f9f9;
     color: #222629;
     /* font-size: 0.75em; */
     line-height: 1.2;
-}
-fieldset{
-    border: 0;
-    height: 100%;
-}
-
-/* 건너뛰기 링크 */
-#skipNav {
+ }
+ /* 건너뛰기 링크 */
+ #skipNav{
     position: absolute;
     left: -9999px;
-}
-
-#skipNav:focus {
+ }
+ #skipNav:focus{
     left: 0;
     padding: 5px 15px;
     background-color: #000;
     color: #fff;
     z-index: 10;
-}
-
-/* 전체적인 레이아웃 설계 */
+ }
+ /* 전체적인 레이아웃 설계 */
 header,
 #main_content,
 .f_container {
@@ -102,7 +77,6 @@ header,
     height: auto;
     box-sizing: border-box;
     font-size: 0.75em;
-
 }
 
 section {
@@ -212,18 +186,6 @@ justify-content: space-between;
     font-size: 1.1em;
     font-family: "NotoSansM";
 }
-
-
-
-
-
-/*   일단 진행 안 하고  해볼게요
-짰는데 뭔가 이상해서  나중에 수정 하죠.main {
-    font-size: 1.5em;
-    font-weight: 40px
-}*/
-
-
 /* footer  영역 */
 footer {
     width: 100vw;
@@ -300,4 +262,3 @@ margin-bottom: 20px;
 address{
     font-style:normal ;
 }
-   
