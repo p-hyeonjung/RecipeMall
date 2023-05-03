@@ -1,0 +1,83 @@
+@charset "utf-8";
+#main_content {
+    font-size: 1em;
+}
+.mypage_box {
+    width: 100%;
+    height: auto;
+}
+#mypage {
+    overflow: hidden;
+    width: 100%;
+    margin: 30px 0 60px 0;
+}
+/* 마이페이지 제목 */
+.mypage_title {
+    margin-bottom: 20px;
+    padding-left: 40px;
+}
+/* 왼쪽 사이드 메뉴 */
+.side_bar {
+    /* box-sizing: border-box; */
+    width: 17%;
+    float: left;
+    border-right: 1px solid #333;
+}
+/* 간단한 유저 정보 */
+.user_info_box {
+    position: relative;
+    box-sizing: border-box;
+    width: 160px;
+    height: 180px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+.user_profile>img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    top: 30px;
+    left: 32%;
+}
+.user_info_box>p {
+    position: absolute;
+    font-size: 0.8em;
+    top: 110px;
+    left: 10px;
+}
+.main_menu>li {
+    margin-top: 30px;
+}
+.main_menu>li>a {
+    padding: 0 8px;
+}
+.main_menu>li>a:hover, a:focus {
+    border-bottom: 1px solid #555;
+}
+.sub_menu>li {
+    margin-top: 5px;
+    padding-left: 40px;
+    font-size: 0.8em;
+}
+
+.check_attend {
+    position: absolute;
+    font-size: 0.8em;
+    top: 140px;
+    left: 31%;
+    border: none;
+}
+/* 메뉴 컨텐츠 */
+.mypage_content {
+    /* box-sizing: border-box; */
+    width: 77%;
+    margin: 0 30px;
+    float: right;
+}
+.menu_title {
+    margin-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
