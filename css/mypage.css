@@ -1,6 +1,7 @@
 @charset "utf-8";
 #main_content {
     font-size: 1em;
+    box-sizing: unset;
 }
 .mypage_box {
     width: 100%;
@@ -10,6 +11,8 @@
     overflow: hidden;
     width: 100%;
     margin: 30px 0 60px 0;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 /* 마이페이지 제목 */
 .mypage_title {
@@ -72,7 +75,7 @@
 /* 메뉴 컨텐츠 */
 .mypage_content {
     /* box-sizing: border-box; */
-    width: 77%;
+    width: 76%;
     margin: 0 30px;
     float: right;
 }
