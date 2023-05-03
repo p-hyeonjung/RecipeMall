@@ -16,6 +16,13 @@
     margin-bottom: 20px;
     padding-left: 40px;
 }
+/* 왼쪽 사이드 메뉴 */
+.side_bar {
+    /* box-sizing: border-box; */
+    width: 17%;
+    float: left;
+    border-right: 1px solid #333;
+}
 /* 간단한 유저 정보 */
 .user_info_box {
     position: relative;
@@ -39,13 +46,6 @@
     font-size: 0.8em;
     top: 110px;
     left: 10px;
-}
-/* 왼쪽 사이드 메뉴 */
-.side_bar {
-    box-sizing: border-box;
-    width: 200px;
-    float: left;
-    border-right: 1px solid #333;
 }
 .main_menu>li {
     margin-top: 30px;
@@ -71,8 +71,8 @@
 }
 /* 메뉴 컨텐츠 */
 .mypage_content {
-    box-sizing: border-box;
-    width: 840px;
+    /* box-sizing: border-box; */
+    width: 77%;
     margin: 0 30px;
     float: right;
 }
