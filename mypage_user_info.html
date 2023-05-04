@@ -123,27 +123,34 @@
             <div class="mypage_content">
                 <h3 class="menu_title">내 정보</h3>
                 <div class="info">
-                    <div>
+                    <div class="info_line">
                         <p>아이디</p>
+                        <span>cooking</span>
                     </div>
-                    <div>
+                    <div class="info_line">
                         <p>닉네임</p>
+                        <input type="text" name="user_nikname" id="nikname" class="info_input" value="nanana">
                         <button>닉네임 변경</button>
                     </div>
-                    <div>
-                        비밀번호
+                    <div class="info_line">
+                        <p>비밀번호</p>
+                        <span>********</span>
                         <button>비밀번호 변경</button>
                     </div>
-                    <div>
-                        휴대폰번호
+                    <div class="info_line">
+                        <p>휴대폰번호</p>
+                        <input type="text" name="user_phone" id="user_phone" class="info_input" value="010-2343-6492">
+                        <button>휴대폰 인증</button>
                     </div>
-                    <div>
-                        주소
+                    <div class="info_line address">
+                        <p>주소</p>
+                        <span>서울특별시 중구 중림동 200</span><br>
+                        <span>1005호</span>
                         <button>주소변경</button>
                     </div>
-                    <button>회원정보 수정</button>
                 </div>
-                <button>회원탈퇴</button>
+                <button class="info_update btn">회원정보 수정</button>
+                <button class="drop_out btn">회원탈퇴</button>
             </div>
             <!-- mypage_content -->
         </div>
