@@ -7,7 +7,7 @@
     <title>RecipeMall-마이페이지</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_2_3.css">
+    <link rel="stylesheet" href="css/mypage_2_4.css">
 </head>
 <body>
      <!--[s]건너뛰기 링크-->
@@ -120,17 +120,65 @@
             <div class="mypage_content">
                 <!-- mypage_content_장바구니 시작-->
                 <h3>장바구니</h3>
-                <div class="mypage_marketbag_header">
-                    <h4>전체상품</h4>
-                </div>
                 <div class="mypage_marketbag">
-                    <table>
-                        <tr>
-                            <th>상품</th><th>수량</th><th>상품금액</th><th>배송비</th>
-                        </tr>
-                    </table>
+                    <div class="cart_cont_all">
+                        <input type="checkbox" id="all_chk">
+                        <label for="all_chk" class="check_s"></label>
+                        <b>전체상품</b>
+                        <span>(1)</span>
+                    </div>
+                    <div class="cart_cont_list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="form_element">
+                                            <input type="checkbox" id="all_chk2">
+                                            <label for="all_chk2" class="check_s"></label>
+                                        </div>
+                                    </th>
+                                    <th>상품</th><th>수량</th><th>상품금액</th><th>배송비</th>
+                                </tr>     
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>   
+                            </tbody>
+                        </table>
+                    </div>   
                 </div>
-                
+                <div class="btn_left_box">
+                        <a href="#"><em>< 쇼핑계속하기</em></a>
+                    </div>
+                    <div class="price_sum">
+                        <div class="price_sum_count">
+                            <ul>
+                                <li>총 <Strong id="total_goods">0</Strong> 개의 상품금액</li>
+                                <li><strong id="total_goods_price">0</strong> 원</li>
+                            </ul>
+                            <span><img src="image/order_price_plus.png" alt="더하기"></span>
+                            <ul>
+                                <li>배송비</li>
+                                <li><strong id="delivery_price">2,500</strong> 원</li>
+                            </ul>
+                            <span><img src="image/order_price_total2.png" alt="합"></span>
+                            <ul>
+                                <li>합계</li>
+                                <li><strong id="total_price">0</strong> 원</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn_right_Pbox">
+                        <button type="button" class="btn_order_choice" onclick="">선택 상품 주문</button>
+                        <button type="button" class="btn_order_whole" onclick="">전체 상품 주문</button>
+                    </div>
                 <!-- mypage_content_장바구니 끝-->
             </div>
             <!-- mypage_content -->

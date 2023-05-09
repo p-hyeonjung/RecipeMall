@@ -1,6 +1,6 @@
 .mypage_product_area{
     box-sizing: border-box;
-    width: 840px;
+    width: 76%;
     margin: 0 30px;
     float: right;
     font-size: 1.2em;
@@ -49,7 +49,7 @@
     bottom: 10px;
 }
 .mypage_product_review_write{
-    width: 740px;
+    width: 74%;
     height: 80px;
     margin-right: 20px;
     border: 1px solid #ccc;
