@@ -65,6 +65,10 @@
 }
 .inquery_tbl th {
     width: 20%;
+    background-color: #e3e2e2;
+}
+.inquery_tbl td {
+    padding-left: 10px;
 }
 .inq_txta {
     resize: none;
