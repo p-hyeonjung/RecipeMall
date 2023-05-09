@@ -10,7 +10,7 @@
     <script src="js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_user.css">
+    <link rel="stylesheet" href="css/mypage_4.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
 </head>
 <body>
@@ -121,36 +121,75 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <h3 class="menu_title">내 정보</h3>
-                <div class="info">
-                    <div class="info_line">
-                        <p>아이디</p>
-                        <span>cooking</span>
+                <h3 class="menu_title">글 관리</h3>
+                <div class="post">
+                    <div class="post_select">
+                        <ul class="post_s">
+                            <li>
+                                <div class="post_class">
+                                    <ul>
+                                        <li><a href="#">전체</a></li>
+                                        <li><a href="#">레시피</a></li>
+                                        <li><a href="#">자유게시판</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_date_s post_h">
+                                    <ul>
+                                        <li><a href="#">처음</a></li>
+                                        <li><a href="#">최신</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_cnt post_h">
+                                    <select name="" id="">
+                                        <option value="">10개</option>
+                                        <option value="">30개</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li><button class="post_view_btn">보기</button></li>
+                        </ul>
                     </div>
-                    <div class="info_line">
-                        <p>닉네임</p>
-                        <input type="text" name="user_nikname" id="nikname" class="info_input" value="nanana">
-                        <button>닉네임 변경</button>
+                    <div class="my_post_list">
+                        <table class="post_list_tb">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>작성일</th>
+                                    <th><input type="checkbox" name="" id=""></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="post_n"><a href="#">1</a></td>
+                                    <td class="post_title"><a href="#">게시판 제목이 들어감</a></td>
+                                    <td class="post_date"><a href="#">23.04.08</a></td>
+                                    <td class="post_chk"><input type="checkbox" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="post_n"><a href="#">2</a></td>
+                                    <td class="post_title"><a href="#">게시판 제목이 들어감</a></td>
+                                    <td class="post_date"><a href="#">23.04.12</a></td>
+                                    <td class="post_chk"><input type="checkbox" name="" id=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="info_line">
-                        <p>비밀번호</p>
-                        <span>********</span>
-                        <button>비밀번호 변경</button>
-                    </div>
-                    <div class="info_line">
-                        <p>휴대폰번호</p>
-                        <input type="text" name="user_phone" id="user_phone" class="info_input" value="010-2343-6492">
-                        <button>휴대폰 인증</button>
-                    </div>
-                    <div class="info_line address">
-                        <p>주소</p>
-                        <span>서울특별시 중구 중림동 200</span><br>
-                        <span>1005호</span>
-                        <button>주소변경</button>
+                    <button class="update_btn">수정</button>
+                    <button class="delete_btn">삭제</button>
+                    <div class="paging_box">
+                        <ul>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">&gt;</a></li>
+                        </ul>
                     </div>
                 </div>
-                <button class="info_update btn">회원정보 수정</button>
-                <button class="drop_out btn">회원탈퇴</button>
             </div>
             <!-- mypage_content -->
         </div>

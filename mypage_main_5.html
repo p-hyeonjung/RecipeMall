@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecipeMall-마이페이지</title>
+    <title>recipeMall</title>
+    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_2_1.css">
+    <link rel="stylesheet" href="css/mypage_5.css">
+    <link rel="shortcut icon" href="images/smalllogo.png" />
 </head>
+
 <body>
-     <!--[s]건너뛰기 링크-->
-     <a id="skipNav" href="">본문 바로가기</a>
-     <!--[e]건너뛰기 링크-->
+    <!--[s]전체 컨텐츠 영역  -->
+    <!--[s]건너뛰기 링크-->
+    <a id="skipNav" href="">본문 바로가기</a>
+    <!--[e]건너뛰기 링크-->
+
+    
+    <!-- [s]광고배너 영역 -->
+    <div class="adbanner">
+        <p><a href="#">지금 가입하면 무료배송!</a></p>
+    </div>
+    <!--[e]광고배너 영역 -->
+
+
     <!-- [s]Header 영역 -->
     <header>
         <!--[s]메인메뉴 영역 -->
@@ -67,6 +84,8 @@
         <div class="textline"></div>
     </header>
     <!-- [s]Header 영역 -->
+    
+
     <!-- content_mypage_s -->
     <div id="main_content" class="mypage_box">
         <div id="mypage">
@@ -87,10 +106,11 @@
                         <li><a href="#">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
-                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
-                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
-                                <li><a href="mypage_main_2_4.html">- 장바구니</a></li>
+                                <li><a href="#">- 주문목록/배송조회</a></li>
+                                <li><a href="#">- 취소/반품/교환 내역</a></li>
+                                <li><a href="#">- 환불/입금 내역</a></li>
+                                <li><a href="#">- 배송지 등록</a></li>
+                                <li><a href="#">- 장바구니</a></li>
                             </ul>
                         </li>
                         <li><a href="#">상품</a>
@@ -118,45 +138,56 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <!-- mypage_content_취소/반품/교환 시작-->
-                <h3>취소 / 반품 / 교환</h3>
-                <div class="mypage_content_lately_info">
-                    <div class="mypage_content_lately_info_header">
-                        <h3>조회기간</h3>
-                    </div>
-                    <div class="date_check_box">
-                        <form action="get" name="frmDateSearch">
-                            <div class="date_check_list">
-                                <button type="button" class="btnDate Edate">전체</button>
-                                <button type="button" class="btnDate Sdate">7일</button>
-                                <button type="button" class="btnDate Odate">1개월</button>
-                            </div>
-                            <div class="date_check_calendar">
-                                <input type="date" name="Fdate" id="Fdate">~<input type="date" name="Ldate" id="Ldate">
-                            </div>
-                            <button type="submit" class="btn_date_check"><em>조회</em></button>
-                        </form>
-                    </div>
-                    <div class="mypage_content_lately_info_result">
-                        <span>취소 / 반품 / 교환 조회 내역 총 <strong>0</strong> 건</span>
-                        <div class="info_result_table">
-                            <table>
-                                <tr>
-                                    <th>날짜</th><th>상품명</th><th>상품금액</th><th>수량</th>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- mypage_content_주문목록/배송조회 끝-->
+                <h3>차단목록</h3>
+                <hr>
             </div>
             <!-- mypage_content -->
+            <div class="mypage_blocklist_area">
+                <table class="block_table">
+                    <thead>
+                        <tr>
+                            <th class="tb_block_number"></th>
+                            <th class="tb_user_name">차단 아이디</th>
+                            <th class="tb_user_nickname">닉네임</th>
+                            <th class="tb_block_date">차단 날짜</th>
+                            <th class="block_setting">차단 설정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>umjunsik</td>
+                            <td>엄준식</td>
+                            <td>2023.01.26</td>
+                            <td><button class="btn_blockoff">차단 해제</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>ralo24</td>
+                            <td>김찬호</td>
+                            <td>2023.01.26</td>
+                            <td><button class="btn_blockoff">차단 해제</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>dopagod</td>
+                            <td>정상길</td>
+                            <td>2023.01.26</td>
+                            <td><button class="btn_blockoff">차단 해제</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>paka</td>
+                            <td>손인욱</td>
+                            <td>2023.01.26</td>
+                            <td><button class="btn_blockoff">차단 해제</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <!-- content_mypage_e -->
-
-    <!-- footer_s -->
     <!-- [s]footer 영역 -->
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
@@ -241,6 +272,8 @@
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
     <!-- [e]footer 영역 -->
-    <!-- footer_e -->
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
