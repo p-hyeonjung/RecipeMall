@@ -9,9 +9,9 @@
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/product_info.js"></script>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/product_info.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
 </head>
 <body>
@@ -20,13 +20,11 @@
         <a id="skipNav" href="">본문 바로가기</a>
         <!--[e]건너뛰기 링크-->
 
-
         <!-- [s]광고배너 영역 -->
         <div class="adbanner">
             <p><a href="#">지금 가입하면 무료배송!</a></p>
         </div>
         <!--[e]광고배너 영역 -->
-
 
         <!-- [s]Header 영역 -->
         <header>
@@ -39,6 +37,7 @@
                 </ul>
             </div>
             <!--[e]메인메뉴 영역 -->
+
             <!--[s]서브 영역 -->
             <div>
                 <ul class="submenu"> <!--submenu-->
@@ -51,7 +50,6 @@
             </div>
             <!--[e]서브 영역 -->
 
-
             <!--[s]검색 영역 -->
             <div class="formtag">
                 <form action="#" method="get" name="#">
@@ -60,14 +58,13 @@
             </div>
             <!--[e]검색 영역-->
 
-            
             <div class="textline"></div>
             <!--[s]카테고리 영역 -->
             <div>
                 <ul class="category">
-                    <li><a href="#">재료</a></li>
+                    <li><a href="index.html">재료</a></li>
                     <li><a href="#">베스트</a></li>
-                    <li><a href="#">대표상품</a></li>
+                    <li><a href="season.html">대표상품</a></li>
                 </ul>
             </div>
             <!--[e]카테고리 영역 -->
@@ -85,202 +82,101 @@
 
         <!-- [s]main_content 영역 -->
         <div id="main_content">
-            <!-- [s]이미지 슬라이더 영역 -->
-            <section class="main_imageslider">
-                <div class="ad">
-                    <a href="#" >
-                    
-                    </a>
+            <!--[s]상품 이름,상품 옵션 선택 영역-->
+            <div class="product_area">
+                
+                <div class="product_image">
+                    <img src="image/product.jpg" alt="상품 이미지">
                 </div>
-                <!-- 버튼 영역  -->
-                <div class="control_panel">
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class=" stop"><i class="fa-solid fa-pause" title="자동 재생 멈추기"></i></div>
-                </div>
-            </section>
-            <!-- [e]이미지 슬라이더 영역 -->
-            <!-- [e]이미지 슬라이더 영역 -->
-            <!-- [s]쇼핑 바로가기 영역 -->
-            <div class="direct_menu_area">
-                <div class="direct_menu">
-                    <img src="image/vegi.png" alt="채소/과일">
-                    <p>채소/과일</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="image/meat.png" alt="정육">
-                    <p>정육</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="image/fish.png" alt="해산물">
-                    <p>해산물</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="image/spa.png" alt="면/양념">
-                    <p>면/양념</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="image/bread.png" alt="베이커리">
-                    <p>베이커리</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="image/etc.png" alt="기타">
-                    <p>기타</p>
+                <div class="product">
+                    <div class="product_name">
+                        <h2>상품명입니다요 예시로 들어볼까요?</h2>
+                        <p>★4.9 999+</p>
+                        <p><span>7000원</span></p>
+                    </div>
+                    <div class="product_option">
+                        <h2>옵션 선택</p>
+                        
+                        <div class="product_date">
+                            <p>발송일</p> 
+                            <select class="product_date_select">
+                                <option class="wavewave">구매 후 바로</option>
+                                <option value="페이스북">3일 후</option>
+                                <option value="카카오톡">5일 후</option>
+                                <option value="인스타그램">7일 후</option>
+                            </select>
+                        </div>
+                        <div class="product_count">
+                            <p>수량</p>
+                            <p class="product_count_minus">-</p>
+                            <input type="text" maxlength="3" value="1" class="count">
+                            <p class="product_count_plus">+</p>
+                        </div>
+                        <div class="product_regular">
+                            <p>정기 배송 여부</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="product_selected">
+                            <p>선택한 옵션</p>
+                            <p class="selected">메뉴 옵션</p>
+                        </div>
+                    </div>
+                    <div class="product_button">
+                        <button class="product_buy">구매하기</button>
+                        <button class="product_cart">장바구니</button>
+                    </div>
                 </div>
             </div>
-            <!-- [e]쇼핑 바로가기 영역 -->
-            <!-- [s]베스트 영역 -->
-            <div class="best">
-                <h1>베스트</h1>
-                <button class="btn_more"><a href="#">더보기</a></button>
-                <div class="best_area">
-                    <div class="best_content">
+            <!--[e]상품 이름,상품 옵션 선택 영역-->
+            <!--[s]비슷한 상품 영역-->
+            <div class="product_similar">
+                <h2>비슷한 상품</h2>
+                <div class="product_similar_area">
+                    <div class="product_similar_content">
                         <img src="" alt="">
-                        <p class="best_name">이름</p>
+                        <p class="product_similar_name">이름</p>
                         <p>★4.9 리뷰 24,123</p>
                     </div>
-                    <div class="best_content">
+                    <div class="product_similar_content">
                         <img src="" alt="">
-                        <p class="best_name">이름</p>
+                        <p class="product_similar_name">이름</p>
                         <p>★4.9 리뷰 24,123</p>
                     </div>
-                    <div class="best_content">
+                    <div class="product_similar_content">
                         <img src="" alt="">
-                        <p class="best_name">이름</p>
+                        <p class="product_similar_name">이름</p>
                         <p>★4.9 리뷰 24,123</p>
                     </div>
-                    <div class="best_content">
+                    <div class="product_similar_content">
                         <img src="" alt="">
-                        <p class="best_name">이름</p>
+                        <p class="product_similar_name">이름</p>
                         <p>★4.9 리뷰 24,123</p>
                     </div>
-                    <div class="best_content">
+                    <div class="product_similar_content">
                         <img src="" alt="">
-                        <p class="best_name">이름</p>
+                        <p class="product_similar_name">이름</p>
                         <p>★4.9 리뷰 24,123</p>
                     </div>
                 </div>
             </div>
-            <!-- [e]베스트 영역 -->
-            <!-- [s]핫딜 영역 -->
-            <div class="hotdeal">
-                <h1>핫딜</h1>
-                <button class="btn_more"><a href="#">더보기</a></button>
-                <div class="hotdeal_area">
-                    <div class="hotdeal_content">
-                        <img src="" alt="">
-                        <p class="hotdeal_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="hotdeal_content">
-                        <img src="" alt="">
-                        <p class="hotdeal_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="hotdeal_content">
-                        <img src="" alt="">
-                        <p class="hotdeal_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="hotdeal_content">
-                        <img src="" alt="">
-                        <p class="hotdeal_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="hotdeal_content">
-                        <img src="" alt="">
-                        <p class="hotdeal_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
+            <!--[e]비슷한 상품 영역-->
+
+            <!--[s]상품 정보 영역-->
+            <div class="product_info_area">
+                <div class="product_info_title">
+                    <ul>
+                        <li>상세 정보</li>
+                        <li>리뷰</li>
+                        <li>상품문의</li>
+                        <li>배송/교환/반품안내</li>
+                    </ul>
+                </div>
+                <div class="product_info">
+                    <img src="image/vegi.png" alt="">
+
                 </div>
             </div>
-            <!-- [e]핫딜 영역 -->
-            <!-- [s]기타추천 영역 -->
-            <div class="etc_area">
-                <h1>기타 추천 상품</h1>
-                <div class="etc_product">
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                    <div class="etc_content">
-                        <img src="" alt="">
-                        <p class="etc_name">이름</p>
-                        <p>★4.9 리뷰 24,123</p>
-                    </div>
-                </div>
-            </div>
-            <!-- [e]기타추천 영역 -->
+            <!--[e]상품 정보 영역-->
         </div>
         <!-- [s]사이드바 영역 -->
         <div class="side_bar">
@@ -410,7 +306,6 @@
         </footer>
         <!-- [e]footer 영역 -->
         <script src="js/common.js"></script>
-        <script src="js/index.js"></script>
 
 
     <!--[e]전체 컨텐츠 영역  -->

@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 /* main_content  영역 */
 .btn_more{
     position: absolute;
@@ -17,42 +13,16 @@
     color: #8bb0a3;
     
 }
-/*[s]쇼핑 바로가기 영역*/
-.direct_menu_area{
-    height: 100px;
-    position: relative;
-    width: 650px;
-    margin: 50px auto;
-}
-.direct_menu{
-    height: 55px;
-    position: relative;
-    display: inline-block;
-    margin: 10px 20px;
-    border: 1px #ccc solid;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.direct_menu img{
-    height: 40px;
-    width: 40px;
-    padding: 10px;
-}
-.direct_menu p {
-    text-align: center;
-    font-family: "malssami";
-    font-size: 1em;
-}
-/*[e]쇼핑 바로가기 영역*/
-/*[s]베스트 영역*/
-.best{
+
+.spring{
     height: 300px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 1100px;
+    margin-top: 30px;
 }
-.best h1{
+.spring h1{
     color: rgba(204,14,14 ,0.79);
     float: left;
     height: 30px;
@@ -71,45 +41,43 @@
     bottom: 10px;
    
 }
-.best_area{
+.spring_area{
     margin-top: 20px;
     position: relative;
     display: flex;
 }
-.best_content{
+.spring_content{
     width: 220px;
     height: 250px;
     position: relative;
     margin: 0 auto;
     
 }
-.best_content img{
+.spring_content img{
     width: 180px;
     height: 180px;
     position: relative;
     margin-left: 20px;
     cursor: pointer;
 }
-.best_content p{
+.spring_content p{
     width: 180px;
     height: 20px;
     text-align: center;
     cursor: pointer;
 }
-.best_name{
+.spring_name{
     font-size: 1.2em;
 }
-/*[e]베스트 영역*/
-/*[s]핫딜 영역*/
-.hotdeal{
+
+.summer{
     height: 300px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 1100px;
-    margin: 0px auto;
 }
-.hotdeal h1{
+.summer h1{
     color: rgba(204,14,14 ,0.79);
     float: left;
     height: 30px;
@@ -117,80 +85,153 @@
 }
 
 .btn_more{
-    top: 40px;
-    right: 20px;
+    position: absolute;
+    height: 25px;
     border: none;
     background: #fff;
 }
 .btn_more>a{
     font-size: 0.8em;
+    position: relative;
+    bottom: 10px;
    
 }
-.hotdeal_area{
+.summer_area{
     margin-top: 20px;
     position: relative;
     display: flex;
 }
-.hotdeal_content{
+.summer_content{
     width: 220px;
     height: 250px;
     position: relative;
     margin: 0 auto;
+    
 }
-.hotdeal_content img{
+.summer_content img{
     width: 180px;
     height: 180px;
     position: relative;
     margin-left: 20px;
     cursor: pointer;
 }
-.hotdeal_content p{
+.summer_content p{
     width: 180px;
     height: 20px;
     text-align: center;
     cursor: pointer;
 }
-.hotdeal_name{
+.summer_name{
     font-size: 1.2em;
 }
-/*[e]핫딜 영역*/
-/*[s]기타추천 영역*/
-.etc_area{
+
+.autumn{
+    height: 300px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     width: 1100px;
-    height: auto;
-    
 }
-.etc_area h1{
-    text-align: center;
+.autumn h1{
     color: rgba(204,14,14 ,0.79);
+    float: left;
+    height: 30px;
     font-size: 1.8em;
 }
-.etc_product{
-    display: flex;
-    width: 1100px;
-    flex-wrap: wrap;
+
+.btn_more{
+    position: absolute;
+    height: 25px;
+    border: none;
+    background: #fff;
 }
-.etc_content{
+.btn_more>a{
+    font-size: 0.8em;
+    position: relative;
+    bottom: 10px;
+   
+}
+.autumn_area{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+}
+.autumn_content{
     width: 220px;
     height: 250px;
     position: relative;
     margin: 0 auto;
     
 }
-.etc_content img{
+.autumn_content img{
     width: 180px;
     height: 180px;
     position: relative;
     margin-left: 20px;
     cursor: pointer;
 }
-.etc_content p{
+.autumn_content p{
     width: 180px;
     height: 20px;
     text-align: center;
     cursor: pointer;
 }
-.etc_name{
+.autumn_name{
     font-size: 1.2em;
 }
-/*[e]기타추천 영역*/
+
+
+.winter{
+    height: 300px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+}
+.winter h1{
+    color: rgba(204,14,14 ,0.79);
+    float: left;
+    height: 30px;
+    font-size: 1.8em;
+}
+
+.btn_more{
+    position: absolute;
+    height: 25px;
+    border: none;
+    background: #fff;
+}
+.btn_more>a{
+    font-size: 0.8em;
+    position: relative;
+    bottom: 10px;
+   
+}
+.winter_area{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+}
+.winter_content{
+    width: 220px;
+    height: 250px;
+    position: relative;
+    margin: 0 auto;
+    
+}
+.winter_content img{
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.winter_content p{
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.winter_name{
+    font-size: 1.2em;
+}
