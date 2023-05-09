@@ -1,10 +1,14 @@
 /*mypage_content 영역시작*/
 .mypage_content>h3 {
-    padding: 35px 0 35px 0;
+    padding: 35px 0 8px 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 /*진행중인 주문 영역시작*/
 .mypage_content_order_header {
-    padding: 0 0 20px 0;
+    padding: 20px 0 20px 0;
+    width: 100%;
 }
 .mypage_content_order_header span {
     font-size: 12px;
@@ -12,7 +16,7 @@
     padding: 0 0 0 10px;
 }
 .mypage_content_order{
-    width: 840px;
+    width: 100%;
     margin: 0 0 30px 0;
     padding: 35px 0 35px 0;
     border: 1px solid #ccc;
@@ -51,11 +55,15 @@
 /*진행중인 주문 영역끝*/
 
 /*조회기간 영역시작*/
+.mypage_content_lately_info {
+    width: 100%;
+}
 .mypage_content_lately_info_header{
     padding: 0 0 20px 0;
+    width: 100%;
 }
 .date_check_box {
-    width: 840px;
+    width: 100%;
     margin: 0 0 35px 0;
     padding: 10px 0 10px 0px;
     border: 3px solid #ccc;
@@ -101,12 +109,13 @@
 /*주문목록 조회내역 영역시작*/
 .mypage_content_lately_info_result{
     height: 300px;
-    width: 840px;
+    width: 100%;
 }
 .mypage_content_lately_info_result span {
     display: block;
     padding: 20px 0 10px 0;
     font-size: 14px;
+    width: 100%;
 }
 .info_result_table table {
     text-align: center;

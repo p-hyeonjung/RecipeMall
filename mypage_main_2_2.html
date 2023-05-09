@@ -1,35 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recipeMall-마이페이지</title>
-    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <title>RecipeMall-마이페이지</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_3_1.css">
-    <link rel="shortcut icon" href="images/smalllogo.png" />
+    <link rel="stylesheet" href="css/mypage_2_1.css">
 </head>
-
 <body>
-    <!--[s]전체 컨텐츠 영역  -->
-    <!--[s]건너뛰기 링크-->
-    <a id="skipNav" href="">본문 바로가기</a>
-    <!--[e]건너뛰기 링크-->
-
-    
-    <!-- [s]광고배너 영역 -->
-    <div class="adbanner">
-        <p><a href="#">지금 가입하면 무료배송!</a></p>
-    </div>
-    <!--[e]광고배너 영역 -->
-
-
+     <!--[s]건너뛰기 링크-->
+     <a id="skipNav" href="">본문 바로가기</a>
+     <!--[e]건너뛰기 링크-->
     <!-- [s]Header 영역 -->
     <header>
         <!--[s]메인메뉴 영역 -->
@@ -84,8 +67,6 @@
         <div class="textline"></div>
     </header>
     <!-- [s]Header 영역 -->
-    
-
     <!-- content_mypage_s -->
     <div id="main_content" class="mypage_box">
         <div id="mypage">
@@ -106,10 +87,9 @@
                         <li><a href="#">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="#">- 주문목록/배송조회</a></li>
-                                <li><a href="#">- 취소/반품/교환 내역</a></li>
-                                <li><a href="#">- 환불/입금 내역</a></li>
-                                <li><a href="#">- 배송지 등록</a></li>
+                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
                                 <li><a href="#">- 장바구니</a></li>
                             </ul>
                         </li>
@@ -138,75 +118,45 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <h3>문의내역 / 답글보기</h3>
-                <hr>
-            </div>
-            <div class="mypage_product_area">
-                <div class="mypage_product_qna">
-                    <div class="mypage_product_q">
-                        <h4>재출고 날짜가 언제인가요?</h4>
-                        <h6>(쇼핑 > 신선식품)</h6>
-                        <p>유기농 고랭지 배추 재출고 날짜가 궁금해 문의 드립니다.</p>
+                <!-- mypage_content_취소/반품/교환 시작-->
+                <h3>취소 / 반품 / 교환</h3>
+                <div class="mypage_content_lately_info">
+                    <div class="mypage_content_lately_info_header">
+                        <h3>조회기간</h3>
                     </div>
-                    <button type="button" class="btn_product">펼쳐보기</button>
-                    <div class="mypage_product_a">
-                        <h4>판매자/작성자님의 답변</h4>
-                        <p>해당상품은 입고 되는 즉시 재출고 됩니다. 감사합니다.</p>
+                    <div class="date_check_box">
+                        <form action="get" name="frmDateSearch">
+                            <div class="date_check_list">
+                                <button type="button" class="btnDate Edate">전체</button>
+                                <button type="button" class="btnDate Sdate">7일</button>
+                                <button type="button" class="btnDate Odate">1개월</button>
+                            </div>
+                            <div class="date_check_calendar">
+                                <input type="date" name="Fdate" id="Fdate">~<input type="date" name="Ldate" id="Ldate">
+                            </div>
+                            <button type="submit" class="btn_date_check"><em>조회</em></button>
+                        </form>
                     </div>
-                </div>
-                <div class="mypage_product_qna">
-                    <div class="mypage_product_q">
-                        <h4>원산지가 어디인가요?</h4>
-                        <h6>(쇼핑 > 신선식품)</h6>
-                        <p>판매중인 우유 원산지 문의 드립니다.</p>
-                    </div>
-                    <button type="button" class="btn_product">펼쳐보기</button>
-                    <div class="mypage_product_a">
-                        <h4>판매자/작성자님의 답변</h4>
-                        <p>해당상품은 저도 모릅니다. 수고하세요.</p>
-                    </div>
-                </div>
-                <div class="mypage_product_qna">
-                    <div class="mypage_product_q">
-                        <h4>문의 제목 넣는 h4</h4>
-                        <h6>(커뮤니티 > 한식)</h6>
-                        <p>문의 내용 넣는 p태그 공간</p>
-                    </div>
-                    <button type="button" class="btn_product">펼쳐보기</button>
-                    <div class="mypage_product_a">
-                        <h4>판매자/작성자님의 답변</h4>
-                        <p>버튼을 누르면 펼쳐지는 div영역</p>
+                    <div class="mypage_content_lately_info_result">
+                        <span>취소 / 반품 / 교환 조회 내역 총 <strong>0</strong> 건</span>
+                        <div class="info_result_table">
+                            <table>
+                                <tr>
+                                    <th>날짜</th><th>상품명</th><th>상품금액</th><th>수량</th>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class="mypage_product_qna">
-                    <div class="mypage_product_q">
-                        <h4>문의 제목 넣는 h4</h4>
-                        <h6>(커뮤니티 > 한식)</h6>
-                        <p>문의 내용 넣는 p태그 공간</p>
-                    </div>
-                    <button type="button" class="btn_product">펼쳐보기</button>
-                    <div class="mypage_product_a">
-                        <h4>판매자/작성자님의 답변</h4>
-                        <p>버튼을 누르면 펼쳐지는 div영역</p>
-                    </div>
-                </div>
-                <div class="mypage_product_qna">
-                    <div class="mypage_product_q">
-                        <h4>문의 제목 넣는 h4</h4>
-                        <h6>(커뮤니티 > 한식)</h6>
-                        <p>문의 내용 넣는 p태그 공간</p>
-                    </div>
-                    <button type="button" class="btn_product">펼쳐보기</button>
-                    <div class="mypage_product_a">
-                        <h4>판매자/작성자님의 답변</h4>
-                        <p>버튼을 누르면 펼쳐지는 div영역</p>
-                    </div>
-                </div>
+                
+                <!-- mypage_content_주문목록/배송조회 끝-->
             </div>
             <!-- mypage_content -->
         </div>
     </div>
     <!-- content_mypage_e -->
+
+    <!-- footer_s -->
     <!-- [s]footer 영역 -->
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
@@ -291,8 +241,6 @@
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
     <!-- [e]footer 영역 -->
-    <script src="js/common.js"></script>
-    <script src="js/index.js"></script>
+    <!-- footer_e -->
 </body>
-
 </html>
