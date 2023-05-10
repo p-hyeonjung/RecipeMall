@@ -124,59 +124,62 @@
                     <h4>배송지 등록</h4>
                 </div>
                 <div class="mypage_content_address">
-                    <table>
-                        <colgroup>
-                            <col style="width: 20%;">
-                            <col style="width: 80%;">
-                        </colgroup>
-                        <tr>
-                            <th><span class="important">배송지 이름</span></th>
-                            <td>
-                                <input type="text" name="shipping_title">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><span class="important">받으실 분</span></th>
-                            <td>
-                                <input type="text" name="shipping_name" maxlength="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><span class="important">받으실 곳</span></th>
-                            <td class="member_address">
-                                <div class="address_postcode">
-                                    <input type="text" name="shipping_zonecode" id="address_postcode_sub">
-                                    <button type="button" onclick="sample4_execDaumPostcode();" class="btn_post_search">우편번호검색</button>
-                                    <input type="hidden" name="shipping_zipcode" >
-                                </div>
-                                <div class="address_input">
-                                    <input type="text" name="shipping_address" id="shipping_address">
-                                    <input type="text" name="shipping_address_sub" id="shipping_address_sub" placeholder="상세주소를 입력해주세요."> 
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>전화번호</th>
-                            <td>
-                                <input type="text" name="shipping_phone" id="shipping_phone">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><span class="important">휴대폰 번호</span></th>
-                            <td>
-                                <input type="text" name="shipping_cellphone">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="mypage_content_address_submit">
-                    <button type="button" class="btn__address_cancel">
-                        <Strong>취소</Strong>
-                    </button>
-                    <button type="submit" class="btn_address_submit">
-                        <strong>저장</strong>
-                    </button>
-                </div>
+                    <form action="">
+                        <table>
+                            <colgroup>
+                                <col style="width: 20%;">
+                                <col style="width: 80%;">
+                            </colgroup>
+                            <tr>
+                                <th><span class="important">배송지 이름</span></th>
+                                <td>
+                                    <input type="text" name="shipping_title">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">받으실 분</span></th>
+                                <td>
+                                    <input type="text" name="shipping_name" maxlength="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">받으실 곳</span></th>
+                                <td class="member_address">
+                                    <div class="address_postcode">
+                                        <input type="text" name="shipping_zonecode" id="address_postcode_sub">
+                                        <button type="button" onclick="sample4_execDaumPostcode();" class="btn_post_search">우편번호검색</button>
+                                        <input type="hidden" name="shipping_zipcode" >
+                                    </div>
+                                    <div class="address_input">
+                                        <input type="text" name="shipping_address" id="shipping_address">
+                                        <input type="text" name="shipping_address_sub" id="shipping_address_sub" placeholder="상세주소를 입력해주세요."> 
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>전화번호</th>
+                                <td>
+                                    <input type="text" name="shipping_phone" id="shipping_phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">휴대폰 번호</span></th>
+                                <td>
+                                    <input type="text" name="shipping_cellphone">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mypage_content_address_submit">
+                        <button type="reset" class="btn__address_cancel">
+                            <Strong>다시입력</Strong>
+                        </button>
+                        <button type="submit" class="btn_address_submit">
+                            <strong>저장</strong>
+                        </button>
+                    </div>
+                    </form>
+                    
                 <!-- mypage_content_배송지등록 끝-->
             </div>
             <!-- mypage_content -->
