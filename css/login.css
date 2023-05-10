@@ -1,11 +1,7 @@
 legend {
     display: none;
 }
-#loginWrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-#loginWrap, .logo, .loginArea, #footer {
+.loginArea{
     width: 460px;
     margin: 0 auto;
 }
