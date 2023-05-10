@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipeMall</title>
+    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="shortcut icon" href="images/smalllogo.png" />
+</head>
+
+<body>
+    <!--[s]전체 컨텐츠 영역  -->
+    <!--[s]건너뛰기 링크-->
+    <a id="skipNav" href="">본문 바로가기</a>
+    <!--[e]건너뛰기 링크-->
+
+    
+    <!-- [s]광고배너 영역 -->
+    <div class="adbanner">
+        <p><a href="#">지금 가입하면 무료배송!</a></p>
+    </div>
+    <!--[e]광고배너 영역 -->
+
+
+    <!-- [s]Header 영역 -->
+    <header>
+        <!--[s]메인메뉴 영역 -->
+        <div>
+            <ul class="mainmenu">
+                <li class="main" title="메인페이지로 이동"><a href="index.html">레시피몰</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="index.html">쇼핑</a></li>
+            </ul>
+        </div>
+        <!--[e]메인메뉴 영역 -->
+        <!--[s]서브 영역 -->
+        <div>
+            <ul class="submenu"> <!--submenu-->
+                <li><a href="#" class="cart"><img src="image/empty.png" alt="cart"></a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><button class="btn_write">글쓰기</button></li>
+            </ul>
+        </div>
+        <!--[e]서브 영역 -->
+
+
+        <!--[s]검색 영역 -->
+        <div class="formtag">
+            <form action="#" method="get" name="#">
+                <input type="text" name="#" id="#" class="search" placeholder="통합검색">
+            </form>
+        </div>
+        <!--[e]검색 영역-->
+
+        
+        <div class="textline"></div>
+        <!--[s]카테고리 영역 -->
+        <div>
+            <ul class="category">
+                <li><a href="matarial.html">재료</a></li>
+                <li><a href="best.html">베스트</a></li>
+                <li><a href="sesson.html">대표 상품</a></li>
+            </ul>
+        </div>
+        <!--[e]카테고리 영역 -->
+
+        <!--[s]실시간차트 영역-->
+        <div class="rank">
+            <ul>
+                <li><a href="#">1.레시피</a></li>
+            </ul>
+        </div>
+        <!--[e]실시간차트 영역 -->
+        <div class="textline"></div>
+    </header>
+    <!-- [e]Header 영역 -->
+    
+    <!-- [s]메인 컨텐츠 영역  -->
+    <div id="main_content">
+        <div class="payment_content">
+            <div>
+                <!-- [s] 주문자 영역 -->
+                <div class="orderer_area">
+                    <h2>주문자 정보</h2>
+                    <ul>
+                        <li>
+                            <label for="orderer_name">주문자</label>
+                            <input type="text" id="orderer_name" name="orderer_name" required placeholder="이름을 입력해 주세요.">
+                        </li>
+                        <li>
+                            <label for="orderer_phone">연락처</label>
+                            <input type="text" id="orderer_phone" name="orderer_phone" required placeholder="&quot;-&quot;없이 입력해 주세요.">
+                        </li>
+                    </ul>
+                </div>
+                <!-- [e] 주문자 영역 -->
+
+                <!-- [s] 배송지 영역 -->
+                <div class="shipping_address">
+                    <h2><i class="fa-solid fa-location-dot"></i> 배송지</h2>
+                    <button>배송지 변경</button>              
+                    <div class="reciver">
+                        <span>가나다</span>
+                        <span>010-1234-4567</span>
+                    </div>
+                    <div class="safe_number">
+                        <input type="checkbox" id="safe_phone" name="safe_phone">
+                        <label for="safe_phone">안심번호 사용하기</label>
+                    </div>             
+                    <div class="reciver_address">
+                        <span>서울시 종로구 100 (건물이름) 1000호</span>
+                    </div>
+                    <select name="deilvery_message" id="deilvery_message">
+                        <option value="0">배송시 요청사항을 선택해 주세요.</option>
+                        <option value="1">직접 수령하겠습니다.</option>
+                        <option value="2">배송 전 연락바랍니다.</option>
+                        <option value="3">부재 시 경비실에 맡겨주세요.</option>
+                        <option value="4">부재 시 문 앞에 놓아주세요.</option>
+                        <option value="5">부재 시 택배함에 넣어주세요.</option>
+                        <option value="6">직접 입력</option>
+                    </select>
+                </div>
+                <!-- [e] 배송지 영역 -->
+
+                <!-- [s] 결제하기 영역 -->
+                <div class="payment_area">
+                    <h2>결제하기</h2>
+                    <div class="product_amout">
+                        <span>상품 금액</span>
+                        <span>57,080원</span>
+                    </div>
+                    <div class="use_point">
+                        <span>사용 할 포인트</span>
+                        <input type="text" placeholder="현재 3000포인트 보유중">
+                    </div>
+                    <div class="payment_amout">
+                        <span>결제 금액</span>
+                        <span>57,080원</span>
+                    </div>
+                    <div class="payment_type">
+                        <ul>
+                            <li><button>카드결제</button></li>
+                            <li><button>가상계좌</button></li>
+                            <li><button>계좌이체</button></li>
+                            <li><button>카카오페이</button></li>
+                        </ul>
+                    </div>
+                    <div class="card_payment">
+                        <select name="card_type" id="card_type">
+                            <option value="0">카드선택</option>
+                            <option value="1">신한카드</option>
+                            <option value="2">KB카드</option>
+                            <option value="3">삼성카드</option>
+                            <option value="4">농협카드</option>
+                            <option value="5">카카오카드</option>
+                            <option value="6">BC카드</option>
+                            <option value="7">하나카드</option>
+                            <option value="8">우리카드</option>
+                        </select>
+                        <select name="installment" id="installment">
+                            <option value="0">일시불</option>
+                            <option value="1">2개월</option>
+                            <option value="2">3개월</option>
+                            <option value="3">4개월</option>
+                            <option value="4">5개월</option>
+                            <option value="5">6개월</option>
+                            <option value="6">7개월</option>
+                            <option value="7">8개월</option>
+                            <option value="8">9개월</option>
+                            <option value="9">10개월</option>
+                            <option value="10">11개월</option>
+                            <option value="11">12개월</option>
+                        </select>
+                    </div>
+                    <span>무이자/부분무이자 할부 혜택 안내</span>
+                    <div class="order_agree">
+                        <span>주문자 동의</span>
+                        <div class="agree_check">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="all_agree" name="all_agree">
+                                    <label for="all_agree">전체 동의하기</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="agree1" name="agree1">
+                                    <label for="agree1">[필수]개인정보 수집 및 이용 동의 자세히</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="agree2" name="agree2">
+                                    <label for="agree1">[필수]개인정보 제 3자 제공 동의 자세히</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="agree3" name="agree3">
+                                    <label for="agree1">[필수]전자결제대행 이용 동의 자세히</label>
+                                </li>
+                            </ul>  
+                        </div>
+                    </div>
+                </div>
+                <!-- [e] 결제하기 영역 -->
+            </div>
+            <!-- [s] 주문 상품 정보 영역 -->
+            <div class="order_product">
+                <div class="order_product_number">
+                    <h2>주문상품 3개</h2>
+                </div>
+                <div class="order_product_imp">
+                    <img src="image/etc3.png" alt="chamyoe">
+                    <div>
+                        <span>성주 참외 1.5kg (4~7입)</span>
+                        <span>13,900원 / 3개</span>
+                        <span>41,700원</span>                   
+                    </div>
+                </div>
+                <div class="order_product_imp">
+                    <img src="image/etc1.png" alt="blueberry">
+                    <div>
+                        <span>국산 블루베리 100g (특)</span>
+                        <span>7,900원 / 1개</span>
+                        <span>7,900원</span>
+                    </div>
+                </div>
+                <div class="order_product_imp">
+                    <img src="image/etc4.png" alt="tomato">
+                    <div>
+                        <span>스테비아 토마토 500g</span>
+                        <span>7,480원 / 1개</span>
+                        <span>7,480원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="go_payment">
+                <button>57,080원 결제하기</button>
+            </div>
+            <!-- [e] 주문 상품 정보 영역 -->
+        </div>
+    </div>
+    <!-- [e]메인 컨텐츠 영역  -->
+    
+    <!-- [s]footer 영역 -->
+    <footer>
+        <!--[s]푸터 컨테이너 영역 -->
+        <div class="f_container flex_area_rsb">
+            <!--[s] footer left & 안내 영역 -->
+            <div class="information f_left">
+                <p class="infor"><a href="#">고객센터</a></p>
+                <p class="infor">1670-0876</p>
+                <span>09:00 ~ 16:00</span>
+                <p class="inquiry">평일:전체 문의 상담 가능</p>
+                <p class="inquiry">주말,공휴일:영업종료</p>
+                <p class="kakao">카톡 상담(평일) 09:00 ~ 16:00</p>
+                <button class="emailbtn" onclick="">이메일문의</button>
+            </div>
+            <!--[e]footer left & 안내 영역-->
+            <!--[s]footer middle & 회사 소개 영역-->
+            <div class="company_introduction1 f_middle flex_area_rsb">
+                <ul >
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용 정보</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보 처리 방침</strong></a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">안전거래센터</a></li>
+                </ul>
+                <ul >
+                    <li><a href="#">입점신청</a></li>
+                    <li><a href="#">제휴/광고 문의</a></li>
+                    <li><a href="#">사업자구매 회원</a></li>
+                    <li><a href="#">파트너 안내</a></li>
+                    <li><a href="#">상품광고 소개</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+            </div>
+            <!--[e]footer middle & 회사 소개 영역-->
+            <!--[s]footer right 영역-->
+
+
+            <!--[e]footer right 영역-->
+            <div class="f_right">
+                <!--[e]회사 소개2 영역 -->
+                <div class="company_introduction2">
+                    <address>
+                        (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
+                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431
+                            <Strong>사업자정보확인</Strong> <br>
+                            통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
+                    </address>
+                </div>
+                    <!--[s]안전거래 영역 -->
+                    <div class="save">
+                    <img src="#" alt="서비스운영"> <span>레시피몰 서비스 운영</span><br>
+                    <span>2021-05-01 ~ 2026-07-09</span>
+                    <img src="#" alt="안전거래"> <span>고객님이 현금결재한 금액에 대해<br> 우리은행과
+                        채무지급 보증 계약을 체결하여 안전거래를
+                        보장 하고 있습니다.</span>
+                </div>
+                <!--[e]안전거래 영역 -->
+                <!--[s]셀러 영역 -->
+                <div class="seller">
+                    <span>(주)이젠아카데미는 통신판매업중개자로 당사자가 아니므로,<br> 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.
+                        <br>단 (주)이젠아카데미가 판매자로 등록한 상품은 판매자로서 책임을 부담합니다.</span>
+                </div>
+                <!--[e]셀러 영역 -->
+
+                <!--[s]소셜네트워크 영역 -->
+                <div class="img_icon">
+                    <a href=""><img src="#" alt="인스타그램"></a>
+                    <a href=""><img src="#" alt="페이스북"></a>
+                    <a href=""><img src="#" alt="트위터"></a>
+                    <a href=""><img src="#" alt="유튜브"></a>
+                </div>
+                <!--[e]소셜네트워크 영역 -->
+
+                <!--[s]카피라이터 영역 -->
+                <div class="copyright">
+                    <p>Copyright 2014. buketplace, Co.,Ltd All rights reserved</p>
+                </div>
+                <!--[e]카피라이터 영역 -->
+            </div>
+        </div>
+        <!--[e]푸터 컨테이너 영역 -->
+    </footer>
+    <!-- [e]footer 영역 -->
+</body>
+
+</html>
