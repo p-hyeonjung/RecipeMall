@@ -47,6 +47,7 @@
 .mypage_product_review_view{
     position: relative;
     bottom: 10px;
+    display: none;  /*script 추가 예정*/
 }
 .mypage_product_review_write{
     width: 74%;
@@ -59,4 +60,8 @@
     padding: 28px 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
+}
+.btn_product:focus,
+.btn_product_review_insert:focus{
+    background-color: #888;
 }

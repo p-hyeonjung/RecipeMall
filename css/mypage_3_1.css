@@ -31,3 +31,9 @@
     padding: 5px 19px;
     cursor: pointer;
 }
+.btn_product:focus{
+    background-color: #888;
+}
+.mypage_product_a{
+    display: none;
+}
