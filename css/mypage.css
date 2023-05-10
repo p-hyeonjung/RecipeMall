@@ -1,6 +1,6 @@
 @charset "utf-8";
 a:hover, a:focus {
-    color: tomato;
+    color: rgb(70, 170, 209);
     font-weight: bold;
 }
 #main_content {
@@ -68,13 +68,14 @@ a:hover, a:focus {
     padding-left: 40px;
     font-size: 0.8em;
 }
-
+/* 출석체크 */
 .check_attend {
     position: absolute;
     font-size: 0.8em;
     top: 140px;
     left: 31%;
     border: none;
+    cursor: pointer;
 }
 /* 메뉴 컨텐츠 */
 .mypage_content {
