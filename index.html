@@ -10,6 +10,9 @@
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
@@ -33,9 +36,9 @@
             <!--[s]메인메뉴 영역 -->
             <div>
                 <ul class="mainmenu">
-                    <li class="main" title="메인페이지로 이동"><a href="index.html">레시피몰</a></li>
+                    <li class="main" title="메인페이지로 이동"><a href="">레시피몰</a></li>
                     <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#">쇼핑</a></li>
+                    <li><a href="index.html">쇼핑</a></li>
                 </ul>
             </div>
             <!--[e]메인메뉴 영역 -->
@@ -65,9 +68,9 @@
             <!--[s]카테고리 영역 -->
             <div>
                 <ul class="category">
-                    <li><a href="#">재료</a></li>
-                    <li><a href="#">베스트</a></li>
-                    <li><a href="#">대표상품</a></li>
+                    <li><a href="matarial.html">재료</a></li>
+                    <li><a href="best.html">베스트</a></li>
+                    <li><a href="season.html">대표상품</a></li>
                 </ul>
             </div>
             <!--[e]카테고리 영역 -->
@@ -86,23 +89,38 @@
         <!-- [s]main_content 영역 -->
         <div id="main_content">
             <!-- [s]이미지 슬라이더 영역 -->
-            <section class="main_imageslider">
-                <div class="ad">
-                    <a href="#" >
-                    
-                    </a>
+            <div class="slide_content">
+                <div class="main_slider">
+                    <div class="image_area">
+                        <img src="image/bread.png" alt="">
+                        <img src="image/cart.png" alt="">
+                        <img src="image/etc.png" alt="">
+                        <img src="image/fish.png" alt="">
+                        <img src="image/meat.png" alt="">
+                    </div>
+                    <div class="image_area">
+                        <img src="image/bread.png" alt="">
+                        <img src="image/cart.png" alt="">
+                        <img src="image/etc.png" alt="">
+                        <img src="image/fish.png" alt="">
+                        <img src="image/meat.png" alt="">
+                    </div>
+                    <div class="image_area">
+                        <img src="image/bread.png" alt="">
+                        <img src="image/cart.png" alt="">
+                        <img src="image/etc.png" alt="">
+                        <img src="image/fish.png" alt="">
+                        <img src="image/meat.png" alt="">
+                    </div>
+                    <div class="image_area">
+                        <img src="image/bread.png" alt="">
+                        <img src="image/cart.png" alt="">
+                        <img src="image/etc.png" alt="">
+                        <img src="image/fish.png" alt="">
+                        <img src="image/meat.png" alt="">
+                    </div>
                 </div>
-                <!-- 버튼 영역  -->
-                <div class="control_panel">
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class="control_btn"></div>
-                    <div class=" stop"><i class="fa-solid fa-pause" title="자동 재생 멈추기"></i></div>
-                </div>
-            </section>
+            </div>
             <!-- [e]이미지 슬라이더 영역 -->
             <!-- [e]이미지 슬라이더 영역 -->
             <!-- [s]쇼핑 바로가기 영역 -->

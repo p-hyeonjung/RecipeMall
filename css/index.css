@@ -3,6 +3,7 @@
     padding: 0;
 }
 /* main_content  영역 */
+
 .btn_more{
     position: absolute;
     right: 50px;
@@ -17,6 +18,27 @@
     color: #8bb0a3;
     
 }
+
+/*[s]이미지 슬라이더 영역*/
+.slide_content{
+   width: 80%;
+   margin: 50px auto;
+}
+.main_slider{
+    display: inline-block;
+    height: 180px;
+    margin: 0 auto;
+}
+.image_area{
+    display: flex;
+}
+.image_area img{
+width: 180px;
+height: 180px;
+}
+
+/*[e]이미지 슬라이더 영역*/
+
 /*[s]쇼핑 바로가기 영역*/
 .direct_menu_area{
     height: 100px;

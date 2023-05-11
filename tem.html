@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+   $(document).ready(function(){
+        $(".main_slider").bxSlider({
+            slideWidth:900,
+            speed:1000,
+        });
+      });
+   
+
+   </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main_slider{
+            position: relative;
+            display: inline-block;
+            height: 180px;
+            margin: 0 auto;
+        }
+        .image_area{
+            display: flex;
+        }
+        .image_area img{
+        width: 180px;
+        height: 180px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_slider">
+        <div class="image_area">
+            <img src="image/bread.png" alt="">
+            <img src="image/cart.png" alt="">
+            <img src="image/etc.png" alt="">
+            <img src="image/fish.png" alt="">
+            <img src="image/meat.png" alt="">
+        </div>
+        <div class="image_area">
+            <img src="image/bread.png" alt="">
+            <img src="image/cart.png" alt="">
+            <img src="image/etc.png" alt="">
+            <img src="image/fish.png" alt="">
+            <img src="image/meat.png" alt="">
+        </div>
+        <div class="image_area">
+            <img src="image/bread.png" alt="">
+            <img src="image/cart.png" alt="">
+            <img src="image/etc.png" alt="">
+            <img src="image/fish.png" alt="">
+            <img src="image/meat.png" alt="">
+        </div>
+        <div class="image_area">
+            <img src="image/bread.png" alt="">
+            <img src="image/cart.png" alt="">
+            <img src="image/etc.png" alt="">
+            <img src="image/fish.png" alt="">
+            <img src="image/meat.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
