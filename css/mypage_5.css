@@ -10,14 +10,22 @@
     text-align: center;
 }
 tbody{
+    position: relative;
     font-size: 0.8125em;
 }
 .block_setting, .btn_blockoff{
     float: right;
+}
+.block_setting{
+    position: absolute;
+    right: 140px;
 }
 .btn_blockoff{
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 3px 10px;
     cursor: pointer;
+}
+.tb_number{
+    font-style: normal;
 }
