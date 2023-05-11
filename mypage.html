@@ -8,8 +8,10 @@
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/mypage_main.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/mypage_2_1.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
 </head>
 <body>
@@ -88,30 +90,29 @@
                         <li><a href="mypage_user_info.html">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="#">- 주문목록/배송조회</a></li>
-                                <li><a href="#">- 취소/반품/교환 내역</a></li>
-                                <li><a href="#">- 환불/입금 내역</a></li>
-                                <li><a href="#">- 배송지 등록</a></li>
-                                <li><a href="#">- 장바구니</a></li>
+                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
+                                <li><a href="mypage_main_2_4.html">- 장바구니</a></li>
                             </ul>
                         </li>
                         <li><a href="#">상품</a>
                             <ul class="sub_menu">
-                                <li><a href="#">- 상품 문의</a></li>
-                                <li><a href="#">- 상품 리뷰</a></li>
+                                <li><a href="mypage_main_3_1.html">- 상품 문의</a></li>
+                                <li><a href="mypage_main_3_2.html">- 상품 리뷰</a></li>
                             </ul>
                         </li>
                         <li><a href="#">글/댓글 관리</a>
                             <ul class="sub_menu">
-                                <li><a href="#">- 글 </a></li>
-                                <li><a href="#">- 댓글</a></li>
+                                <li><a href="mypage_main_4_1.html">- 글 </a></li>
+                                <li><a href="mypage_main_4_2.html">- 댓글</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">차단 목록</a></li>
-                        <li><a href="#">고객센터</a>
+                        <li><a href="mypage_main_5.html">차단 목록</a></li>
+                        <li><a href="">고객센터</a>
                             <ul class="sub_menu">
-                                <li><a href="#">- 자주하는 질문</a></li>
-                                <li><a href="#">- 일대일 문의</a></li>
+                                <li><a href="mypage_main_6_1.html">- 자주하는 질문</a></li>
+                                <li><a href="mypage_main_6_2.html">- 일대일 문의</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -121,7 +122,32 @@
             <!-- mypage_content -->
             <div class="mypage_content">
                 <h3 class="menu_title">메뉴 제목</h3>
-                <h4>입금 대기>결제완료>상품준비중</h4>
+                <div class="mypage_content_order_header">
+                    <h3>진행 중인 주문<span>최근 30일 내에 진행중인 주문정보입니다.</span></h3>
+                </div>
+                <div class="mypage_content_order">
+                    <ul>
+                        <li class="order_sub"><span>결제완료</span><Strong><em>0</em></Strong></li>
+                        <li class="order_sub"><span>상품준비중</span><Strong><em>0</em></Strong></li>
+                        <li class="order_sub"><span>배송중</span><Strong><em>0</em></Strong></li>
+                        <li class="order_sub"><span>배송완료</span><Strong><em>0</em></Strong></li>
+                    </ul>
+                </div>
+                <div class="order_message">
+                    <h3>조금만 기다려주세요 상품이 곧 도착합니다!</h3>
+                </div>
+                <div class="moving_box">
+                    <div class="order_place">
+                        <img src="image/market.JPG" alt="market">
+                    </div>
+                    <div class="truck_img">
+                        <img src="image/truck.JPG" alt="truck">
+                    </div>
+                    <div class="order_home">
+                        <img src="image/house.JPG" alt="house">
+                    </div>
+                </div>
+                
             </div>
             <!-- mypage_content -->
         </div>
