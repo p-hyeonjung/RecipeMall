@@ -1,4 +1,7 @@
 @charset "utf-8";
+a, a:visited {
+    color: black;
+}
 a:hover, a:focus {
     color: rgb(70, 170, 209);
     font-weight: bold;
@@ -88,4 +91,10 @@ a:hover, a:focus {
     margin-top: 20px;
     padding-bottom: 8px;
     border-bottom: 1px solid #ccc;
+}
+.btn_c {
+    border: none;
+    background-color: #2ebaf1;
+    color: #fff;
+    cursor: pointer;
 }

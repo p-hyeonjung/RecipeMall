@@ -34,16 +34,19 @@
     position: absolute;
     bottom: 240px;
     right: 500px;
-    border: 1px solid #ccc;
+    border: none;
 }
-.info_update:hover {
+/* .info_update:hover {
     background-color: #c0c0c0;
-}
+} */
 .drop_out {
     position: absolute;
     right: 180px;
     bottom: 20px;
-    color: red;
+    color: #fff;
+    background-color: #eb625f;
+    cursor: pointer;
+    border: none;
 }
 .btn {
     width: 120px;
