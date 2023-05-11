@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="shortcut icon" href="images/smalllogo.png" />
+</head>
+
+<body>
+    <!-- [s]Header 영역 -->
+    <header>
+        <!--[s]메인메뉴 영역 -->
+        <div>
+            <ul class="mainmenu">
+                <li class="main" title="메인페이지로 이동"><a href="../index.html">레시피몰</a></li>
+                <li><a href="index.html">커뮤니티</a></li>
+                <li><a href="#">쇼핑</a></li>
+            </ul>
+        </div>
+        <!--[e]메인메뉴 영역 -->
+        <!--[s]서브 영역 -->
+        <div>
+            <ul class="submenu"> <!--submenu-->
+                <li><a href="#" class="cart"><img src="../image/empty.png" alt="cart"></a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><button class="btn_write"><a href="edit.html">글쓰기</a></button></li>
+            </ul>
+        </div>
+        <!--[e]서브 영역 -->
+
+
+        <!--[s]검색 영역 -->
+        <div class="formtag">
+            <form action="#" method="get" name="#">
+                <input type="text" name="#" id="#" class="search">
+            </form>
+        </div>
+        <!--[e]검색 영역-->
+
+
+        <div class="textline"></div>
+        <!--[s]카테고리 영역 -->
+        <div>
+            <ul class="category">
+                <li><a href="../recipe.html">레시피</a></li>
+                <li><a href="../best.html">베스트</a></li>
+                <li><a href="../free_board.html">자유게시판</a></li>
+            </ul>
+        </div>
+        <!--[e]카테고리 영역 -->
+
+        <!--[s]실시간차트 영역-->
+        <div class="rank">
+            <ul>
+                <li><a href="#">1.레시피</a></li>
+            </ul>
+        </div>
+        <!--[e]실시간차트 영역 -->
+        <div class="textline"></div>
+    </header>
+    <!-- [s]Header 영역 -->
+
+    <div class="board_wrap">
+        <div class="f_main_title">
+            <h1>자유게시판</h1>
+        </div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text" placeholder="제목 입력" value="글 제목이 들어갑니다"></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd><input type="text" placeholder="글쓴이 입력" value="박승호"></dd>
+                    </dl>
+                    <dl>
+                        <dt>비밀번호</dt>
+                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <textarea placeholder="내용 입력">
+
+                    </textarea>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="view.html" class="on">등록</a>
+                <a href="view.html">취소</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!--[s]푸터 컨테이너 영역 -->
+        <div class="f_container flex_area_rsb">
+            <!--[s] footer left & 안내 영역 -->
+            <div class="information f_left">
+                <p class="infor"><a href="#">고객센터</a></p>
+                <p class="infor">1670-0876</p>
+                <span>09:00 ~ 16:00</span>
+                <p class="inquiry">평일:전체 문의 상담 가능</p>
+                <p class="inquiry">주말,공휴일:영업종료</p>
+                <p class="kakao">카톡 상담(평일) 09:00 ~ 16:00</p>
+                <button class="emailbtn" onclick="">이메일문의</button>
+            </div>
+            <!--[e]footer left & 안내 영역-->
+            <!--[s]footer middle & 회사 소개 영역-->
+            <div class="company_introduction1 f_middle flex_area_rsb">
+                <ul>
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용 정보</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보 처리 방침</strong></a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">안전거래센터</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">입점신청</a></li>
+                    <li><a href="#">제휴/광고 문의</a></li>
+                    <li><a href="#">사업자구매 회원</a></li>
+                    <li><a href="#">파트너 안내</a></li>
+                    <li><a href="#">상품광고 소개</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+            </div>
+            <!--[e]footer middle & 회사 소개 영역-->
+            <!--[s]footer right 영역-->
+
+
+            <!--[e]footer right 영역-->
+            <div class="f_right">
+                <!--[e]회사 소개2 영역 -->
+                <div class="company_introduction2">
+                    <address>
+                        (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
+                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431<br>
+                            <Strong>사업자정보확인</Strong> <br>
+                            통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
+                    </address>
+                </div>
+                <!--[s]안전거래 영역 -->
+                <div class="save">
+                    <i class="fa-brands fa-servicestack"></i>
+                    <span>레시피몰 운영</span><br>
+                    <p>2021-05-01 ~ 2026-07-09</p>
+                    <i class="fa-solid fa-helmet-safety"></i><span>고객님이 현금결재한 금액에 대해<br>
+                        우리은행과 채무지급 보증 계약을 체결하여 안전거래를
+                        보장 하고 있습니다.</span>
+                </div>
+                <!--[e]안전거래 영역 -->
+                <!--[s]셀러 영역 -->
+                <div class="seller">
+                    <span>(주)이젠아카데미는 통신판매업중개자로 당사자가 아니므로,<br> 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.
+                        <br>단 (주)이젠아카데미가 판매자로 등록한 상품은 판매자로서 책임을 부담합니다.</span>
+                </div>
+                <!--[e]셀러 영역 -->
+
+                <!--[s]소셜네트워크 영역 -->
+                <div class="img_icon">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <!--[e]소셜네트워크 영역 -->
+
+                <!--[s]카피라이터 영역 -->
+                <div class="copyright">
+                    <p>Copyright 2014. buketplace, Co.,Ltd All rights reserved</p>
+                </div>
+                <!--[e]카피라이터 영역 -->
+            </div>
+        </div>
+        <!--[e]푸터 컨테이너 영역 -->
+    </footer>
+    <!-- [e]footer 영역 -->
+</body>
+
+</html>

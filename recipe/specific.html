@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipeMall</title>
+    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/recipe_spe.css">
+    <link rel="shortcut icon" href="images/smalllogo.png" />
+</head>
+
+<body>
+    <!--[s]전체 컨텐츠 영역  -->
+    <!--[s]건너뛰기 링크-->
+    <a id="skipNav" href="">본문 바로가기</a>
+    <!--[e]건너뛰기 링크-->
+
+    
+
+
+    <!-- [s]Header 영역 -->
+    <header>
+        <!--[s]메인메뉴 영역 -->
+        <div>
+            <ul class="mainmenu">
+                <li class="main"><a href="../index.html">레시피몰</a></li>
+                <li><a href="../index.html">커뮤니티</a></li>
+                <li><a href="#">쇼핑</a></li>
+            </ul>
+        </div>
+        <!--[e]메인메뉴 영역 -->
+        <!--[s]서브 영역 -->
+        <div>
+            <ul class="submenu"> <!--submenu-->
+                <li><a href="#" class="cart"><img src="image/empty.png" alt="cart"></a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><button class="btn_write">글쓰기</button></li>
+            </ul>
+        </div>
+        <!--[e]서브 영역 -->
+
+
+         <!--[s]검색 영역 -->
+        <div class="formtag">
+            <form action="#" method="get" name="#">
+                <input type="text" name="#" id="#" class="search">
+            </form>
+        </div>
+        
+        <!--[e]검색 영역-->
+        <div class="textline"></div>
+        <!--[s]카테고리 영역 -->
+        <div>
+            <ul class="category">
+                <li><a href="../recipe.html">레시피</a></li>
+                <li><a href="#">베스트</a></li>
+                <li><a href="#">자유게시판</a></li>
+            </ul>
+        </div>
+        <!--[e]카테고리 영역 -->
+
+        <!--[s]실시간차트 영역-->
+        <div class="rank">
+            <ul>
+                <li><a href="#">1.레시피</a></li>
+            </ul>
+        </div>
+        <!--[e]실시간차트 영역 -->
+        <div class="textline"></div>
+    </header>
+    <!-- [s]Header 영역 -->
+    
+
+    <!-- [s]main_content 영역 -->
+    <div id="main_content">
+     <!-- [s]레시피 등록 내용 영역 -->
+     <div class="r_content_area">
+        <!-- [s]레시피 소개 영역 -->
+       <section class="r_info">
+           <div class="r_info_img">
+
+           </div>
+           <div class="r_info_ex_area">
+                <h1 class="r_info_ex_title">달래장 훈제오리 비빔밥 만들기</h1>
+                <div class="r_info_ex_in" id="recipe_explain">
+                    봄 제철 채소인 달래로 만든 양념장은 고소한 오리고기와 잘 어울려요.
+                </div>
+                <div class="r_info_sum flex_area_rsb">
+                    <span class="r_in_num">
+                        <i class="fa-solid fa-user-group"></i><br>
+                        <span>1인분</span>
+                    </span>
+                    <span class="r_in_time">
+                        
+                        <i class="fa-solid fa-clock"></i><br>
+                        <span>5분이내</span>
+                    </span>
+                    <span class="r_in_lev">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br>
+                        <span>초급</span>
+                    </span>
+                </div>
+           </div>
+       </section>
+       <div class="textline"></div>
+       <!-- [e]레시피 소개 영역 -->
+
+       <!-- [s]재료 영역 -->
+       <section class="r_ing_c flex_area_rsb">
+        <div class="r_txt">
+            <i class="fa-solid fa-utensils"></i>
+            재료</div>
+           <div class="r_ings ">
+               <ul class="r_ing">
+                    <h3 class="ing_t">[재료]</h3>
+                    <li class="r_ing_c flex_area_rsb">
+                        <a href="" class="r_ing_name" >다진마늘</a>
+                        <div class="txt_al_r">
+                            <span  class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur">구매</button>
+                        </div>
+                        
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <a href="" class="r_ing_name">다진마늘</a>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur">구매</button>
+                        </div>
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <a href="" class="r_ing_name">다진마늘</a>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur">구매</button>
+                        </div>
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <a href="" class="r_ing_name">다진마늘</a>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur">구매</button>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul  class="r_ing">
+                    <li class="r_ing_c flex_area_rsb">
+                        <h3 class="ing_t">[고기밑간]</h3>
+                        <li class="r_ing_c flex_area_rsb flex_area_rsb">
+                            <a href="" class="r_ing_name" >다진마늘</a>
+                            <div class="txt_al_r">
+                                <span  class="r_ing_amount">1작은술</span>
+                                <button class="btn_pur">구매</button>
+                            </div>
+                            
+                        </li>
+                        <li class="r_ing_c flex_area_rsb">
+                            <a href="" class="r_ing_name">다진마늘</a>
+                            <div class="txt_al_r">
+                                <span class="r_ing_amount">1작은술</span>
+                                <button class="btn_pur">구매</button>
+                            </div>
+                        </li>
+                        <li class="r_ing_c flex_area_rsb">
+                            <a href="" class="r_ing_name">다진마늘</a>
+                            <div class="txt_al_r">
+                                <span class="r_ing_amount">1작은술</span>
+                                <button class="btn_pur">구매</button>
+                            </div>
+                        </li>
+                        <li class="r_ing_c flex_area_rsb">
+                            <a href="" class="r_ing_name">다진마늘</a>
+                            <div class="txt_al_r">
+                                <span class="r_ing_amount">1작은술</span>
+                                <button class="btn_pur">구매</button>
+                            </div>
+                        </li>
+                    </li>
+            </ul>
+            <ul class="r_ing">
+                <h3 class="ing_t">[양념]</h3>
+                <li class="r_ing_c flex_area_rsb flex_area_rsb">
+                    <a href="" class="r_ing_name" >다진마늘</a>
+                    <div class="txt_al_r">
+                        <span  class="r_ing_amount">1작은술</span>
+                        <button class="btn_pur">구매</button>
+                    </div>
+                    
+                </li>
+                <li class="r_ing_c flex_area_rsb">
+                    <a href="" class="r_ing_name">다진마늘</a>
+                    <div class="txt_al_r">
+                        <span class="r_ing_amount">1작은술</span>
+                        <button class="btn_pur">구매</button>
+                    </div>
+                </li>
+                <li class="r_ing_c flex_area_rsb">
+                    <a href="" class="r_ing_name">다진마늘</a>
+                    <div class="txt_al_r">
+                        <span class="r_ing_amount">1작은술</span>
+                        <button class="btn_pur">구매</button>
+                    </div>
+                </li>
+                <li class="r_ing_c flex_area_rsb">
+                    <a href="" class="r_ing_name">다진마늘</a>
+                    <div class="txt_al_r">
+                        <span class="r_ing_amount">1작은술</span>
+                        <button class="btn_pur">구매</button>
+                    </div>
+                </li>
+           </ul>
+                   
+               
+           </div>
+       </section>
+       <div class="textline"></div>
+       <!-- [e]재료 영역 -->
+       
+       <!-- [s]순서 영역 -->
+       <section class="r_seq">
+            <div class="r_txt">
+                <i class="fa-solid fa-kitchen-set"></i>
+                조리순서</div>
+            <div class="seq_content_area ">
+                <div class="seq_content">
+                    <h2 class="seq_num">Step1</h2>
+                    <span class="seq_txt">
+                        이는 김순기 작가가 올해 새롭게 선보인 6분 48초 분량의 멀티미디어 작품 ‘주석 정원-템플(Stock Garden Temple)’이다. 김 작가는 이 작품을 통해 자본주의적 가치에 의존하는 현대인들의 삶과 그 내면을 극대화시킨다. 우리를 집어삼키며 지우는 숫자들의 질주가, 나를 잊음으로써 나를 찾는 불교의 깨달음과 만나는 역설이 ‘주식 정원-템플’의 아이러니다. 이 둘은 단지 현저한 대조로도 동행하지 못한다는 것이 작업의 울림을 증폭시킨다.
+                    </span>
+                    <div  class="seq_img">
+                        <img src="../image/temp_imgslider.gif" alt="">
+                    </div>
+                </div>
+                <div class="seq_content">
+                    <h2 class="seq_num">Step2</h2>
+                    <span class="seq_txt">음식을 볶아줍니다.</span>
+                    <div class="seq_img">
+                        <img src="../image/temp_imgslider.gif" alt="">
+                    </div>
+                </div>
+                <div class="seq_content">
+                    <h2 class="seq_num">Step3</h2>
+                    <span class="seq_txt">음식을 볶아줍니다.</span>
+                    <div class="seq_img">
+                        <img src="../image/temp_imgslider.gif" alt="">
+                    </div>
+                </div>
+           </div>
+           <div class="seq_pho_area ">
+               <div class="r_txt cf">
+                <i class="fa-solid fa-camera-retro"></i>
+                요리 완성 사진</div>
+                <!-- 이미지 슬라이더 영역 -->
+                <div class="seq_phos">
+                    <!-- 슬라이더 패널  -->
+                    <div class="seq_pho">
+                      <img class="seq_slider_img" src="../image/temp_imgslider1.jpg" alt="temp">
+                      <img class="seq_slider_img" src="../image/temp_imgslider2.gif" alt="temp">
+                      <img class="seq_slider_img" src="../image/temp_imgslider3.gif" alt="temp">
+                    </div>
+                     <!-- 좌우 컨트롤 버튼 패널  -->
+                    <div class="left_right_control_panel">
+                    <i class="left_control fa-solid fa-angle-left "></i>
+                    <i class="right_control fa-solid fa-angle-right"></i>
+                </div> 
+                </div>
+                         
+           </div>
+       </section>
+       <div class="textline"></div>
+        <!-- [e]순서 영역 -->
+
+       <!-- [s]기타 영역 -->
+       <section class="r_ect ">
+           <div class="r_txt">
+            <!-- <i class="fa-solid fa-tag"></i> -->
+            <!-- <i class="fa-solid fa-bookmark"></i> -->
+            <!-- <i class="fa-solid fa-bell"></i> -->
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            팁/주의사항
+            </div>
+            <p class="r_ect_content">잡채를 볶을 때 센불에 볶지마세요</p>            
+       </section>
+       <div class="textline"></div>
+       <!--[e]기타 영역 -->
+   </div>
+   
+   <!-- [e]레시피 등록 내용 영역 -->
+
+   <!-- [s]댓글 영역 -->
+   <section>
+    <div class="r_txt">댓글</div>
+   </section>
+   <!-- [e]댓글 영역 -->
+
+    </div>
+    <!-- [e]main_content 영역 -->
+    <!-- [s]footer 영역 -->
+    <footer>
+        <!--[s]푸터 컨테이너 영역 -->
+        <div class="f_container flex_area_rsb">
+            <!--[s] footer left & 안내 영역 -->
+            <div class="information f_left">
+                <p class="infor"><a href="#">고객센터</a></p>
+                <p class="infor">1670-0876</p>
+                <span>09:00 ~ 16:00</span>
+                <p class="inquiry">평일:전체 문의 상담 가능</p>
+                <p class="inquiry">주말,공휴일:영업종료</p>
+                <p class="kakao">카톡 상담(평일) 09:00 ~ 16:00</p>
+                <button class="emailbtn" onclick="">이메일문의</button>
+            </div>
+            <!--[e]footer left & 안내 영역-->
+            <!--[s]footer middle & 회사 소개 영역-->
+            <div class="company_introduction1 f_middle flex_area_rsb">
+                <ul >
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용 정보</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보 처리 방침</strong></a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">안전거래센터</a></li>
+                </ul>
+                <ul >
+                    <li><a href="#">입점신청</a></li>
+                    <li><a href="#">제휴/광고 문의</a></li>
+                    <li><a href="#">사업자구매 회원</a></li>
+                    <li><a href="#">파트너 안내</a></li>
+                    <li><a href="#">상품광고 소개</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+            </div>
+            <!--[e]footer middle & 회사 소개 영역-->
+            <!--[s]footer right 영역-->
+
+
+            <!--[e]footer right 영역-->
+            <div class="f_right">
+                <!--[e]회사 소개2 영역 -->
+                <div class="company_introduction2">
+                    <address>
+                        (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
+                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431
+                            <Strong>사업자정보확인</Strong> <br>
+                            통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
+                    </address>
+                </div>
+                    <!--[s]안전거래 영역 -->
+                    <div class="save">
+                    <img src="#" alt="서비스운영"> <span>레시피몰 서비스 운영</span><br>
+                    <span>2021-05-01 ~ 2026-07-09</span>
+                    <img src="#" alt="안전거래"> <span>고객님이 현금결재한 금액에 대해<br> 우리은행과
+                        채무지급 보증 계약을 체결하여 안전거래를
+                        보장 하고 있습니다.</span>
+                </div>
+                <!--[e]안전거래 영역 -->
+                <!--[s]셀러 영역 -->
+                <div class="seller">
+                    <span>(주)이젠아카데미는 통신판매업중개자로 당사자가 아니므로,<br> 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.
+                        <br>단 (주)이젠아카데미가 판매자로 등록한 상품은 판매자로서 책임을 부담합니다.</span>
+                </div>
+                <!--[e]셀러 영역 -->
+
+                <!--[s]소셜네트워크 영역 -->
+                <div class="img_icon">
+                    <a href=""><img src="#" alt="인스타그램"></a>
+                    <a href=""><img src="#" alt="페이스북"></a>
+                    <a href=""><img src="#" alt="트위터"></a>
+                    <a href=""><img src="#" alt="유튜브"></a>
+                </div>
+                <!--[e]소셜네트워크 영역 -->
+
+                <!--[s]카피라이터 영역 -->
+                <div class="copyright">
+                    <p>Copyright 2014. buketplace, Co.,Ltd All rights reserved</p>
+                </div>
+                <!--[e]카피라이터 영역 -->
+            </div>
+        </div>
+        <!--[e]푸터 컨테이너 영역 -->
+    </footer>
+    <!-- [e]footer 영역 -->
+    <script src="../js/common.js"></script>
+    <script src="../js/recipe_spe.js"></script>
+</body>
+
+</html>

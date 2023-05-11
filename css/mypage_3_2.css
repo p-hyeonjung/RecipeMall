@@ -1,0 +1,62 @@
+.mypage_product_area{
+    box-sizing: border-box;
+    width: 76%;
+    margin: 0 30px;
+    float: right;
+    font-size: 1.2em;
+}
+.mypage_product_review{
+    border-bottom: 3px solid #ccc;
+    position: relative;
+    margin-top: 10px;
+}
+.img_product_view{
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
+}
+.mypage_product_view h4{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    top: 5px;
+    left: 200px;
+}
+.mypage_product_view p{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    font-size: 0.7125em;
+}
+.mypage_product_view p>em{
+    font-style: normal;
+}
+.btn_product_area{
+    position: relative;
+    width: 640px;
+    left: 200px;
+    bottom: 35px;
+}
+.btn_product{
+    border: 1px solid #ccc;
+    margin: 0 15px;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.mypage_product_review_view{
+    position: relative;
+    bottom: 10px;
+}
+.mypage_product_review_write{
+    width: 74%;
+    height: 80px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    font-size: 0.8125em;
+}
+.btn_product_review_insert{
+    padding: 28px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
