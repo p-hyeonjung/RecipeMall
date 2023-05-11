@@ -47,6 +47,9 @@
     padding: 20px;
     /* display: none; */
 }
+.on {
+    display: block;
+}
 /* 자주하는 질문{e} */
 
 /* 일대일 문의{s} */

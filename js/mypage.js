@@ -1,3 +1,6 @@
 $(function () {
-    $(".accordion .answer:not(:fisrt-child)").css('display','none');
+    // 자주하는 질문 accordion
+    $('.accordion_title').click(function () {
+
+    });
 });
