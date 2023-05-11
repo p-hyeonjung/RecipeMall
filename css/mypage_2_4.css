@@ -9,6 +9,9 @@
     padding: 20px 0 20px 0;
     width: 100%;
 }
+.cart_cont_all p {
+    display: inline-block;
+}
 .cart_cont_list{
     width: 100%;
     margin-top: 20px;
@@ -57,10 +60,14 @@
     display: flex;
     flex-direction: row;
 }
+.price_sum_count span img {
+    padding: 20px 0 0 50px;
+}
 .price_sum_count ul {
     padding: 5px 10px 5px 10px;
     font-size: 16px;
     text-align: right;
+    width: 150px;
 }
 .btn_right_Pbox {
     margin-top: 10px;
