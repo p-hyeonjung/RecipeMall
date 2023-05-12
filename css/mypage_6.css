@@ -42,10 +42,10 @@
 } */
 .answer {
     border: 1px solid #dee2e6;
+    display: none;
 }
 .accordion_content {
     padding: 20px;
-    /* display: none; */
 }
 .on {
     display: block;
