@@ -69,10 +69,13 @@
 .post_list_tb th:first-child, .post_n {
     width: 40px;
 }
-.post_list_tb th:nth-child(2), .post_title {
-    width: 623px;
+.post_list_tb th:nth-child(2), .post_board {
+    width: 100px;
 }
-.post_list_tb th:nth-child(3), .post_date {
+.post_list_tb th:nth-child(3), .post_title {
+    width: 523px;
+}
+.post_list_tb th:nth-child(4), .post_date {
     width: 100px;
 }
 .post_list_tb th:last-child, .post_chk {
