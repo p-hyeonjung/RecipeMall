@@ -36,4 +36,5 @@
 }
 .mypage_product_a{
     display: none;
+    overflow: hidden;
 }
