@@ -5,14 +5,16 @@ $(document).ready(function() {
     function updateTotalPrice() {
         total_goods_price = 0;
         $('input[name=proudct_chk]:checked').each(function() {
-          total_goods_price += parseInt($(this).closest('tr').find('.product_sangpum_price').text());
+            var product_count = parseInt($(this).closest('tr').find('.product_sangpum_count').text());
+            var product_price = parseInt($(this).closest('tr').find('.product_sangpum_price').text());
+            total_goods_price += product_count * product_price;
         });
         $('#total_goods_price').text(total_goods_price);
         $('#total_price').text(delivery_price + total_goods_price);
         if (total_goods_price === 0) {
-          $('#total_price').text(0);
+            $('#total_price').text(0);
         }
-      }
+    }
       
     $('#product_chk_all').click(function() {
         $('input[name=proudct_chk]').prop('checked', this.checked);
@@ -39,6 +41,5 @@ $(document).ready(function() {
         updateTotalPrice();
     });
 
-    updateTotalPrice();
-    
+    updateTotalPrice();   
 });
