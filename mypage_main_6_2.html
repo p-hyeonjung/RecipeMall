@@ -158,10 +158,11 @@
                                 <tr>
                                     <th>파일첨부</th>
                                     <td>
-                                        <label for="inquery_file">
+                                        <label for="inq_file">
                                             <div class="file_upload_btn">파일 첨부</div>
                                         </label>
-                                        <input type="file" name="inquery_file" id="inquery_file" multiple>
+                                        <input type="file" data-ax-path="file" name="inq_file" id="inq_file" class="file_c" onchange="name_load();" multiple>
+                                        <p id="file_name"></p>
                                     </td>
                                 </tr>
                             </tbody>

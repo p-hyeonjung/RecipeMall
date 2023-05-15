@@ -56,4 +56,15 @@ $(function () {
         item.not($(this)).removeClass('active');
     });
 
+    /* ------------- 1:1문의 파일첨부 시 파일 이름 출력 ---------- */
+    let file=$('input[name="inq_file"]').files[0];
+    alert(file);
+    // function name_load(input) {
+    //     let file=input.files;
+    //     let file_name=$('#file_name');
+    //     for(var i=0; i<file.length; i++) {
+    //         file_name.textContent=file[i];
+    //         console.log(file_name.textContent);
+    //     }
+    // }
 });

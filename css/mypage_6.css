@@ -83,8 +83,11 @@
     line-height: 30px;
     cursor: pointer;
 }
-#inquery_file {
+#inq_file {
     display: none;
+}
+#file_name {
+    display: inline-block;
 }
 .subm_btn {
     width: 100%;
