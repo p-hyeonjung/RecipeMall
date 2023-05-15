@@ -29,13 +29,11 @@
     background-color: #f1f1f1;
 }
 .qna_title {
+    display: inline-block;
+    width: 740px;
     color: #48494a;
-    padding-left: 20px;
     text-align: left;
     font-size: 1.2em;
-}
-.qna_title::before {
-    content: "> ";
 }
 /* .down_btn {
 
