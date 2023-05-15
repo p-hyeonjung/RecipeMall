@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/mypage.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/mypage.css">
     <link rel="stylesheet" href="css/mypage_4.css">
@@ -127,9 +128,9 @@
                             <li>
                                 <div class="comment_class">
                                     <ul>
-                                        <li><a href="#">전체</a></li>
-                                        <li><a href="#">레시피</a></li>
-                                        <li><a href="#">자유게시판</a></li>
+                                        <li class="board_all menu_li active"><a class="active_a" href="#">전체</a></li>
+                                        <li class="board_recipe menu_li"><a href="#">레시피</a></li>
+                                        <li class="board_free menu_li"><a href="#">자유게시판</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -161,7 +162,7 @@
                                     <th>내용</th>
                                     <th>본문</th>
                                     <th>작성일</th>
-                                    <th><input type="checkbox"></th>
+                                    <th><input type="checkbox" name="comment_chk_all" id="comment_chk_all"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,7 +172,7 @@
                                     <td class="cmt_ctnt">레시피 게시판 1번 글 댓글</td>
                                     <td class="post_going"><a href="#">img</a></td>
                                     <td class="cmt_date"><a href="#">23.04.08</a></td>
-                                    <td class="comment_chk"><input type="checkbox" name="" id=""></td>
+                                    <td class="comment_chk"><input type="checkbox" name="comment_e_chk" id="comment_e_chk1" class="comm_e_chk chk"></td>
                                 </tr>
                                 <tr>
                                     <td class="comment_n">2</td>
@@ -179,7 +180,7 @@
                                     <td class="cmt_ctnt">자유게시판 2번 글 댓글</td>
                                     <td class="post_going"><a href="#">img</a></td>
                                     <td class="cmt_date"><a href="#">23.04.08</a></td>
-                                    <td class="comment_chk"><input type="checkbox" name="" id=""></td>
+                                    <td class="comment_chk"><input type="checkbox" name="comment_e_chk" id="comment_e_chk2" class="comm_e_chk chk"></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -1,4 +1,17 @@
 @charset "utf-8";
+/* 글/댓글 게시판 선택 */
+.hover_li {
+    background-color: #2ebaf1;
+}
+.active {
+    background-color: #2ebaf1;
+}
+.active>a {
+    color: #fff;
+}
+.active_a {
+    color: #fff;
+}
 /* 글 관리 페이지{s} */
 .post {
     width: 95%;
@@ -22,11 +35,14 @@
 .post_class li {
     float: left;
     padding: 8px 15px;
-    border: 1px solid #bbb;
 }
-.post_class li:hover, .post_clicked {
-    background-color: #ddd;
+/* .post_class li:hover {
+    background-color: #2ebaf1;
+    cursor: pointer;
 }
+.post_class a:hover {
+    color: #fff;
+} */
 .post_date_s {
     margin-right: 15px;
 }
@@ -35,6 +51,7 @@
 }
 .post_date_s li:first-child>a::after {
     content: " |";
+    color: #000;
 }
 .post_date_s li:last-child>a {
     padding-left: 5px;
@@ -69,10 +86,13 @@
 .post_list_tb th:first-child, .post_n {
     width: 40px;
 }
-.post_list_tb th:nth-child(2), .post_title {
-    width: 623px;
+.post_list_tb th:nth-child(2), .post_board {
+    width: 80px;
 }
-.post_list_tb th:nth-child(3), .post_date {
+.post_list_tb th:nth-child(3), .post_title {
+    width: 543px;
+}
+.post_list_tb th:nth-child(4), .post_date {
     width: 100px;
 }
 .post_list_tb th:last-child, .post_chk {
@@ -105,11 +125,14 @@
 .comment_class li {
     float: left;
     padding: 8px 15px;
-    border: 1px solid #bbb;
 }
-.comment_class li:hover, .comment_clicked {
-    background-color: #ddd;
+/* .comment_class li:hover {
+    background-color: #2ebaf1;
+    cursor: pointer;
 }
+.comment_class a:hover {
+    color: #fff;
+} */
 .comment_date_s {
     margin-right: 15px;
 }
@@ -118,6 +141,7 @@
 }
 .comment_date_s li:first-child>a::after {
     content: " |";
+    color: #000;
 }
 .comment_date_s li:last-child>a {
     padding-left: 5px;
@@ -192,12 +216,21 @@
     line-height: 25px;
     float: left;
 }
-/* 삭제 버튼 */
+/* 버튼 */
 .delete_btn {
     position: absolute;
     right: 152px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
 }
 .update_btn {
     position: absolute;
     right: 205px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.post_view_btn, .comment_view_btn {
+    background-color: #fff;
+    cursor: pointer;
 }
