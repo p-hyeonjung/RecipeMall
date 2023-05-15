@@ -3,8 +3,8 @@ a, a:visited {
     color: black;
 }
 a:hover, a:focus {
-    color: rgb(70, 170, 209);
-    font-weight: bold;
+    color: #46aad1;
+    /* font-weight: bold; */
 }
 #main_content {
     font-size: 1em;
@@ -63,7 +63,7 @@ a:hover, a:focus {
 .main_menu>li>a {
     padding: 0 8px;
 }
-.main_menu>li>a:hover, a:focus {
+.main_menu>li>a:hover, .main_menu>li>a:focus {
     border-bottom: 1px solid #555;
 }
 .sub_menu>li {
