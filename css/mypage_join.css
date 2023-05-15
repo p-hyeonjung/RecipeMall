@@ -5,6 +5,9 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
 }
+button{
+    cursor: pointer;
+}
 #join_form{
     width: 37%;
     margin-left: 320px;
@@ -20,6 +23,11 @@
 #join_form input[type="text"],
 #join_form input[type="password"]{
     height: 20px;
+    padding: 3px 5px;
+}
+#join_form input[type="button"]{
+    padding: 3px 5px;
+    cursor: pointer;
 }
 #join_form>p:nth-child(3){  /*비밀번호*/
     margin: 0;
@@ -45,4 +53,44 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
+}
+#agree_check>label{
+    font-size: 1.1em;
+}
+#agree_check>input{
+    margin-left: 180px;
+}
+.agree{
+    margin-left: 210px;
+    margin-top: 15px;
+}
+#agree_check label{
+    font-weight: bold;
+}
+.treaty_area{
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    width: 67%;
+    height: 100px;
+}
+.btn_join{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    margin-left: 340px;
+    display: block;
+}
+.btn_cancel{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    margin-left: 340px;
+    margin-top: 5px;
+    display: block;
+}
+#user_addr2{
+    margin-top: 5px;
+    width: 250px;
 }
