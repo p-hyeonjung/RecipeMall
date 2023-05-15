@@ -47,12 +47,14 @@ $(document).ready(function() {
         let num=parseInt($(this).closest('tr').find('.count').val());
         if(num>1){
             $(this).closest('tr').find('.count').val(num-1);
+            updateTotalPrice(); 
         }
     }
     
     function plus(){
         let num=parseInt($(this).closest('tr').find('.count').val());
         $(this).closest('tr').find('.count').val(num+1);
+        updateTotalPrice(); 
     }
     
     $('.product_count_minus').on('click',function(){
@@ -63,3 +65,4 @@ $(document).ready(function() {
         plus.call(this);
     });
 });
+
