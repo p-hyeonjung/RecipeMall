@@ -76,6 +76,7 @@ a:visited {
     color: #222629;
     text-decoration: none;
 }
+
 .a_community:hover,
 .a_community:focus {
     color: #036c44;
@@ -87,8 +88,9 @@ a:visited {
     color: rgba(204, 14, 14, 0.79);
     text-decoration: none;
 }
+
 .a_btn_write:hover,
-.a_btn_write:focus{
+.a_btn_write:focus {
     color: #222629;
 }
 
@@ -127,13 +129,13 @@ header,
 .f_container {
     width: 100%;
     max-width: 1200px;
-    min-width: 1100px;
+    min-width: 1200px;
     margin: 0 auto;
     padding: 0 50px;
     position: relative;
     height: auto;
     box-sizing: border-box;
-
+    margin-top: 30px;
 }
 
 section {
@@ -145,17 +147,20 @@ h1 {
     line-height: 80px;
     font-family: "NotoSansR";
 }
-input{
+
+input {
     outline: 0;
 }
-textarea{
+
+textarea {
     font-family: "NotoSansL";
     resize: none;
     outline: 0;
     border-radius: 3px;
     border: 1px solid #ccc;
 }
-button{
+
+button {
     font-family: "NotoSansR";
     cursor: pointer;
     border: 0;
@@ -181,49 +186,62 @@ button{
     margin-bottom: 30px;
 }
 
-/*광고 배너 x 버튼*/
-.fist_btn {
-    font-size: 0.7em;
-    margin-left: 7px;
-    padding: 2px;
-    height: auto;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.banner_btn {
+    color: #fff;
+    background-color: #036c44;
+    position: absolute;
+    right: 10px;
+    top: 11px;
 }
+
+/*광고 배너 x 버튼 크기*/
+
 
 .adbanner>p>a {
     color: #fff;
 }
 
 /* header 레이아웃 */
-.header_top{
+.header_top {
     min-width: 1100px;
     height: 50px;
 }
-.header_bottom{
+
+.header_bottom {
     height: 40px;
     line-height: 40px;
 }
 
 /* 메인메뉴*/
 .mainmenu {
-    float: left;
-    clear: both;
     font-size: 1.6em;
     font-weight: bold;
     font-family: "NotoSansR";
 
 }
 
+li.main {
+    background: url("../image/recipemall-logo-commu.svg") no-repeat;
+    background-size: 135%;
+    background-position: -21px -19px;
+    cursor: pointer;
+}
+
 .mainmenu>li {
+    text-align: center;
     display: inline;
     width: 100px;
     padding: 0 10px 0 0;
     line-height: 50px;
 }
+
 /* 검색 영역 */
-.search_area{
+.search_form {
+    display: inline-block;
+    width: 380px;
+}
+
+.search_area {
     width: 78%;
     height: 100%;
     line-height: 60px;
@@ -238,7 +256,7 @@ button{
     border-radius: 4px;
     font-family: "NotoSansM";
     color: #222629;
-    
+
 
 }
 
@@ -250,7 +268,7 @@ button{
     border-radius: 4px 0 0 4px;
 }
 
-.r_btn_search {
+.btn_search {
     border-radius: 0 4px 4px 0;
     width: 30px;
     height: 60%;
@@ -261,7 +279,7 @@ button{
 
 }
 
-.r_btn_search i {
+.btn_search i {
     font-size: 1.2em;
     color: #fffdf7;
     padding: 0 5px;
@@ -274,8 +292,7 @@ button{
 .submenu {
     display: flex;
     justify-content: end;
-    font-weight: bolder;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-family: "NotoSansR";
 }
 
@@ -285,20 +302,33 @@ button{
     margin-left: 20px;
 }
 
+.fa-cart-shopping,
+.fa-cart-plus {
+    font-weight: 800;
+    font-size: 25px;
+}
+
 .btn_write {
-    font-size: 0.8em;
-    padding: 5px 10px 5px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px 15px;
     background-color: #036c44;
     border-radius: 5px;
     border: 1px solid #036c44;
     color: #fff;
-}
-.btn_write i {
-    margin-left: 5px;
+    text-align: center;
+
 }
 
+.btn_write i {
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+
+
 /* 글쓰기 하위메뉴 영역 */
-.btn_write_sub{
+.btn_write_sub {
     position: absolute;
     transform: translate(850px, 50px);
     inset: 0px auto auto 0px;
@@ -308,23 +338,28 @@ button{
     border-radius: 4px;
     box-shadow: 0 0 10px #ccc;
 }
-.btn_write_sub a{
+
+.btn_write_sub a {
     display: flex;
     justify-content: flex-start;
     padding: 20px;
 }
-.btn_write_sub a:hover{
+
+.btn_write_sub a:hover {
     background-color: #f1f1f1;
 }
-.btn_write_icon{
+
+.btn_write_icon {
     font-size: 2em;
-    margin-right:15px ;
+    margin-right: 15px;
 }
-.btn_write_t{
+
+.btn_write_t {
     font-family: "NotoSansBo";
     font-size: 1.3em;
 }
-.btn_write_c{
+
+.btn_write_c {
     font-family: "NotoSansR";
     font-size: 1em;
 }
@@ -351,7 +386,7 @@ button{
     font-family: "NotoSansM";
 }
 
-.textline.cf{
+.textline.cf {
     margin-top: 0;
 }
 
@@ -365,7 +400,7 @@ footer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     background-color: #eef3f1;
-    height: 350px;
+    height: 420px;
     font-family: "NotoSansL";
     font-style: normal;
     color: #4d5250;
@@ -439,4 +474,27 @@ footer {
 
 address {
     font-style: normal;
+}
+
+.save {
+    justify-content: flex-start;
+}
+
+.save1 {
+    width: 40%;
+}
+
+.save2 {
+    font-size: 0.7em;
+}
+
+/*푸터 아이콘 크기*/
+footer .fa-brands {
+    font-size: 30px;
+    padding: 0 10px 0 0;
+}
+
+footer .fa-solid {
+    font-size: 30px;
+    padding: 0 10px 0 0;
 }

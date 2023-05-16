@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/recipe_spe.css">
-    <link rel="shortcut icon" href="images/smalllogo.png" />
+    <link rel="shortcut icon" href="../image/disah_ko.png" />
 </head>
 
 <body>
@@ -19,8 +19,6 @@
     <!--[s]건너뛰기 링크-->
     <a id="skipNav" href="">본문 바로가기</a>
     <!--[e]건너뛰기 링크-->
-
-    
 
 
     <!-- [s]Header 영역 -->
@@ -113,113 +111,120 @@
        <!-- [e]레시피 소개 영역 -->
 
        <!-- [s]재료 영역 -->
-       <section class="r_ing_c flex_area_rsb">
-        <div class="r_txt">
-            <i class="fa-solid fa-utensils"></i>
-            재료</div>
-           <div class="r_ings ">
-               <ul class="r_ing">
-                    <h3 class="ing_t">[재료]</h3>
-                    <li class="r_ing_c flex_area_rsb">
-                        <a href="" class="r_ing_name" >다진마늘</a>
-                        <div class="txt_al_r">
-                            <span  class="r_ing_amount">1작은술</span>
-                            <button class="btn_pur">구매</button>
-                        </div>
-                        
-                    </li>
-                    <li class="r_ing_c flex_area_rsb">
-                        <a href="" class="r_ing_name">다진마늘</a>
-                        <div class="txt_al_r">
-                            <span class="r_ing_amount">1작은술</span>
-                            <button class="btn_pur">구매</button>
-                        </div>
-                    </li>
-                    <li class="r_ing_c flex_area_rsb">
-                        <a href="" class="r_ing_name">다진마늘</a>
-                        <div class="txt_al_r">
-                            <span class="r_ing_amount">1작은술</span>
-                            <button class="btn_pur">구매</button>
-                        </div>
-                    </li>
-                    <li class="r_ing_c flex_area_rsb">
-                        <a href="" class="r_ing_name">다진마늘</a>
-                        <div class="txt_al_r">
-                            <span class="r_ing_amount">1작은술</span>
-                            <button class="btn_pur">구매</button>
-                        </div>
-                    </li>
-                </ul>
-
-                <ul  class="r_ing">
-                    <li class="r_ing_c flex_area_rsb">
-                        <h3 class="ing_t">[고기밑간]</h3>
-                        <li class="r_ing_c flex_area_rsb flex_area_rsb">
-                            <a href="" class="r_ing_name" >다진마늘</a>
+       <section class="r_ing_area">
+        <div class="btn_total_area">
+            <button class="btn_total">모두 장바구니 담기</button>
+        </div>
+        <!-- recipe ingredient container -->
+        <div class="r_ing_con flex_area_rsb">
+            <div class="r_txt">
+                <i class="fa-solid fa-utensils"></i>
+                재료</div>
+            <div class="r_ings ">
+                <ul class="r_ing">
+                        <h3 class="ing_t">[재료]</h3>
+                        <!-- recipe ingredient content -->
+                        <li class="r_ing_c flex_area_rsb">
+                            <span class="r_ing_name">다진마늘</span>
                             <div class="txt_al_r">
                                 <span  class="r_ing_amount">1작은술</span>
-                                <button class="btn_pur">구매</button>
+                                <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                             
                         </li>
                         <li class="r_ing_c flex_area_rsb">
-                            <a href="" class="r_ing_name">다진마늘</a>
+                            <span class="r_ing_name">다진마늘</span>
                             <div class="txt_al_r">
                                 <span class="r_ing_amount">1작은술</span>
-                                <button class="btn_pur">구매</button>
+                                <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </li>
                         <li class="r_ing_c flex_area_rsb">
-                            <a href="" class="r_ing_name">다진마늘</a>
+                            <span class="r_ing_name">다진마늘</span>
                             <div class="txt_al_r">
                                 <span class="r_ing_amount">1작은술</span>
-                                <button class="btn_pur">구매</button>
+                                <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </li>
                         <li class="r_ing_c flex_area_rsb">
-                            <a href="" class="r_ing_name">다진마늘</a>
+                            <span class="r_ing_name">다진마늘</span>
                             <div class="txt_al_r">
                                 <span class="r_ing_amount">1작은술</span>
-                                <button class="btn_pur">구매</button>
+                                <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
                             </div>
                         </li>
+                    </ul>
+
+                    <ul  class="r_ing">
+                        <li class="r_ing_c flex_area_rsb">
+                            <h3 class="ing_t">[고기밑간]</h3>
+                            <li class="r_ing_c flex_area_rsb flex_area_rsb">
+                                <span class="r_ing_name">다진마늘</span>
+                                <div class="txt_al_r">
+                                    <span  class="r_ing_amount">1작은술</span>
+                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                                
+                            </li>
+                            <li class="r_ing_c flex_area_rsb">
+                                <span class="r_ing_name">다진마늘</span>
+                                <div class="txt_al_r">
+                                    <span class="r_ing_amount">1작은술</span>
+                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                            </li>
+                            <li class="r_ing_c flex_area_rsb">
+                                <span class="r_ing_name">다진마늘</span>
+                                <div class="txt_al_r">
+                                    <span class="r_ing_amount">1작은술</span>
+                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                            </li>
+                            <li class="r_ing_c flex_area_rsb">
+                                <span class="r_ing_name">다진마늘</span>
+                                <div class="txt_al_r">
+                                    <span class="r_ing_amount">1작은술</span>
+                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                            </li>
+                        </li>
+                </ul>
+                <ul class="r_ing">
+                    <h3 class="ing_t">[양념]</h3>
+                    <li class="r_ing_c flex_area_rsb flex_area_rsb">
+                        <span class="r_ing_name">다진마늘</span>
+                        <div class="txt_al_r">
+                            <span  class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                        
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <span class="r_ing_name">다진마늘</span>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <span class="r_ing_name">다진마늘</span>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </li>
+                    <li class="r_ing_c flex_area_rsb">
+                        <span class="r_ing_name">다진마늘</span>
+                        <div class="txt_al_r">
+                            <span class="r_ing_amount">1작은술</span>
+                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
                     </li>
             </ul>
-            <ul class="r_ing">
-                <h3 class="ing_t">[양념]</h3>
-                <li class="r_ing_c flex_area_rsb flex_area_rsb">
-                    <a href="" class="r_ing_name" >다진마늘</a>
-                    <div class="txt_al_r">
-                        <span  class="r_ing_amount">1작은술</span>
-                        <button class="btn_pur">구매</button>
-                    </div>
                     
-                </li>
-                <li class="r_ing_c flex_area_rsb">
-                    <a href="" class="r_ing_name">다진마늘</a>
-                    <div class="txt_al_r">
-                        <span class="r_ing_amount">1작은술</span>
-                        <button class="btn_pur">구매</button>
-                    </div>
-                </li>
-                <li class="r_ing_c flex_area_rsb">
-                    <a href="" class="r_ing_name">다진마늘</a>
-                    <div class="txt_al_r">
-                        <span class="r_ing_amount">1작은술</span>
-                        <button class="btn_pur">구매</button>
-                    </div>
-                </li>
-                <li class="r_ing_c flex_area_rsb">
-                    <a href="" class="r_ing_name">다진마늘</a>
-                    <div class="txt_al_r">
-                        <span class="r_ing_amount">1작은술</span>
-                        <button class="btn_pur">구매</button>
-                    </div>
-                </li>
-           </ul>
-                   
-               
-           </div>
+                
+            </div>
+            </div>
        </section>
        <div class="textline"></div>
        <!-- [e]재료 영역 -->
@@ -266,7 +271,11 @@
                       <img class="seq_slider_img" src="../image/temp_imgslider2.gif" alt="temp">
                       <img class="seq_slider_img" src="../image/temp_imgslider3.gif" alt="temp">
                     </div>
-                     <!-- 좌우 컨트롤 버튼 패널  -->
+                    <!-- 컨트롤 패널 -->
+                    <div class="control_panel">
+                        <!-- <div class="control_btn"></div> -->
+                    </div>
+                    <!-- 좌우 컨트롤 버튼 패널  -->
                     <div class="left_right_control_panel">
                     <i class="left_control fa-solid fa-angle-left "></i>
                     <i class="right_control fa-solid fa-angle-right"></i>

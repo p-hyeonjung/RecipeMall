@@ -108,6 +108,7 @@ section{
     /* 재료 영역 */
     .r_ing{
         justify-content: flex-start;
+        margin-bottom: 50px;
     }
     .r_ing input{
         height: 25px;
@@ -127,44 +128,60 @@ section{
         position: relative;
     } 
     .ing_name_amount{
-        text-align: center;
+        position: relative;
+        text-align: left;
         width: 500px;
     }
-    .ing_name_amount input{
-        width: 45%;
-    }
-    .ing_name_amount button{
-        border: 0;
-        background-color: none;
-        font-family: "NotoSansM";
-        font-size: 1.3em;
-        letter-spacing: 1.5px;
-        margin: 10px 0;
-        cursor: pointer;
-    }
     .ing_input_area{
+        height: 30px;
+    }
+
+
+    .ing_input_area{
+        display: flex;
+        flex-direction: row;
         margin-bottom: 10px;
     }
-    .ing_input_area > input{
-        margin-right: 15px;
-       
+    .ing_input_area >{
+        width: 43%;
+    }
+    .ing_input_area > input:nth-child(1) {
+        margin-right: 16px; 
+    }
+    .btn_del {
+        display: none;
+        background-color:transparent;
+    }
+    .btn_del button{
+        background-color:transparent;
+    }
+    .btn_del i{
+        font-size: 1.1em;
     }
     .r_ing_ex_area{
         margin-left: 130px;
         text-align: center;
     }
-    .textline.cf{
-        position: absolute;
-    }
-    
+   
     .r_in_ex{
         color: red;
         margin: 20px 0;
     }
-
+    .ing_name_amount .btn_add_s{
+        border: 0;
+        background-color: none;
+        font-family: "NotoSansM";
+        font-size: 1.3em;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+    }
+    
     /* 순서 영역 */
     .seq_content_area{
         justify-content: flex-start;
+        margin-bottom: 50px;
     }
     .seq_content_area h2{
         margin-right: 50px;

@@ -20,16 +20,27 @@
     font-size: 1.8em;
 }
 
-
+/* 로고영역 */
+.logo_img{
+    height: 50px;
+    /* width: 100px; */
+}
 
 /* 이미지 슬라이더 영역 */
 .main_imageslider{
     height: 350px;
-    background: url(../image/temp_imgslider.gif);
     position: relative;
     margin: 40px 0;
-    border: 1px solid #000;
+    /* overflow: hidden; */
 }
+.img_slide{
+    position: relative;
+    
+ }
+ /* .img_slide > a >img{
+     position: absolute;
+     float: left;
+ } */
     /* 버튼영역 */
     .control_panel{
         position: absolute;
@@ -37,13 +48,13 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 100000;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(73, 184, 97, 0.5);
         padding: 8px 30px;
         border-radius: 20px;
         
     }
     .control_panel .on{
-        background: #000;
+        background: #036c44;
     }
     .control_panel .control_btn{
         float: left;
@@ -171,7 +182,9 @@
 
 .advertise{
     width: 50%;
+    
     border: 1px solid #000;
+    overflow: hidden;
 }
 /* 인기레시피 영역 */
 .ranking{
@@ -190,17 +203,20 @@
 
 }
 .btn_product_category_area{
-
+    
 }
 .btn_product_category_area button{
     border-radius: 20px;
     border: none;
-    background-color: #036c44;
-    color: #fffdf7;
-    font-family: "NotoSansTh";
+    font-family: "NotoSansR";
     margin-left: 7px;
 }
+.btn_clk{
+    background-color : #036c44;
+    color : #fff;
+}
 .best_product_content{
+    /* display: none; */
     width: 315px;
     height: 280px;
     margin-top: 40px;
