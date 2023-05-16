@@ -37,6 +37,16 @@
 .cart_cont_list table tr th:first-child{
     width: 90px;
 }
+.count{
+    width: 15px;
+    text-align: center;
+    margin: 0 5px 0 5px;
+}
+.product_count_minus ,.product_count_plus{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1em;
+}
 #product_img{
     width: 100px;
     height: 100px;

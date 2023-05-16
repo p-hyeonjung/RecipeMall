@@ -5,7 +5,7 @@ $(document).ready(function() {
     function updateTotalPrice() {
         total_goods_price = 0;
         $('input[name=proudct_chk]:checked').each(function() {
-            var product_count = parseInt($(this).closest('tr').find('.product_sangpum_count').text());
+            var product_count = parseInt($(this).closest('tr').find('.count').val());
             var product_price = parseInt($(this).closest('tr').find('.product_sangpum_price').text());
             total_goods_price += product_count * product_price;
         });
@@ -41,5 +41,28 @@ $(document).ready(function() {
         updateTotalPrice();
     });
 
-    updateTotalPrice();   
+    updateTotalPrice(); 
+    //수량 - +   
+    function minus(){
+        let num=parseInt($(this).closest('tr').find('.count').val());
+        if(num>1){
+            $(this).closest('tr').find('.count').val(num-1);
+            updateTotalPrice(); 
+        }
+    }
+    
+    function plus(){
+        let num=parseInt($(this).closest('tr').find('.count').val());
+        $(this).closest('tr').find('.count').val(num+1);
+        updateTotalPrice(); 
+    }
+    
+    $('.product_count_minus').on('click',function(){
+        minus.call(this);
+    });
+    
+    $('.product_count_plus').on('click',function(){
+        plus.call(this);
+    });
 });
+
