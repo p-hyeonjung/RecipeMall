@@ -155,14 +155,14 @@
                                         <textarea name="inq_content" id="inq_content" class="inq_txta" cols="90" rows="20"></textarea>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="file_area">
                                     <th>파일첨부</th>
                                     <td>
                                         <label for="inq_file">
                                             <div class="file_upload_btn">파일 첨부</div>
                                         </label>
-                                        <input type="file" data-ax-path="file" name="inq_file" id="inq_file" class="file_c" onchange="name_load();" multiple>
-                                        <p id="file_name"></p>
+                                        <input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">
+                                        <div class="file_list"></div>
                                     </td>
                                 </tr>
                             </tbody>

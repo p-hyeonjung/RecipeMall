@@ -57,14 +57,47 @@ $(function () {
     });
 
     /* ------------- 1:1문의 파일첨부 시 파일 이름 출력 ---------- */
-    let file=$('input[name="inq_file"]').files[0];
-    alert(file);
-    // function name_load(input) {
-    //     let file=input.files;
-    //     let file_name=$('#file_name');
-    //     for(var i=0; i<file.length; i++) {
-    //         file_name.textContent=file[i];
-    //         console.log(file_name.textContent);
-    //     }
-    // }
+    const handler = {
+        init() {
+            const fileInput = document.querySelector('#inq_file');
+            const preview = document.querySelector('.file_list');
+            fileInput.addEventListener('change', () => {  
+                //console.dir(fileInput)                  
+                const files = Array.from(fileInput.files)
+                files.forEach(file => {
+                    preview.innerHTML += `
+                        <p id="${file.lastModified}">
+                            ${file.name}
+                            <button data-index='${file.lastModified}' class='file_remove'>X</button>
+                        </p>`;
+                });
+            });
+        },
+    
+        removeFile: () => {
+            document.addEventListener('click', (e) => {
+                if(e.target.className !== 'file_remove') return;
+                const removeTargetId = e.target.dataset.index;
+                const removeTarget = document.getElementById(removeTargetId);
+                const files = document.querySelector('#inq_file').files;
+                const dataTranster = new DataTransfer();
+    
+    // document.querySelector('#file-input').files =
+    // Array.from(files).filter(file => file.lastModified !== removeTarget);
+    
+                Array.from(files)
+                    .filter(file => file.lastModified != removeTargetId)
+                    .forEach(file => {
+                    dataTranster.items.add(file);
+                });
+    
+                document.querySelector('#inq_file').files = dataTranster.files;
+    
+                removeTarget.remove();
+            });
+        }
+    }
+    
+    handler.init();
+    handler.removeFile();
 });
