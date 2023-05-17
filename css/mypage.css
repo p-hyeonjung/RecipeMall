@@ -92,9 +92,16 @@ a:hover, a:focus {
     padding-bottom: 8px;
     border-bottom: 1px solid #ccc;
 }
+.btn {
+    width: 120px;
+    height: 40px;
+}
 .btn_c {
     border: none;
     background-color: #2ebaf1;
     color: #fff;
     cursor: pointer;
+}
+.status {
+    display: none;
 }

@@ -1,4 +1,14 @@
 $(function () {
+    $('.inquering').click(function() {
+		$(location).attr('href','mypage_main_6_2_in.html');
+	});
+    
+    // 일대일 문의 취소할 경우 목록으로 돌아가기
+    $('.calcel').click(function () {
+        // history.go(-1)();
+        $(location).attr('href','mypage_main_6_2.html');
+    })
+
     // 자주하는 질문 accordion
     $('.accordion_title').click(function () {
 
@@ -48,13 +58,60 @@ $(function () {
         $('#comment_chk_all').prop('checked',false);
     });
 
-    /* ------------- 글/댓글 게시판 메뉴 분류 css 유지 ---------- */
+    /* ------------- 글/댓글 게시판 메뉴 분류, css 유지 ---------- */
     let item=$('.menu_li');
 
     item.on('click',function () {
         $(this).addClass('active');
         item.not($(this)).removeClass('active');
     });
+
+    function menu(board, recipe, free) {
+        if(board == '레시피') {
+            recipe.removeClass('status');
+            free.addClass('status');
+        } else if(board == '자유게시판') {
+            free.removeClass('status');
+            recipe.addClass('status');
+        } else {
+            recipe.removeClass('status');
+            free.removeClass('status');
+        }
+    }
+
+    $('ul.post_menu li').click(function () {
+        let board=$(this).text();
+        let recipe=$('table.post_list_tb td:contains("레시피")').parent();
+        let free=$('table.post_list_tb td:contains("자유게시판")').parent();
+        
+        menu(board, recipe, free);
+    });
+
+    $('ul.comment_menu li').click(function () {
+        let board=$(this).text();
+        let recipe=$('table.comment_list_tb td:contains("레시피")').parent();
+        let free=$('table.comment_list_tb td:contains("자유게시판")').parent();
+        
+        menu(board, recipe, free);
+    });
+
+    /* ------------------ 문의 목록 분류 -------------------------- */
+    $('ul.inq_menu li').click(function () {
+        let inq=$(this).text();
+        let comm_tr=$('table.inq_list_tb td:contains("커뮤니티")').parent();
+        let shop_tr=$('table.inq_list_tb td:contains("쇼핑")').parent();
+        console.log(inq);
+        if(inq == '커뮤니티') {
+          shop_tr.addClass('status');
+          comm_tr.removeClass('status');
+        } else if(inq == '쇼핑') {
+          shop_tr.removeClass('status');
+          comm_tr.addClass('status');
+        } else {
+          comm_tr.removeClass('status');
+          shop_tr.removeClass('status');
+        }
+      });
 
     /* ------------- 1:1문의 파일첨부 시 파일 이름 출력 ---------- */
     const handler = {

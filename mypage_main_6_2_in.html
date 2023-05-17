@@ -122,74 +122,57 @@
             <!-- mypage_content -->
             <div class="mypage_content">
                 <h3 class="menu_title">고객센터</h3>
-                <div class="inq_list">
-                    <div class="inq_select">
-                        <ul class="inq_s">
-                            <li>
-                                <div class="inq_class">
-                                    <ul class="inq_menu">
-                                        <li class="board_all menu_li active"><a class="active_a" href="#">전체</a></li>
-                                        <li class="board_community menu_li"><a href="#">커뮤니티</a></li>
-                                        <li class="board_shopping menu_li"><a href="#">쇼핑</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inq_date_s inq_h">
-                                    <ul>
-                                        <li><a href="#">처음</a></li>
-                                        <li><a href="#">최신</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inq_cnt inq_h">
-                                    <select name="" id="">
-                                        <option value="">10개</option>
-                                        <option value="">30개</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li><button class="inq_view_btn">보기</button></li>
-                        </ul>
-                    </div>
-                    <div class="my_inq_list">
-                        <table class="inq_list_tb">
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>분류</th>
-                                    <th>제목</th>
-                                    <th>작성일</th>
-                                    <th>상태</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="inq_n"><a href="#">1</a></td>
-                                    <td id="inq_bd" class="inq_board">쇼핑</td>
-                                    <td class="inq_title"><a href="#">쇼핑 문의1</a></td>
-                                    <td class="inq_date"><a href="#">23.04.08</a></td>
-                                    <td class="inq_status">답변 대기중</td>
-                                </tr>
-                                <tr>
-                                    <td class="inq_n"><a href="#">2</a></td>
-                                    <td id="inq_bd" class="inq_board">커뮤니티</td>
-                                    <td class="inq_title"><a href="#">커뮤니티 문의1</a></td>
-                                    <td class="inq_date"><a href="#">23.04.12</a></td>
-                                    <td class="inq_status">답변 완료</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <button class="inquering btn_c">문의하기</button>
-                    <div class="paging_box">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
+                <div class="cs_center">
+                    <h4>일대일 문의</h4>
+                    <div class="one_inquery">
+                        <form action="">
+                            <table class="inquery_tbl">
+                                <caption>일대일 문의</caption>
+                                <tbody>
+                                    <tr>
+                                        <th>분류</th>
+                                        <td>
+                                            <select>
+                                                <option value="">커뮤니티</option>
+                                                <option value="">쇼핑</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>제목</th>
+                                        <td><input type="text" name="inq_title" id="inq_title"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>이메일</th>
+                                        <td>
+                                            <input type="email" name="email" id="email">
+                                            <input type="checkbox" name="email_comm_ok" id="email_comm_ok">
+                                            답변 받기
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용</th>
+                                        <td>
+                                            <textarea name="inq_content" id="inq_content" class="inq_txta" cols="90" rows="20"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr class="file_area">
+                                        <th>파일첨부</th>
+                                        <td>
+                                            <label for="inq_file">
+                                                <div class="file_upload_btn">파일 첨부</div>
+                                            </label>
+                                            <input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">
+                                            <div class="file_list"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="subm_btn">
+                                <input type="submit" name="" class="inq_btn btn_c" value="문의하기">
+                                <button class="cancel inq_btn">취소</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
