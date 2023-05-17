@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RecipeMall-마이페이지</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mypage.js"></script>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_6.css">
-    <link rel="shortcut icon" href="images/smalllogo.png" />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="../js/mypage_2_3.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../css/mypage_2_3.css">
 </head>
 <body>
-    <!-- header_s -->
+     <!--[s]건너뛰기 링크-->
+     <a id="skipNav" href="">본문 바로가기</a>
+     <!--[e]건너뛰기 링크-->
+    <!-- [s]Header 영역 -->
     <header>
         <!--[s]메인메뉴 영역 -->
         <div>
@@ -29,7 +32,7 @@
         <!--[s]서브 영역 -->
         <div>
             <ul class="submenu"> <!--submenu-->
-                <li><a href="#" class="cart"><img src="image/empty.png" alt="cart"></a></li>
+                <li><a href="#" class="cart"><img src="../image/empty.png" alt="cart"></a></li>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
                 <li><a href="#">고객센터</a></li>
@@ -68,8 +71,7 @@
         <!--[e]실시간차트 영역 -->
         <div class="textline"></div>
     </header>
-    <!-- header_e -->
-
+    <!-- [s]Header 영역 -->
     <!-- content_mypage_s -->
     <div id="main_content" class="mypage_box">
         <div id="mypage">
@@ -87,32 +89,32 @@
                 <!-- mypage menu -->
                 <div class="mypage_menu">
                     <ul class="main_menu">
-                        <li><a href="mypage_user_info.html">내 정보</a></li>
+                        <li><a href="../mypage_user_info.html">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
-                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
-                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
-                                <li><a href="mypage_main_2_4.html">- 장바구니</a></li>
+                                <li><a href="../order/mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="../order/mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="../order/mypage_main_2_3.html">- 배송지 등록</a></li>
+                                <li><a href="../order/mypage_main_2_4.html">- 장바구니</a></li>
                             </ul>
                         </li>
                         <li><a href="#">상품</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_3_1.html">- 상품 문의</a></li>
-                                <li><a href="mypage_main_3_2.html">- 상품 리뷰</a></li>
+                                <li><a href="../product/mypage_main_3_1.html">- 상품 문의</a></li>
+                                <li><a href="../product/mypage_main_3_2.html">- 상품 리뷰</a></li>
                             </ul>
                         </li>
                         <li><a href="#">글/댓글 관리</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_4_1.html">- 글 </a></li>
-                                <li><a href="mypage_main_4_2.html">- 댓글</a></li>
+                                <li><a href="../board_manage/mypage_main_4_1.html">- 글 </a></li>
+                                <li><a href="../board_manage/mypage_main_4_2.html">- 댓글</a></li>
                             </ul>
                         </li>
                         <li><a href="mypage_main_5.html">차단 목록</a></li>
                         <li><a href="">고객센터</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_6_1.html">- 자주하는 질문</a></li>
-                                <li><a href="mypage_main_6_2.html">- 일대일 문의</a></li>
+                                <li><a href="../inquery/mypage_main_6_1.html">- 자주하는 질문</a></li>
+                                <li><a href="../inquery/mypage_main_6_2.html">- 일대일 문의</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -121,71 +123,69 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <h3 class="menu_title">고객센터</h3>
-                <div class="cs_center">
-                    <h4>자주하는 질문</h4>
-                    <div class="accordions cs_faq">
-                        <ul class="faq_list">
-                            <li class="accordion qna_box">
-                                <div class="accordion_title question">
-                                    <button class="click_btn">
-                                        <p class="qna_title">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            자주하는 질문 1</p>
-                                        <span class="fa"><i class="fa-solid fa-chevron-up"></i></span>
-                                    </button>
-                                </div>
-                                <div class="accordion_body answer">
-                                    <div class="accordion_content">
-                                        <p>
-                                            국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.
-    
-                                            국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="qna_box">
-                                <div class="accordion_title question">
-                                    <button class="click_btn">
-                                        <p class="qna_title">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            자주하는 질문 2</p>
-                                        <span class="fa"><i class="fa-solid fa-chevron-up"></i></span>
-                                    </button>
-                                </div>
-                                <div class="accordion_body answer">
-                                    <div class="accordion_content">
-                                        <p>
-                                            국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.
-    
-                                            국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="qna_box">
-                                <div class="accordion_title question">
-                                    <button class="click_btn">
-                                        <p class="qna_title">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            자주하는 질문 3</p>
-                                        <span class="fa"><i class="fa-solid fa-chevron-up"></i></span>
-                                    </button>
-                                </div>
-                                <div class="accordion_body answer">
-                                    <div class="accordion_content">
-                                        <p>
-                                            국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.
-    
-                                            국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- mypage_content 배송지등록 시작-->
+                <h3>나의 배송지 관리</h3>
+                <div class="mypage_content_aHeader">
+                    <h4>배송지 등록</h4>
                 </div>
+                <div class="mypage_content_address">
+                    <form action="">
+                        <table>
+                            <colgroup>
+                                <col style="width: 20%;">
+                                <col style="width: 80%;">
+                            </colgroup>
+                            <tr>
+                                <th><span class="important">배송지 이름</span></th>
+                                <td>
+                                    <input type="text" name="shipping_title">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">받으실 분</span></th>
+                                <td>
+                                    <input type="text" name="shipping_name" maxlength="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">받으실 곳</span></th>
+                                <td class="member_address">
+                                    <div class="address_postcode">
+                                        <input type="text" name="shipping_zonecode" id="address_postcode_sub">
+                                        <button type="button" onclick="sample4_execDaumPostcode();" class="btn_post_search">우편번호검색</button>
+                                        <input type="hidden" name="shipping_zipcode" >
+                                    </div>
+                                    <div class="address_input">
+                                        <input type="text" name="shipping_address" id="shipping_address">
+                                        <input type="text" name="shipping_address_sub" id="shipping_address_sub" placeholder="상세주소를 입력해주세요."> 
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>전화번호</th>
+                                <td>
+                                    <input type="text" name="shipping_phone" id="shipping_phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="important">휴대폰 번호</span></th>
+                                <td>
+                                    <input type="text" name="shipping_cellphone">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mypage_content_address_submit">
+                        <button type="reset" class="btn__address_cancel">
+                            <Strong>다시입력</Strong>
+                        </button>
+                        <button type="submit" class="btn_address_submit">
+                            <strong>저장</strong>
+                        </button>
+                    </div>
+                    </form>
+                    
+                <!-- mypage_content_배송지등록 끝-->
             </div>
             <!-- mypage_content -->
         </div>
@@ -193,6 +193,7 @@
     <!-- content_mypage_e -->
 
     <!-- footer_s -->
+    <!-- [s]footer 영역 -->
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
         <div class="f_container flex_area_rsb">
@@ -275,6 +276,9 @@
         </div>
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
+    <!-- [e]footer 영역 -->
     <!-- footer_e -->
+    
+    
 </body>
 </html>

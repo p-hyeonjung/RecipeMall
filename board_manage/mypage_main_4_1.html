@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RecipeMall-마이페이지</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_user.css">
-    <link rel="shortcut icon" href="images/smalllogo.png" />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/mypage.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../css/mypage_4.css">
+    <link rel="shortcut icon" href="../image/smalllogo.png" />
 </head>
 <body>
     <!-- header_s -->
@@ -78,7 +79,7 @@
                 <!-- user_info:회원 프로필사진,포인트,출석체크 -->
                 <div class="user_info_box">
                     <div class="user_profile">
-                        <img src="image/user.png" alt="user">
+                        <img src="../image/user.png" alt="user">
                     </div>
                     <p>현재 포인트 14330</p>
                     <button class="check_attend">출석체크</button>
@@ -86,32 +87,32 @@
                 <!-- mypage menu -->
                 <div class="mypage_menu">
                     <ul class="main_menu">
-                        <li><a href="mypage_user_info.html">내 정보</a></li>
+                        <li><a href="../mypage_user_info.html">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="./order/mypage_main_2_1.html">- 주문목록/배송조회</a></li>
-                                <li><a href="./order/mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
-                                <li><a href="./order/mypage_main_2_3.html">- 배송지 등록</a></li>
-                                <li><a href="./order/mypage_main_2_4.html">- 장바구니</a></li>
+                                <li><a href="../order/mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="../order/mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="../order/mypage_main_2_3.html">- 배송지 등록</a></li>
+                                <li><a href="../order/mypage_main_2_4.html">- 장바구니</a></li>
                             </ul>
                         </li>
                         <li><a href="#">상품</a>
                             <ul class="sub_menu">
-                                <li><a href="./product/mypage_main_3_1.html">- 상품 문의</a></li>
-                                <li><a href="./product/mypage_main_3_2.html">- 상품 리뷰</a></li>
+                                <li><a href="../product/mypage_main_3_1.html">- 상품 문의</a></li>
+                                <li><a href="../product/mypage_main_3_2.html">- 상품 리뷰</a></li>
                             </ul>
                         </li>
                         <li><a href="#">글/댓글 관리</a>
                             <ul class="sub_menu">
-                                <li><a href="./board_manage/mypage_main_4_1.html">- 글 </a></li>
-                                <li><a href="./board_manage/mypage_main_4_2.html">- 댓글</a></li>
+                                <li><a href="../board_manage/mypage_main_4_1.html">- 글 </a></li>
+                                <li><a href="../board_manage/mypage_main_4_2.html">- 댓글</a></li>
                             </ul>
                         </li>
                         <li><a href="mypage_main_5.html">차단 목록</a></li>
                         <li><a href="">고객센터</a>
                             <ul class="sub_menu">
-                                <li><a href="./inquery/mypage_main_6_1.html">- 자주하는 질문</a></li>
-                                <li><a href="./inquery/mypage_main_6_2.html">- 일대일 문의</a></li>
+                                <li><a href="../inquery/mypage_main_6_1.html">- 자주하는 질문</a></li>
+                                <li><a href="../inquery/mypage_main_6_2.html">- 일대일 문의</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -120,51 +121,78 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <h3 class="menu_title">내 정보</h3>
-                <div class="user_info">
-                    <form action="">
-                        <table class="info_tbl">
-                            <caption>내 정보</caption>
+                <h3 class="menu_title">글 관리</h3>
+                <div class="post">
+                    <div class="post_select">
+                        <ul class="post_s">
+                            <li>
+                                <div class="post_class">
+                                    <ul class="post_menu">
+                                        <li class="board_all menu_li active"><a class="active_a" href="#">전체</a></li>
+                                        <li class="board_recipe menu_li"><a href="#">레시피</a></li>
+                                        <li class="board_free menu_li"><a href="#">자유게시판</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_date_s post_h">
+                                    <ul>
+                                        <li><a href="#">처음</a></li>
+                                        <li><a href="#">최신</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_cnt post_h">
+                                    <select name="" id="">
+                                        <option value="">10개</option>
+                                        <option value="">30개</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li><button class="post_view_btn">보기</button></li>
+                        </ul>
+                    </div>
+                    <div class="my_post_list">
+                        <table class="post_list_tb">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>게시판</th>
+                                    <th>제목</th>
+                                    <th>작성일</th>
+                                    <th><input type="checkbox" name="post_chk_all" id="post_chk_all"></th>
+                                </tr>
+                            </thead>
                             <tbody>
-                                <tr class="user_id">
-                                    <th>아이디</th>
-                                    <td><span>cooking</span></td>
+                                <tr>
+                                    <td class="post_n">1</td>
+                                    <td class="post_board">레시피</td>
+                                    <td class="post_title"><a href="#">게시판 제목이 들어감</a></td>
+                                    <td class="post_date"><a href="#">23.04.08</a></td>
+                                    <td class="post_chk"><input type="checkbox" name="post_chk1" id="post_chk1" class="post_ck chk"></td>
                                 </tr>
-                                <tr class="user_nkn">
-                                    <th>닉네임</th>
-                                    <td>
-                                        <input type="text" name="user_nikname" id="nikname" class="info_input" value="nanana">
-                                        <button class="btn_n">닉네임 변경</button>
-                                    </td>
-                                </tr>
-                                <tr class="user_pw">
-                                    <th>비밀번호</th>
-                                    <td>
-                                        <p>********</p>
-                                        <button class="btn_n">비밀번호 변경</button>
-                                    </td>
-                                </tr>
-                                <tr class="user_ph">
-                                    <th>휴대폰번호</th>
-                                    <td>
-                                        <input type="text" name="user_phone" id="user_phone" class="info_input" value="010-2343-6492">
-                                        <button class="btn_n">휴대폰 인증</button>
-                                    </td>
-                                </tr>
-                                <tr class="user_addr">
-                                    <th>주소</th>
-                                    <td>
-                                        <input type="text" name="" id=""><br>
-                                        <input type="text" name="" id="">
-                                        <button class="btn_n">주소변경</button>
-                                    </td>
+                                <tr>
+                                    <td class="post_n">2</td>
+                                    <td class="post_board">자유게시판</td>
+                                    <td class="post_title"><a href="#">게시판 제목이 들어감</a></td>
+                                    <td class="post_date"><a href="#">23.04.12</a></td>
+                                    <td class="post_chk"><input type="checkbox" name="post_chk2" id="post_chk2" class="post_ck chk"></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </form>
+                    </div>
+                    <button class="update_btn">수정</button>
+                    <button class="delete_btn">삭제</button>
+                    <div class="paging_box">
+                        <ul>
+                            <li><a href="#">&lt;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">&gt;</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <button class="info_update btn btn_c">회원정보 수정</button>
-                <button class="drop_out btn">회원탈퇴</button>
             </div>
             <!-- mypage_content -->
         </div>

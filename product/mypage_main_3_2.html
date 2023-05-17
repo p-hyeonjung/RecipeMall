@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecipeMall-마이페이지</title>
+    <title>recipeMall</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mypage.js"></script>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_6.css">
-    <link rel="shortcut icon" href="images/smalllogo.png" />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../css/mypage_3_2.css">
+    <link rel="shortcut icon" href="../image/smalllogo.png" />
 </head>
+
 <body>
-    <!-- header_s -->
+    <!--[s]전체 컨텐츠 영역  -->
+    <!--[s]건너뛰기 링크-->
+    <a id="skipNav" href="">본문 바로가기</a>
+    <!--[e]건너뛰기 링크-->
+    <!-- [s]Header 영역 -->
     <header>
         <!--[s]메인메뉴 영역 -->
         <div>
@@ -29,7 +35,7 @@
         <!--[s]서브 영역 -->
         <div>
             <ul class="submenu"> <!--submenu-->
-                <li><a href="#" class="cart"><img src="image/empty.png" alt="cart"></a></li>
+                <li><a href="#" class="cart"><img src="../image/empty.png" alt="cart"></a></li>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
                 <li><a href="#">고객센터</a></li>
@@ -68,7 +74,7 @@
         <!--[e]실시간차트 영역 -->
         <div class="textline"></div>
     </header>
-    <!-- header_e -->
+    
 
     <!-- content_mypage_s -->
     <div id="main_content" class="mypage_box">
@@ -79,7 +85,7 @@
                 <!-- user_info:회원 프로필사진,포인트,출석체크 -->
                 <div class="user_info_box">
                     <div class="user_profile">
-                        <img src="image/user.png" alt="user">
+                        <img src="../image/user.png" alt="user">
                     </div>
                     <p>현재 포인트 14330</p>
                     <button class="check_attend">출석체크</button>
@@ -87,32 +93,32 @@
                 <!-- mypage menu -->
                 <div class="mypage_menu">
                     <ul class="main_menu">
-                        <li><a href="mypage_user_info.html">내 정보</a></li>
+                        <li><a href="../mypage_user_info.html">내 정보</a></li>
                         <li><a href="#">주문/배송</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
-                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
-                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
-                                <li><a href="mypage_main_2_4.html">- 장바구니</a></li>
+                                <li><a href="../order/mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="../order/mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="../order/mypage_main_2_3.html">- 배송지 등록</a></li>
+                                <li><a href="../order/mypage_main_2_4.html">- 장바구니</a></li>
                             </ul>
                         </li>
                         <li><a href="#">상품</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_3_1.html">- 상품 문의</a></li>
-                                <li><a href="mypage_main_3_2.html">- 상품 리뷰</a></li>
+                                <li><a href="../product/mypage_main_3_1.html">- 상품 문의</a></li>
+                                <li><a href="../product/mypage_main_3_2.html">- 상품 리뷰</a></li>
                             </ul>
                         </li>
                         <li><a href="#">글/댓글 관리</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_4_1.html">- 글 </a></li>
-                                <li><a href="mypage_main_4_2.html">- 댓글</a></li>
+                                <li><a href="../board_manage/mypage_main_4_1.html">- 글 </a></li>
+                                <li><a href="../board_manage/mypage_main_4_2.html">- 댓글</a></li>
                             </ul>
                         </li>
                         <li><a href="mypage_main_5.html">차단 목록</a></li>
                         <li><a href="">고객센터</a>
                             <ul class="sub_menu">
-                                <li><a href="mypage_main_6_1.html">- 자주하는 질문</a></li>
-                                <li><a href="mypage_main_6_2.html">- 일대일 문의</a></li>
+                                <li><a href="../inquery/mypage_main_6_1.html">- 자주하는 질문</a></li>
+                                <li><a href="../inquery/mypage_main_6_2.html">- 일대일 문의</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -121,57 +127,87 @@
             <!-- sidebar -->
             <!-- mypage_content -->
             <div class="mypage_content">
-                <h3 class="menu_title">고객센터</h3>
-                <div class="cs_center">
-                    <h4>일대일 문의</h4>
-                    <div class="one_inquery">
-                        <form action="">
-                            <table class="inquery_tbl">
-                                <caption>일대일 문의</caption>
-                                <tbody>
-                                    <tr>
-                                        <th>분류</th>
-                                        <td>
-                                            <select>
-                                                <option value="">커뮤니티</option>
-                                                <option value="">쇼핑</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>제목</th>
-                                        <td><input type="text" name="inq_title" id="inq_title"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>이메일</th>
-                                        <td>
-                                            <input type="email" name="email" id="email">
-                                            <input type="checkbox" name="email_comm_ok" id="email_comm_ok">
-                                            답변 받기
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>내용</th>
-                                        <td>
-                                            <textarea name="inq_content" id="inq_content" class="inq_txta" cols="90" rows="20"></textarea>
-                                        </td>
-                                    </tr>
-                                    <tr class="file_area">
-                                        <th>파일첨부</th>
-                                        <td>
-                                            <label for="inq_file">
-                                                <div class="file_upload_btn">파일 첨부</div>
-                                            </label>
-                                            <input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">
-                                            <div class="file_list"></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="subm_btn">
-                                <input type="submit" name="" class="inq_btn btn_c" value="문의하기">
-                                <button class="cancel inq_btn">취소</button>
-                            </div>
+                <h3>상품/상품리뷰</h3>
+                <hr>
+            </div>
+            <div class="mypage_product_area">
+                <div class="mypage_product_review">
+                    <div class="mypage_product_view">
+                        <img class="img_product_view" src="../image/dish7.png" alt="이미지">
+                        <h4>양파 한 묶음</h4>
+                        <p><em>배송완료</em> 2023/05/02</p>
+                        <div class="btn_product_area">
+                            <button class="btn_product product_reorder">재주문</button>
+                            <button class="btn_product product_view">상품보러가기</button>
+                            <button class="btn_product product_open " data-review-id="1">리뷰쓰기</button>
+                        </div>
+                        <form class="mypage_product_review_view" id="review_form_1">
+                            <input type="text" class="mypage_product_review_write" maxlength="200" placeholder="내용을 입력해주세요.(200자 제한)">
+                            <button class="btn_product_review_insert" type="submit">등록하기</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mypage_product_review">
+                    <div class="mypage_product_view">
+                        <img class="img_product_view" src="../image/dish7.png" alt="이미지">
+                        <h4>타르타르 소스 500g</h4>
+                        <p><em>배송완료</em> 2023/05/02</p>
+                        <div class="btn_product_area">
+                            <button class="btn_product product_reorder">재주문</button>
+                            <button class="btn_product product_view">상품보러가기</button>
+                            <button class="btn_product product_open" data-review-id="2">리뷰쓰기</button>
+                        </div>
+                        <form class="mypage_product_review_view" id="review_form_2">
+                            <input type="text" class="mypage_product_review_write" maxlength="200" placeholder="내용을 입력해주세요.(200자 제한)">
+                            <button class="btn_product_review_insert" type="submit">등록하기</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mypage_product_review">
+                    <div class="mypage_product_view">
+                        <img class="img_product_view" src="../image/dish7.png" alt="이미지">
+                        <h4>빵가루 800g</h4>
+                        <p><em>배송완료</em> 2023/05/02</p>
+                        <div class="btn_product_area">
+                            <button class="btn_product product_reorder">재주문</button>
+                            <button class="btn_product product_view">상품보러가기</button>
+                            <button class="btn_product product_open" data-review-id="3">리뷰쓰기</button>
+                        </div>                    
+                        <form class="mypage_product_review_view" id="review_form_3">
+                            <input type="text" class="mypage_product_review_write" maxlength="200" placeholder="내용을 입력해주세요.(200자 제한)">
+                            <button class="btn_product_review_insert" type="submit">등록하기</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mypage_product_review">
+                    <div class="mypage_product_view">
+                        <img class="img_product_view" src="../image/dish7.png" alt="이미지">
+                        <h4>돼지 앞다리살 1kg</h4>
+                        <p><em>배송완료</em> 2023/05/02</p>
+                        <div class="btn_product_area">
+                            <button class="btn_product product_reorder">재주문</button>
+                            <button class="btn_product product_view">상품보러가기</button>
+                            <button class="btn_product product_open" data-review-id="4">리뷰쓰기</button>
+                        </div>
+                        <form class="mypage_product_review_view" id="review_form_4">
+                            <input type="text" class="mypage_product_review_write" maxlength="200" placeholder="내용을 입력해주세요.(200자 제한)">
+                            <button class="btn_product_review_insert" type="submit">등록하기</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mypage_product_review">
+                    <div class="mypage_product_view">
+                        <img class="img_product_view" src="../image/dish7.png" alt="이미지">
+                        <h4>흰살 생선 필렛</h4>
+                        <p><em>배송완료</em> 2023/05/02</p>
+                        <div class="btn_product_area">
+                            <button class="btn_product product_reorder">재주문</button>
+                            <button class="btn_product product_view">상품보러가기</button>
+                            <button class="btn_product product_open" data-review-id="5">리뷰쓰기</button>
+                        </div>
+                        <form class="mypage_product_review_view" id="review_form_5">
+                            <input type="text" class="mypage_product_review_write" maxlength="200" placeholder="내용을 입력해주세요.(200자 제한)">
+                            <button class="btn_product_review_insert" type="submit">등록하기</button>
                         </form>
                     </div>
                 </div>
@@ -180,8 +216,7 @@
         </div>
     </div>
     <!-- content_mypage_e -->
-
-    <!-- footer_s -->
+    <!-- [s]footer 영역 -->
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
         <div class="f_container flex_area_rsb">
@@ -264,6 +299,10 @@
         </div>
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
-    <!-- footer_e -->
+    <!-- [e]footer 영역 -->
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    
 </body>
+<script src="js/mypage_3_2.js"></script>
 </html>
