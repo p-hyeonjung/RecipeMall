@@ -222,9 +222,10 @@ button {
 
 li.main {
     background: url("../image/recipemall-logo-commu.svg") no-repeat;
-    background-size: 135%;
-    background-position: -21px -19px;
+    background-size: 105%;
+    background-position: -19px -19px;
     cursor: pointer;
+    flex-basis: 50%;
 }
 
 .mainmenu>li {
