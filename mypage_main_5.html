@@ -9,81 +9,122 @@
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/mypage.css">
-    <link rel="stylesheet" href="css/mypage_5.css">
+    <link rel="stylesheet" href="./css/mypage.css">
+    <link rel="stylesheet" href="./css/mypage_common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mypage_5.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
 </head>
 
 <body>
-    <!--[s]전체 컨텐츠 영역  -->
+ <!--[s]전체 컨텐츠 영역  -->
     <!--[s]건너뛰기 링크-->
     <a id="skipNav" href="">본문 바로가기</a>
     <!--[e]건너뛰기 링크-->
 
-    
-    <!-- [s]광고배너 영역 -->
-    <div class="adbanner">
-        <p><a href="#">지금 가입하면 무료배송!</a></p>
-    </div>
-    <!--[e]광고배너 영역 -->
-
 
     <!-- [s]Header 영역 -->
     <header>
-        <!--[s]메인메뉴 영역 -->
-        <div>
-            <ul class="mainmenu">
-                <li class="main" title="메인페이지로 이동"><a href="index.html">레시피몰</a></li>
-                <li><a href="#">커뮤니티</a></li>
-                <li><a href="#">쇼핑</a></li>
-            </ul>
-        </div>
-        <!--[e]메인메뉴 영역 -->
-        <!--[s]서브 영역 -->
-        <div>
-            <ul class="submenu"> <!--submenu-->
-                <li><a href="#" class="cart"><img src="../image/empty.png" alt="cart"></a></li>
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">고객센터</a></li>
-                <li><button class="btn_write">글쓰기</button></li>
-            </ul>
-        </div>
-        <!--[e]서브 영역 -->
+        <!-- [s]Header_top 영역 -->
+        <div class="header_top flex_area_rsb">
+            <!--[s]메인메뉴 영역 -->
+            <div>
+                <ul class="mainmenu flex_area_rsb">
+                    <li class="main" title="메인페이지로 이동" onclick="location.href='index.html'"></li>
+                    <li><a href="index.html" class="a_community">커뮤니티</a></li>
+                    <li><a href="#" class="a_shopping">쇼핑</a></li>
+                </ul>
+            </div>
+            <!--[e]메인메뉴 영역 -->
 
-
-        <!--[s]검색 영역 -->
-        <div class="formtag">
-            <form action="#" method="get" name="#">
-                <input type="text" name="#" id="#" class="search">
+            <!--[s]검색 영역 -->
+            <form action="" class="search_form">
+                <div class="search_area  flex_area_rsb">
+                    <input id="" name="" type="search" title="검색어 입력" maxlength="255" class="" placeholder=" 통합검색">
+                    <div class="btn_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </form>
-        </div>
-        <!--[e]검색 영역-->
+            <!--[e]검색 영역-->
 
-        
-        <div class="textline"></div>
-        <!--[s]카테고리 영역 -->
-        <div>
-            <ul class="category">
-                <li><a href="recipe.html">레시피</a></li>
-                <li><a href="#">베스트</a></li>
-                <li><a href="#">자유게시판</a></li>
-            </ul>
-        </div>
-        <!--[e]카테고리 영역 -->
+            <!--[s]서브 영역 -->
+            <div>
+                <ul class="submenu">
+                    <!-- <li><a href="#"><i class="fa-sharp fa-regular fa-cart-shopping"></i></a></li> -->
+                    <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
 
-        <!--[s]실시간차트 영역-->
-        <div class="rank">
-            <ul>
-                <li><a href="#">1.레시피</a></li>
-            </ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><button class="btn_write">글쓰기
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button></li>
+                </ul>
+            </div>
+            <!--[e]서브 영역 -->
+            <!--[s]글쓰기 하위메뉴 영역 -->
+            <div class="btn_write_sub" hidden>
+                <a class="a_btn_write" href="recipe/insert.html">
+                    <div class="btn_write_icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div class="btn_write_txt">
+                        <div class="btn_write_t">레시피 글쓰기</div>
+                        <div class="btn_write_c">나만의 레시피를 공유해보세요.</div>
+                    </div>
+                </a>
+                <a class="a_btn_write" href="board/notice_write.html">
+                    <div class="btn_write_icon">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div class="btn_write_txt">
+                        <div class="btn_write_t">자유게시판 글쓰기</div>
+                        <div class="btn_write_c">레시피몰의 회원들과 자유롭게 이야기를 나눠보세요.</div>
+                    </div>
+                </a>
+                <a class="a_btn_write" href="">
+                    <div class="btn_write_icon">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                    </div>
+                    <div class="btn_write_txt">
+                        <div class="btn_write_t">상품 리뷰하기</div>
+                        <div class="btn_write_c">상품 후기를 공유해보세요.</div>
+                    </div>
+                </a>
+
+            </div>
+            <!--[e]글쓰기 하위메뉴 영역 -->
         </div>
-        <!--[e]실시간차트 영역 -->
+        <!-- [e]Header_top 영역 -->
+
         <div class="textline"></div>
+
+        <!-- [s]Header_bottom 영역 -->
+        <div class="header_bottom flex_area_rsb">
+            <!--[s]카테고리 영역 -->
+            <div class="flex_area_rsb">
+                <ul class="category">
+                    <li><a href="recipe.html" class="a_community">레시피</a></li>
+                    <li><a href="best.html" class="a_community">베스트</a></li>
+                    <li><a href="free_board.html" class="a_community">자유게시판</a></li>
+                </ul>
+            </div>
+            <!--[e]카테고리 영역 -->
+
+            <!--[s]실시간차트 영역-->
+            <div class="rank">
+                <ul>
+                    <li><a href="#">1.레시피</a></li>
+                </ul>
+            </div>
+            <!--[e]실시간차트 영역 -->
+        </div>
+        <!-- [e]Header_bottom 영역 -->
+        <div class="textline cf"></div>
     </header>
     <!-- [s]Header 영역 -->
+
     
 
     <!-- content_mypage_s -->
@@ -187,7 +228,6 @@
         </div>
     </div>
     <!-- content_mypage_e -->
-    <!-- [s]footer 영역 -->
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
         <div class="f_container flex_area_rsb">
@@ -204,7 +244,7 @@
             <!--[e]footer left & 안내 영역-->
             <!--[s]footer middle & 회사 소개 영역-->
             <div class="company_introduction1 f_middle flex_area_rsb">
-                <ul >
+                <ul>
                     <li><a href="#">회사 소개</a></li>
                     <li><a href="#">채용 정보</a></li>
                     <li><a href="#">이용약관</a></li>
@@ -212,7 +252,7 @@
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">안전거래센터</a></li>
                 </ul>
-                <ul >
+                <ul>
                     <li><a href="#">입점신청</a></li>
                     <li><a href="#">제휴/광고 문의</a></li>
                     <li><a href="#">사업자구매 회원</a></li>
@@ -231,17 +271,18 @@
                 <div class="company_introduction2">
                     <address>
                         (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
-                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431
+                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431<br>
                             <Strong>사업자정보확인</Strong> <br>
                             통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
                     </address>
                 </div>
-                    <!--[s]안전거래 영역 -->
-                    <div class="save">
-                    <img src="#" alt="서비스운영"> <span>레시피몰 서비스 운영</span><br>
-                    <span>2021-05-01 ~ 2026-07-09</span>
-                    <img src="#" alt="안전거래"> <span>고객님이 현금결재한 금액에 대해<br> 우리은행과
-                        채무지급 보증 계약을 체결하여 안전거래를
+                <!--[s]안전거래 영역 -->
+                <div class="save">
+                    <i class="fa-brands fa-servicestack"></i>
+                    <span>레시피몰 운영</span><br>
+                    <p>2021-05-01 ~ 2026-07-09</p>
+                    <i class="fa-solid fa-helmet-safety"></i><span>고객님이 현금결재한 금액에 대해<br>
+                        우리은행과 채무지급 보증 계약을 체결하여 안전거래를
                         보장 하고 있습니다.</span>
                 </div>
                 <!--[e]안전거래 영역 -->
@@ -254,10 +295,10 @@
 
                 <!--[s]소셜네트워크 영역 -->
                 <div class="img_icon">
-                    <a href=""><img src="#" alt="인스타그램"></a>
-                    <a href=""><img src="#" alt="페이스북"></a>
-                    <a href=""><img src="#" alt="트위터"></a>
-                    <a href=""><img src="#" alt="유튜브"></a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <!--[e]소셜네트워크 영역 -->
 
@@ -270,6 +311,7 @@
         </div>
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
+    <!-- [e]footer 영역 -->
     <!-- [e]footer 영역 -->
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
