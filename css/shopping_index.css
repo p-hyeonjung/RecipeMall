@@ -102,7 +102,7 @@ height: 180px;
     width: 220px;
     height: 250px;
     position: relative;
-    margin: 0 auto;
+    margin: 20px auto;
     
 }
 .best_content img{
@@ -146,7 +146,6 @@ height: 180px;
 }
 .btn_more>a{
     font-size: 0.8em;
-   
 }
 .hotdeal_area{
     margin-top: 20px;
@@ -157,7 +156,7 @@ height: 180px;
     width: 220px;
     height: 250px;
     position: relative;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 .hotdeal_content img{
     width: 180px;
