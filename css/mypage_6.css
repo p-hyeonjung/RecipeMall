@@ -127,7 +127,7 @@
 
 /* 문의 목록 {s} */
 .inq_list {
-    width: 95%;
+    width: 100%;
     box-sizing: border-box;
     margin: 15px auto;
 }
@@ -173,6 +173,7 @@
 }
 /* ------------------- */
 .inq_list_tb {
+    width: 100%;
     margin-bottom: 20px;
     border-bottom: 1px solid #999;
     border-collapse: collapse;
@@ -239,7 +240,6 @@
     background-color: #fff;
     cursor: pointer;
 }
-
 .cancel {
     color: #fff;
     background-color: #eb625f;
