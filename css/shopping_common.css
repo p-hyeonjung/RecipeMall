@@ -144,7 +144,7 @@ section {
 
 h1 {
     height: 80px;
-    line-height: 80px;
+    /* line-height: 80px; */
     font-family: "NotoSansR";
 }
 
@@ -234,7 +234,13 @@ li.main {
     padding: 0 10px 0 0;
     line-height: 50px;
 }
-
+.mainmenu>li:nth-child(2) {
+    padding: 0;
+}
+.mainmenu>li:last-child {
+    width: 50px;
+    padding-right: 60px;
+}
 /* 검색 영역 */
 .search_form {
     display: inline-block;

@@ -32,6 +32,11 @@ function slide_seen(){
     }
    
 };
+function close_div() {
+    const banner = document.querySelector(".adbanner");
+    banner.style.display = "none";
+}
+
 // 글쓰기 숨김메뉴 
 let btn_write = $(".btn_write");
 btn_write.click(function (e) {

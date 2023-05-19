@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap; 
     width: 100%;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 /* 카테고리 영역 */
 .main_category {
@@ -57,14 +57,22 @@
 /* 재료 검색 영역 */
 .form_matarial {
     width: 100%;
+    display: flex;
 }
 .form_matarial input {
+    box-sizing: border-box;
     width: 400px;
-    height: 48px;
+    height: 40px;
     border: 1px solid rgba(204, 14, 14, 0.79);
-    border-radius: 6px;
+    border-radius: 6px 0 0 6px;
     margin-left: 347px;
     outline: 0;
+    text-indent: 13px;
+}
+.mat_search {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
 }
 .matarial_content {
     width: 100%;
