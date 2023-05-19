@@ -16,10 +16,12 @@ $(function () {
         
         if (pointInput === "") {
           $("#payment_amount_value").text(productPrice.toLocaleString() + "원");
+          $(".go_payment button").text(paymentPrice.toLocaleString() + "원 결제하기");
         } else {
           let pointUsed = parseFloat(pointInput);
           let paymentPrice = productPrice - pointUsed;
           $("#payment_amount_value").text(paymentPrice.toLocaleString() + "원");
+          $(".go_payment button").text(paymentPrice.toLocaleString() + "원 결제하기");
         }
       });
 
