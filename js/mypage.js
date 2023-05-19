@@ -4,10 +4,9 @@ $(function () {
 	});
     
     // 일대일 문의 취소할 경우 목록으로 돌아가기
-    $('.calcel').click(function () {
-        // history.go(-1)();
-        $(location).attr('href','mypage_main_6_2.html');
-    })
+    $('.cancel').click(function () {
+        location.href='mypage_main_6_2.html';
+    });
 
     // 자주하는 질문 accordion
     $('.accordion_title').click(function () {

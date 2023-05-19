@@ -141,6 +141,9 @@
     height: 41px;
     overflow: hidden;
 }
+.inq_s>li:first-child {
+    width: 590px;
+}
 .inq_class {
     margin-right: 340px;
 }
@@ -167,9 +170,6 @@
 .inq_h {
     height: 41px;
     line-height: 41px;
-}
-.inq_view_btn {
-    margin-top: 10px;
 }
 /* ------------------- */
 .inq_list_tb {
@@ -231,14 +231,16 @@
 /* 버튼 */
 .inquering {
     position: absolute;
-    right: 160px;
+    right: 100px;
     cursor: pointer;
     width: 80px;
     height: 30px;
 }
 .inq_view_btn {
+    margin-top: 10px;
+    padding: 2px 10px;
     background-color: #fff;
-    cursor: pointer;
+    border: 1px solid #000;
 }
 .cancel {
     color: #fff;
