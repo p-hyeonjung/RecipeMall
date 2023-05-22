@@ -57,6 +57,8 @@
 /* 재료 검색 영역 */
 .form_matarial {
     width: 100%;
+}
+.form_matarial form {
     display: flex;
 }
 .form_matarial input {
