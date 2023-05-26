@@ -181,11 +181,19 @@
 }
 .transfer_number {
     display: none;
-    margin: 10px auto 20px auto;
+    margin: 10px 50px;
     font-size: 14px;
 }
-.transfer_number label:first-child{
-    margin-right: 30px;
+.transfer_number input {
+    height: 40px;
+    box-sizing: border-box;
+    margin-left: 30px;
+    border-radius: 6px;
+}
+#transfer{
+    height: 40px;
+    display: inline-block;
+    border-radius: 6px;
 }
 .payment_area>span {
     width: 600px;
