@@ -239,8 +239,11 @@
                         </select>
                     </div>
                     <div class="transfer_number payment_method">
-                        <label><input type="radio" name="transfer" value="sinhan">신한은행 100-000-123456</label>
-                        <label><input type="radio" name="transfer" value="kakaobank">카카오뱅크 1234-1234-105454</label>
+                        <select name="transfer" id="transfer">
+                            <option value="sinhan">신한은행 100-000-123456</option>
+                            <option value="kakaobank">카카오뱅크 1234-1234-105454</option>
+                        </select>
+                        <input type="text" name="transfer_name" placeholder="입금자명을 입력해주세요.">
                     </div>
                     <div class="order_agree">
                         <span>주문자 동의</span>
