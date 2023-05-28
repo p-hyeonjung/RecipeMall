@@ -1,3 +1,0 @@
-# RecipeMall
-# full
-# update
