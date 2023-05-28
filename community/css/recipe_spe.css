@@ -1,0 +1,245 @@
+/* main_content  영역 */
+#main_content{
+    position: relative;
+}
+.btn_more {
+    position: absolute;
+    right: 50px;
+    font-size: 1.3em;
+}
+
+.btn_more a {
+    color: #036c44;
+    font-family: "NotoSansM";
+}
+
+.btn_more a:hover {
+    color: #8bb0a3;
+
+}
+
+section {
+    margin: 40px 0;
+}
+.textline{
+    clear: both;
+}
+
+.r_txt{
+    font-family: "NotoSansBo";
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+/* 좋아요 영역 */
+.like_area{
+    position: sticky;
+    text-align: right;
+    z-index: 300;
+    top: 400px;
+   
+     
+}
+.btn_like{
+    font-weight: bold;
+    font-size: 2.2em;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 5px;
+    
+}
+.cnt_like{
+    font-size: 2em;
+    margin-right: 23px;
+    font-family: "NotoSansR";
+}
+/* 레시피 소개 영역 */
+.r_info{
+    text-align: center;
+}
+.r_info_img{
+    border: 1px solid #000;
+    width: 400px;
+    height: 300px;
+    margin: 80px auto;
+}
+.r_info_ex_title{
+    font-size: 2.5em;
+    font-family: "NotoSansBo";
+}
+.r_info_ex_in{
+    font-size: 1.4em;
+    font-family: "NotoSansR";
+}
+.r_info_sum{
+    padding: 0 35%;
+    height: 76px;
+    padding-top: 38px;
+    line-height: 30px;
+    font-size: 1.5em;
+}
+/* 재료 영역 */
+.r_ing{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 49%;
+    padding: 0 40px 15px 40px;
+}
+.btn_total_area{
+    display: block;
+    text-align: right;
+    height: 60px;
+}
+.btn_total{
+    font-family: "NotoSansM";
+    font-size: 1.5em;
+    margin-right: 40px;
+    background-color: #036c44;
+    color: #fffdf7;
+    padding: 5px 10px;
+}
+.btn_total:hover{
+    font-size: 1.7em;
+}
+.txt_al_r{
+    text-align: right;
+}
+.ing_t{
+    font-family: "NotoSansR";
+    font-size: 1.6em;
+    margin-bottom: 20px ;
+    color: #036c44;
+    
+}
+.r_ing_c{
+    margin: 10px 0;
+}
+.r_ing_name{
+    font-size: 1.5em;
+    padding: 5px 0;
+}
+.r_ing_amount{
+    font-size: 1.5em;
+    margin-right: 30px;
+}
+.btn_pur{
+    background-color: rgba(0, 0, 0, 0);
+    color: #036c44;
+    width: 60px;
+    font-size: 1.5em;
+}
+.btn_pur:hover{
+    color: #8bb0a3;
+}
+/* 동영상 영역 */ 
+/* js로 사용자가 업로드한 동영상이 없으면 display:none */
+.r_video, .textline.videoLine{
+    /* display: none; */
+}
+.r_video_container{
+    display: flex;
+    justify-content: flex-start;
+}
+.r_video .r_txt{
+    margin-right:100px ;
+}
+
+/* 순서 영역 */
+.seq_content{
+    width: 80%;
+}
+.seq_num{
+    /* display: inline-block; */
+    font-family: "malssami";
+    font-size: 2.5em;
+    color: #036c44;
+    margin: 0 30px 20px 0;
+    vertical-align: top;
+}
+.seq_txt{
+    font-family: "NotoSansR";
+    font-size: 1.4em;
+    
+}
+.seq_img{
+    margin: 40px 0;
+}
+.seq_img > img{
+    width: 100%;
+}
+.seq_phos{
+    position: relative;
+    width: 600px;
+    overflow: hidden;
+
+  }
+  /*이미지 슬라이더 영역 - 완성사진   */
+.seq_pho_area {
+    position: relative;
+}  
+.seq_pho{
+position: relative;
+width: 3000px;
+}
+.seq_slider_img{
+width: 600px;
+height: 400px;
+float: left;
+}
+    /* 버튼영역 */
+    .control_panel{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100000;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 8px 30px;
+        border-radius: 20px;
+        
+    }
+    .control_panel .active{
+        background: #fff;
+    }
+    .control_panel .control_btn{
+        float: left;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin: 0 8px;
+        cursor: pointer;
+        
+        
+    }
+    .left_right_control_panel i{
+        position:absolute;
+        font-size: 5em;
+        color: #fffdf7;
+        bottom: 40%;
+        cursor: pointer;
+    }
+    .left_control{ 
+        left: 15px;   
+      }
+      .right_control{
+        right: 15px;
+      }
+
+
+
+
+/* 기타영역 */
+.r_ect{
+    clear: both;
+}
+.r_ect i{
+    color: #DE4830; 
+}
+.r_ect_content{
+    font-size: 1.5em;
+}
+/* 댓글영역 */
