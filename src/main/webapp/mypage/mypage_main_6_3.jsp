@@ -14,14 +14,12 @@ session.getAttribute("log_id");
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>recipeMall</title>
-<script src="https://kit.fontawesome.com/54880b83c5.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
 <script src="${contextPath}/js/jquery-3.6.4.min.js"></script>
 <script src="${contextPath}/js/jquery-ui.min.js"></script>
 <script src="${contextPath}/mypage/js/mypage.js"></script>
 <link rel="stylesheet" href="${contextPath}/mypage/css/mypage.css">
-<link rel="stylesheet"
-	href="${contextPath}/mypage/css/mypage_common.css">
+<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_common.css">
 <link rel="stylesheet" href="${contextPath}/mypage/css/mypage_6.css">
 <link rel="stylesheet" href="${contextPath}/mypage/css/mypage_6_3.css">
 <link rel="shortcut icon" href="${contextPath}/images/smalllogo.png" />
@@ -48,75 +46,36 @@ session.getAttribute("log_id");
 			<!-- sidebar -->
 			<!--[s]공지사항 영역-->
 			<div class="mypage_content">
-				<h3 class="menu_title">고객센터</h3>
-				<div class="cs_center"></div>
-				<div class="notice_area">
-					<h2 class="notice_title">공지사항</h2>
-				</div>
+				<!-- <h3 class="menu_title">고객센터</h3> -->
+				<h2 class="notice_title">공지사항</h2>
+				<!-- <div class="cs_center"></div> -->
 				<div class="notice_content">
+					<div class="n_search">
+						<form class="search_form" action="">
+							<select>
+								<option>제목</option>
+								<option>내용</option>
+								<option>제목+내용</option>
+							</select>
+							<input type="search" name="search" class="search_in">
+							<input type="submit" value="검색" class="search_do">
+						</form>
+					</div>
 					<div class="notice_list">
 						<div class="top">
 							<div class="num">번호</div>
 							<div class="title">제목</div>
 							<div class="date">작성일</div>
 						</div>
+					<c:forEach var="notice" items="${noticeList}">
 						<div>
-							<div class="num">7</div>
+							<div class="num">${notice.noticeNo}</div>
 							<div class="title">
-								<a href="view.html">가</a>
+								<a href="${contextPath}/mypage/notice/noticeView.do?noticeNo=${notice.noticeNo}">${notice.noticeTitle}</a>
 							</div>
-							<div class="date">2023-5-17</div>
+							<div class="date">${notice.noticeDate}</div>
 						</div>
-						<div>
-							<div class="num">6</div>
-							<div class="title">
-								<a href="view.html">나</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-						<div>
-							<div class="num">5</div>
-							<div class="title">
-								<a href="view.html">다</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-						<div>
-							<div class="num">4</div>
-							<div class="title">
-								<a href="view.html">라</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-						<div>
-							<div class="num">3</div>
-							<div class="title">
-								<a href="view.html">마</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-						<div>
-							<div class="num">2</div>
-							<div class="title">
-								<a href="view.html">바</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-						<div>
-							<div class="num">1</div>
-							<div class="title">
-								<a href="view.html">사</a>
-							</div>
-							<div class="date">2023-5-17</div>
-						</div>
-					</div>
-					<div class="pagnation_area">
-						<ul class="pagnation">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-						</ul>
-					</div>
-
+					</c:forEach>
 				</div>
 			</div>
 			<!--[e]공지사항 영역-->
@@ -129,45 +88,13 @@ session.getAttribute("log_id");
 	<jsp:include page="/fix/footer.jsp" />
 	<!-- [e]footer 영역 -->
 	<!--로그인 영역-->
-	<div id="modal">
-		<div class="loginArea">
-			<form action="member.js" method="post">
-				<fieldset>
-					<legend>입력 칸</legend>
-					<div class="loginbox">
-						<p>
-							<label for="id"></label> <input type="text" id="id" name="id"
-								placeholder="아이디" required>
-						</p>
-						<p>
-							<label for="pass"></label> <input type="password" id="pxass"
-								name="pass" placeholder="비밀번호" required>
-						</p>
-						<label for="login" class="loggin"><input type="checkbox"
-							name="login" id="login"><span>로그인 상태 유지</span></label>
-						<button type="submit" class="green">로그인</button>
-						<p class="underBar">또는</p>
-						<a id="naverIdLogin_loginButton" class="naver"
-							href="javascript:void(0)"> <span>네이버 로그인</span>
-						</a> <a id="kakao-login-btn" class="kakao_login"
-							href="javascript:loginWithKakao()"> <img
-							src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
-							width="222" height="50" alt="카카오 로그인 버튼" />
-						</a>
-						<p id="token-result"></p>
-						<a href="../join.html">회원가입</a> <a href="#">계정찾기</a> <a href="#">비밀번호
-							찾기</a>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-	<script src="../js/login.js"></script>
-	<script src="../js/naver_login.js"></script>
-	<script src="../js/kakao_login.js"></script>
-	<link rel="stylesheet" href="../css/login.css">
-	<link rel="stylesheet" href="../js/common.js">
-
+	<jsp:include page="/fix/login.jsp"/>
+	<!--로그인 영역-->
+	
+	<script src="${contextPath}/js/login.js"></script>
+	<script src="${contextPath}/js/naver_login.js"></script>
+	<script src="${contextPath}/js/kakao_login.js"></script>
+	<link rel="stylesheet" href="${contextPath}/css/login.css">
+	<link rel="stylesheet" href="${contextPath}/js/common.js">
 </body>
-
 </html>
