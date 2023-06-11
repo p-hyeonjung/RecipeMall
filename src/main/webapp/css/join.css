@@ -17,8 +17,12 @@ button{
     cursor: pointer;
 }
 #join_form{
+    /* width: 37%; */
+    width: 100%;
+}
+.data_input {
     width: 37%;
-    margin-left: 320px;
+    margin-left: 300px;
 }
 #join_form label{
     display: block;
@@ -47,6 +51,17 @@ button{
     margin-bottom: 15px;
     font-size: 0.7125em;
 }
+.pw_e {
+	margin: 5px 0;
+}
+.pw_ne {
+	margin: 5px 0;
+	color: red;
+}
+.user_addr{
+    margin-top: 5px;
+    width: 250px;
+}
 .recommend_p{
     font-size: 0.7125em;
 }
@@ -55,31 +70,34 @@ button{
 }
 #agree_check{
     width: 100%;
-    height: 350px;
+    height: 480px;
     margin-top: 24px;
     font-size: 0.9em;
 }
 #agree_check>p{
-    text-align: center;
+    padding-left: 90px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 #agree_check>label{
     font-size: 1.1em;
 }
-#agree_check>input{
+/* #agree_check>input{
     margin-left: 180px;
-}
+} */
 .agree{
-    margin-left: 210px;
+    /* margin-left: 210px; */
     margin-top: 15px;
 }
 #agree_check label{
+    display: inline-block;
     font-weight: bold;
+    padding-left: 120px;
 }
 .treaty_area{
     border: 1px solid #ccc;
     overflow-y: scroll;
+    margin: 0 auto;
     width: 67%;
     height: 100px;
 }
@@ -105,8 +123,4 @@ button{
     display: block;
     font-weight: bold;
     font-size: 1em;
-}
-#user_addr2{
-    margin-top: 5px;
-    width: 250px;
 }
