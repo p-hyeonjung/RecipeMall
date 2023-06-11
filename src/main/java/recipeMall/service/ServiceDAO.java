@@ -1,6 +1,7 @@
 package recipeMall.service;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -51,5 +52,93 @@ public class ServiceDAO {
 			e.printStackTrace();
 		}
 		return faqList;
+	}
+	
+	public List<InqueryVO> userInqueryList(String id) {
+		List<InqueryVO> inqueryList=new ArrayList<InqueryVO>();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select inqNo,id,inqTitle,hasRe,inqCate,inqDate from inquerytbl where id=? order by inqDate Desc";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()) {
+				int inqNo=rs.getInt("inqNo");
+				String inqTitle=rs.getString("inqTitle");
+				int hasRe=rs.getInt("hasRe");
+				int inqCate=rs.getInt("inqCate");
+				Date inqDate=rs.getDate("inqDate");
+				
+				InqueryVO inqueryVO=new InqueryVO();
+				inqueryVO.setInqNo(inqNo);
+				inqueryVO.setId(id);
+				inqueryVO.setInqTitle(inqTitle);
+				inqueryVO.setHasRe(hasRe);
+				inqueryVO.setInqCate(inqCate);
+				inqueryVO.setInqDate(inqDate);
+				
+				inqueryList.add(inqueryVO);
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 일대일 문의 목록 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return inqueryList;
+	}
+	
+	public void addInquery(InqueryVO inqVO) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="insert into inquerytbl(inqNo,id,inqTitle,inqContent,inqCate) values(inqNo_seq.nextval,?,?,?,?)";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, inqVO.getId());
+			pstmt.setString(2, inqVO.getInqTitle());
+			pstmt.setString(3, inqVO.getInqContent());
+			pstmt.setInt(4, inqVO.getInqCate());
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 일대일 문의 등록 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	public InqueryVO inqView(String id, int inqNo) {
+		InqueryVO inqVO=new InqueryVO();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select * from inquerytbl where id=? and inqNo=?";
+			System.out.println(query);
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, inqNo);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			
+			String inqTitle=rs.getString("inqTitle");
+			String inqContent=rs.getString("inqContent");
+			int hasRe=rs.getInt("hasRe");
+			int inqCate=rs.getInt("inqCate");
+			Date inqDate=rs.getDate("inqDate");
+			
+			inqVO.setInqTitle(inqTitle);
+			inqVO.setInqContent(inqContent);
+			inqVO.setHasRe(hasRe);
+			inqVO.setInqCate(inqCate);
+			inqVO.setInqDate(inqDate);
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 일대일 문의 상세보기 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return inqVO;
 	}
 }

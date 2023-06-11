@@ -10,6 +10,7 @@ public class InqueryVO {
 	private String adminId;
 	private String inqReply;
 	private int hasRe;
+	private int inqCate;
 	private Date inqDate;
 	
 	public int getInqNo() {
@@ -60,5 +61,13 @@ public class InqueryVO {
 	public void setInqDate(Date inqDate) {
 		this.inqDate = inqDate;
 	}
+	public int getInqCate() {
+		return inqCate;
+	}
+	public void setInqCate(int inqCate) {
+		this.inqCate = inqCate;
+	}
+	
+	
 	
 }
