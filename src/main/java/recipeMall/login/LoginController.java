@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		
 		try {
-			if(action == null || action.equals("/login")) {
+			if(action.equals("/login")) {
 				String id=request.getParameter("id");
 				String pw=request.getParameter("pw");
 				
@@ -54,12 +54,14 @@ public class LoginController extends HttpServlet {
 					session=request.getSession();
 					session.setAttribute("isLogon", result); // or result
 					session.setAttribute("log_id", id);
-					System.out.println("세션 ID : "+session.getId());
+					System.out.println("세션 유지 시간 : "+session.getMaxInactiveInterval());
 				} else {
 					out.print("false");
 				}
 			} else if(action.equals("/logout")) {
 				session=request.getSession();
+				session.removeAttribute("isLogon");
+				session.removeAttribute("log_id");
 				session.invalidate();
 				response.sendRedirect(ContextPath+"/index.jsp");
 			}
