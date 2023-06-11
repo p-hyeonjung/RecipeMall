@@ -85,12 +85,12 @@ $('.r_seq .btn_add').click(function() {
     '<h2>Step <span class="stepNum">'+stepNumber+'</span> </h2>'+
     '<textarea name="" id="" cols="30" rows="10" placeholder="예)소고기는 기름기를 떼어내고 적당한크기로 썰어주세요."></textarea>' +
     '<div class="seq_step_pho seq_step_pho'+ stepNumber +'">'+
-    '<label for="inq_file_step'+stepNumber +'">'+
+    '<label for="rec_file_step'+stepNumber +'">'+
     '<div class="file_upload_btn">'+
     '<i class="fa-solid fa-plus"></i>'+
     '</div>'+
     '</label>'+
-    '<input type="file" data-ax-path="file" name="inq_file_step'+stepNumber +'" id="inq_file_step'+stepNumber+'" multiple="multiple">'+
+    '<input type="file" data-ax-path="file" name="rec_file_step'+stepNumber +'" id="rec_file_step'+stepNumber+'" multiple="multiple">'+
     '</div>'+
     ' <div class="btn_del_seq">'+
     '<button type="button">'+
@@ -133,10 +133,9 @@ seq_del();
 //stepnumber update
 function step_update() {
   $('.r_seq .seq_content_area').each(function(index) {
-    $(this).find('h2').html('Step' + (index + 1));
+     $(this).find('h2').html('Step <span class="stepNum">' + (index + 1)+'</span>');
   });
 }
- 
 
 
 // 파일 업로드
@@ -153,29 +152,29 @@ function removeImage() {
     let re_photo;
 
     if ($targetDiv.hasClass('r_in_photo')) {
-      re_photo = $('<label for="inq_file">' +
+      re_photo = $('<label for="rec_file">' +
         '<div class="file_upload_btn">' +
         '요리 대표사진을 등록해주세요 <br>' +
         '<i class="fa-solid fa-image"></i>' +
         '</div>' +
         '</label>' +
-        '<input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">'
+        '<input type="file" data-ax-path="file" name="rec_file" id="rec_file" multiple="multiple">'
       );
     } else if ($targetDiv.hasClass('seq_step_pho')) { 
-      re_photo = $('<label for="inq_file_step'+stepNumber+'">' + 
+      re_photo = $('<label for="rec_file_step'+stepNumber+'">' + 
       '<div class="file_upload_btn">' +
       '<i class="fa-solid fa-plus"></i>' +
       '</div>' +
       '</label>' +
-      '<input type="file" data-ax-path="file" name="inq_file_step'+stepNumber+'" id="inq_file_step'+stepNumber+'" multiple="multiple">'
+      '<input type="file" data-ax-path="file" name="rec_file_step'+stepNumber+'" id="rec_file_step'+stepNumber+'" multiple="multiple">'
       );
     } else if ($targetDiv.hasClass('seq_pho')) {
-      re_photo = $('<label for="inq_file_seq">' +
+      re_photo = $('<label for="rec_file_com">' +
         '<div class="file_upload_btn">' +
         '<i class="fa-solid fa-plus"></i>' +
         '</div>' +
         '</label>' +
-        '<input type="file" data-ax-path="file" name="inq_file_seq" id="inq_file_seq" multiple="multiple"> '
+        '<input type="file" data-ax-path="file" name="rec_file_com" id="rec_file_com" multiple="multiple"> '
       );
     }
 
@@ -221,18 +220,18 @@ function file_reload() {
     let $targetDiv = $(this).parent('.r_in_photo, .seq_step_pho, .seq_pho'); 
     $targetDiv.find('input[type="file"]').remove();
     if ($targetDiv.hasClass('r_in_photo')) {
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">');
+      $targetDiv.append('<input type="file" data-ax-path="file" name="rec_file" id="rec_file" multiple="multiple">');
       addFile();
-      $("#inq_file").click();
+      $("#rec_file").click();
     } else if ($targetDiv.hasClass('seq_step_pho')) { 
       stepNum = parseInt($targetDiv.siblings('h2').find('.stepNum').text());
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file_step'+stepNum+'" id="inq_file_step'+stepNum+'" multiple="multiple">');
+      $targetDiv.append('<input type="file" data-ax-path="file" name="rec_file_step'+stepNum+'" id="rec_file_step'+stepNum+'" multiple="multiple">');
       addFile();
-      $("#inq_file_step"+stepNum).click();
+      $("#rec_file_step"+stepNum).click();
     } else {
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file_seq" id="inq_file_seq" multiple="multiple">');
+      $targetDiv.append('<input type="file" data-ax-path="file" name="rec_file_com" id="rec_file_com" multiple="multiple">');
       addFile();
-      $("#inq_file_seq").click();
+      $("#rec_file_com").click();
     } 
   });
 }

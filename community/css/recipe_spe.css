@@ -55,7 +55,7 @@ section {
     font-size: 2em;
     margin-right: 23px;
     font-family: "NotoSansR";
-}
+} 
 /* 레시피 소개 영역 */
 .r_info{
     text-align: center;
@@ -64,7 +64,7 @@ section {
     border: 1px solid #000;
     width: 400px;
     height: 300px;
-    margin: 80px auto;
+    margin: 30px auto;
 }
 .r_info_ex_title{
     font-size: 2.5em;
@@ -81,29 +81,59 @@ section {
     line-height: 30px;
     font-size: 1.5em;
 }
+
+/* 작성자 영역 */
+.writer_area{
+    display: inline-block;
+    width: 80%;
+    margin: 30px 0 15px 0;
+}
+.writer_img{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: url(../../images/idimg.jpg) center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.writer_id{
+    font-size: 1.3em;
+    font-family: "NotoSansM";
+    margin: 0 15px;
+}
+.write_date{
+    font-size: 1.2em;
+}
+.writer_block{
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 1.3em;
+    color: #ccc;
+}
+.writer_block:hover{
+    margin-left: 15px;
+    font-size: 1.3em;
+    color: #DE4830;
+}
+
 /* 재료 영역 */
+.r_ing_con{
+    display: flex;
+    justify-content: flex-start;
+}
+.r_ings{
+	margin-left: 130px;
+}
 .r_ing{
     box-sizing: border-box;
     display: inline-block;
     width: 49%;
     padding: 0 40px 15px 40px;
 }
-.btn_total_area{
-    display: block;
-    text-align: right;
-    height: 60px;
-}
-.btn_total{
-    font-family: "NotoSansM";
-    font-size: 1.5em;
-    margin-right: 40px;
-    background-color: #036c44;
-    color: #fffdf7;
-    padding: 5px 10px;
-}
-.btn_total:hover{
-    font-size: 1.7em;
-}
+
 .txt_al_r{
     text-align: right;
 }
@@ -124,15 +154,6 @@ section {
 .r_ing_amount{
     font-size: 1.5em;
     margin-right: 30px;
-}
-.btn_pur{
-    background-color: rgba(0, 0, 0, 0);
-    color: #036c44;
-    width: 60px;
-    font-size: 1.5em;
-}
-.btn_pur:hover{
-    color: #8bb0a3;
 }
 /* 동영상 영역 */ 
 /* js로 사용자가 업로드한 동영상이 없으면 display:none */
