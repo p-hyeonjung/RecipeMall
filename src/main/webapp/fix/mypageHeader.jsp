@@ -9,9 +9,9 @@
 	    <!--[s]메인메뉴 영역 -->
 	    <div>
 	        <ul class="mainmenu flex_area_rsb">
-	            <li class="main" title="메인페이지로 이동" onclick="location.href='../index.html'"></li>
-	            <li><a href="../index.html" class="a_community">커뮤니티</a></li>
-	            <li><a href="../shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+	            <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/index.jsp'"></li>
+	            <li><a href="${contextPath}/index.html" class="a_community">커뮤니티</a></li>
+	            <li><a href="${contextPath}/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
 	        </ul>
 	    </div>
 	    <!--[e]메인메뉴 영역 -->
@@ -38,9 +38,9 @@
 			</c:if>
 			<c:if test="${isLogon != true}">
                 <li><a href="#" class="login">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <li><a href="${contextPath}/user/joinForm.do">회원가입</a></li>
 			</c:if>
-	            <li><a href="#">고객센터</a></li>
+	            <!-- <li><a href="#">고객센터</a></li> -->
 	            <li><button class="btn_write">글쓰기
 	                    <i class="fa-solid fa-chevron-down"></i>
 	                </button></li>

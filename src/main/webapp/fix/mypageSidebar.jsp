@@ -17,7 +17,7 @@ request.setCharacterEncoding("utf-8");
 				<!-- mypage menu -->
 				<div class="mypage_menu">
 					<ul class="main_menu">
-						<li><a href="mypage_user_info.html">내 정보</a></li>
+						<li><a href="${contextPath}/user/userInfo.do?id=${log_id}">내 정보</a></li>
 						<li><a href="#">주문/배송</a>
 							<ul class="sub_menu">
 								<li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
@@ -38,10 +38,9 @@ request.setCharacterEncoding("utf-8");
 						<li><a href="mypage_main_5.html">차단 목록</a></li>
 						<li><a href="">고객센터</a>
 							<ul class="sub_menu">
-								<li><a href="${contextPath}/mypage/service/faq.do">-
-										자주하는 질문</a></li>
-								<li><a href="mypage_main_6_2.html">- 일대일 문의</a></li>
-								<li><a href="mypage_main_6_3.html">- 공지사항</a></li>
+								<li><a href="${contextPath}/mypage/service/faq.do">- 자주하는 질문</a></li>
+								<li><a href="${contextPath}/mypage/service/inqList.do?id=${log_id}">- 일대일 문의</a></li>
+								<li><a href="${contextPath}/mypage/service/notice.do">- 공지사항</a></li>
 							</ul>
 						</li>
 					</ul>
