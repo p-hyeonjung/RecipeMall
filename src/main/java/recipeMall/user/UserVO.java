@@ -14,6 +14,26 @@ public class UserVO {
 	private int pointNo;
 	private Date joinDate;
 	
+	public UserVO() {
+		
+	}
+	
+	public UserVO(String id, String pw, String name, String nikName, String phone, String userAddr, String userAddr2) {
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.nikName = nikName;
+		this.phone = phone;
+		this.userAddr = userAddr;
+		this.userAddr2 = userAddr2;
+	}
+
+	public UserVO(String id, String pw, String name, String nikName, String phone, String rcmd, String userAddr,
+			String userAddr2) {
+		this(id,pw,name,nikName,phone,userAddr,userAddr2);
+		this.rcmd = rcmd;
+	}
+
 	public String getId() {
 		return id;
 	}

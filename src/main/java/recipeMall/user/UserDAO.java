@@ -47,6 +47,73 @@ public class UserDAO {
 		return result;
 	}
 	
+	// 아이디 중복 확인
+	public Boolean idExisted(String id) {
+		Boolean result=false;
+		try {
+			conn=dataFactory.getConnection();
+			String query="select decode(count(*),1,'true','false') as result from usertbl where id=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			result=Boolean.parseBoolean(rs.getString("result"));
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("아이디 중복 확인 여부 처리 중 에러!!");
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	// 회원가입 + 추천인 x
+	public void addUser(UserVO userVO) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="insert into usertbl(id,pw,name,nikName,phone,userAddr,userAddr2) values(?,?,?,?,?,?,?)";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, userVO.getId());
+			pstmt.setString(2, userVO.getPw());
+			pstmt.setString(3, userVO.getName());
+			pstmt.setString(4, userVO.getNikName());
+			pstmt.setString(5, userVO.getPhone());
+			pstmt.setString(6, userVO.getUserAddr());
+			pstmt.setString(7, userVO.getUserAddr2());
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("회원 등록 중 오류 발생!!");
+			e.printStackTrace();
+		}
+	}
+	
+	// 회원가입 + 추천인 o
+	public void addUser2(UserVO userVO) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="insert into usertbl(id,pw,name,nikName,phone,userAddr,userAddr2,rcmd) values(?,?,?,?,?,?,?,?)";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, userVO.getId());
+			pstmt.setString(2, userVO.getPw());
+			pstmt.setString(3, userVO.getName());
+			pstmt.setString(4, userVO.getNikName());
+			pstmt.setString(5, userVO.getPhone());
+			pstmt.setString(6, userVO.getUserAddr());
+			pstmt.setString(7, userVO.getUserAddr2());
+			pstmt.setString(8, userVO.getRcmd());
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("회원 등록 중 오류 발생!!");
+			e.printStackTrace();
+		}
+	}
+	
 	// 회원 정보 조회
 	public UserVO userInfo(String id) {
 		UserVO userVO=new UserVO();
@@ -57,12 +124,61 @@ public class UserDAO {
 			pstmt.setString(1, id);
 			ResultSet rs=pstmt.executeQuery();
 			rs.next();
-			userVO.setId(id);
+			userVO.setId(rs.getString("id"));
+			userVO.setPw(rs.getString("pw"));
+			userVO.setNikName(rs.getString("nikName"));
+			userVO.setPhone(rs.getString("phone"));
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (Exception e) {
 			System.out.println("회원 정보 조회 중 오류 발생");
 			e.printStackTrace();
 		}
 		return userVO;
+	}
+	
+	// 회원정보 수정
+	public void updateUser(UserVO userVO) {
+		String id=userVO.getId();
+		String nikName=userVO.getNikName();
+		String pw=userVO.getPw();
+		String phone=userVO.getPhone();
+		try {
+			conn=dataFactory.getConnection();
+			String query="update usertbl set pw=?, nikName=?, phone=? where id=?";
+			System.out.println(query);
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, nikName);
+			pstmt.setString(3, phone);
+			pstmt.setString(4, id);
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("회원 정보 수정 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	// 회원정보 삭제
+	public void deleteUser(String id) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="delete from usertbl where id=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.executeQuery();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("회원 정보 삭제 중 오류 발생");
+			e.printStackTrace();
+		}
+		
 	}
 
 }
