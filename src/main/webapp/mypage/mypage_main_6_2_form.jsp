@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 request.setCharacterEncoding("utf-8");
+session.getAttribute("isLogon");
+session.getAttribute("log_id");
 %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -13,13 +15,13 @@ request.setCharacterEncoding("utf-8");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RecipeMall-마이페이지</title>
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-<script src="../js/jquery-3.6.4.min.js"></script>
-<script src="../js/jquery-ui.min.js"></script>
-<script src="js/mypage.js"></script>
-<link rel="stylesheet" href="css/mypage.css">
-<link rel="stylesheet" href="css/mypage_common.css">
-<link rel="stylesheet" href="css/mypage_6.css">
-<link rel="shortcut icon" href="../image/smalllogo.png" />
+<script src="${contextPath}/js/jquery-3.6.4.min.js"></script>
+<script src="${contextPath}/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/mypage/js/mypage.js"></script>
+<link rel="stylesheet" href="${contextPath}/mypage/css/mypage.css">
+<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_common.css">
+<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_6.css">
+<link rel="shortcut icon" href="${contextPath}/images/smalllogo.png" />
 </head>
 <body>
 	<!--[s]건너뛰기 링크-->
@@ -32,51 +34,10 @@ request.setCharacterEncoding("utf-8");
 	<div id="main_content" class="mypage_box">
 		<div id="mypage">
 			<h2 class="mypage_title">
-				<a href="mypage.html">마이페이지</a>
+				<a href="${contextPath}/mypage/service/main.do?id=${log_id}">마이페이지</a>
 			</h2>
 			<!-- sidebar -->
-			<div class="side_bar">
-				<!-- user_info:회원 프로필사진,포인트,출석체크 -->
-				<div class="user_info_box">
-					<div class="user_profile">
-						<img src="../images/user.png" alt="user">
-					</div>
-					<p>현재 포인트 14330</p>
-					<button class="check_attend">로그아웃</button>
-				</div>
-				<!-- mypage menu -->
-				<div class="mypage_menu">
-					<ul class="main_menu">
-						<li><a href="mypage_user_info.html">내 정보</a></li>
-						<li><a href="#">주문/배송</a>
-							<ul class="sub_menu">
-								<li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
-								<li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
-								<li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
-								<li><a href="mypage_main_2_4.html">- 장바구니</a></li>
-							</ul></li>
-						<li><a href="#">상품</a>
-							<ul class="sub_menu">
-								<li><a href="mypage_main_3_1.html">- 상품 문의</a></li>
-								<li><a href="mypage_main_3_2.html">- 상품 리뷰</a></li>
-							</ul></li>
-						<li><a href="#">글/댓글 관리</a>
-							<ul class="sub_menu">
-								<li><a href="mypage_main_4_1.html">- 글 </a></li>
-								<li><a href="mypage_main_4_2.html">- 댓글</a></li>
-							</ul></li>
-						<li><a href="mypage_main_5.html">차단 목록</a></li>
-						<li><a href="">고객센터</a>
-							<ul class="sub_menu">
-								<li><a href="${contextPath}/mypage/service/faq.do">-
-										자주하는 질문</a></li>
-								<li><a href="mypage_main_6_2.html">- 일대일 문의</a></li>
-								<li><a href="mypage_main_6_3.html">- 공지사항</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<jsp:include page="/fix/mypageSidebar.jsp" />
 			<!-- sidebar -->
 			<!-- mypage_content -->
 			<div class="mypage_content">
@@ -84,27 +45,28 @@ request.setCharacterEncoding("utf-8");
 				<div class="cs_center">
 					<h4>일대일 문의</h4>
 					<div class="one_inquery">
-						<form action="">
+						<form action="${contextPath}/mypage/service/addInq.do" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="${log_id}">
 							<table class="inquery_tbl">
 								<caption>일대일 문의</caption>
 								<tbody>
 									<tr>
 										<th>분류</th>
-										<td><select>
-												<option value="">커뮤니티</option>
-												<option value="">쇼핑</option>
+										<td><select name="inqCate" onchange="alert(this.value)">
+												<option value="커뮤니티">커뮤니티</option>
+												<option value="쇼핑">쇼핑</option>
 										</select></td>
 									</tr>
 									<tr>
 										<th>제목</th>
 										<td><input type="text" name="inq_title" id="inq_title"></td>
 									</tr>
-									<tr>
+									<!-- <tr>
 										<th>이메일</th>
 										<td><input type="email" name="email" id="email">
 											<input type="checkbox" name="email_comm_ok"
 											id="email_comm_ok"> 답변 받기</td>
-									</tr>
+									</tr> -->
 									<tr>
 										<th>내용</th>
 										<td><textarea name="inq_content" id="inq_content"
@@ -121,8 +83,8 @@ request.setCharacterEncoding("utf-8");
 								</tbody>
 							</table>
 							<div class="subm_btn">
-								<input type="submit" name="" class="inq_btn btn_c" value="문의하기">
-								<input type="button" name="" class="inq_btn cancel" value="취소">
+								<input type="submit" class="inq_btn btn_c" value="문의하기">
+								<input type="button" class="inq_btn cancel" value="취소">
 								<!-- <button class="cancel inq_btn">취소</button> -->
 							</div>
 						</form>
