@@ -133,10 +133,9 @@ seq_del();
 //stepnumber update
 function step_update() {
   $('.r_seq .seq_content_area').each(function(index) {
-    $(this).find('h2').html('Step' + (index + 1));
+     $(this).find('h2').html('Step <span class="stepNum">' + (index + 1)+'</span>');
   });
 }
- 
 
 
 // 파일 업로드

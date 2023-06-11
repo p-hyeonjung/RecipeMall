@@ -1,8 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
@@ -10,31 +11,34 @@
     <script src="../js/jquery-3.6.4.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="css/recipe.css">
+    <link rel="stylesheet" href="css/view.css">
     <link rel="shortcut icon" href="../images/smalllogo.png" />
 </head>
-
 <body>
-    <!--[s]전체 컨텐츠 영역  -->
+	<!--[s]전체 컨텐츠 영역  -->
     <!--[s]건너뛰기 링크-->
     <a id="skipNav" href="">본문 바로가기</a>
     <!--[e]건너뛰기 링크-->
 
+
+    <!-- [s]광고배너 영역 -->
     <div class="adbanner">
         <p><a href="#">지금 가입하면 무료배송!<button class="banner_btn" onclick="close_div()"><i
                         class="fa-solid fa-x"></i></button></a></p>
     </div>
+    <!--[e]광고배너 영역 -->
 
-   <!-- [s]Header 영역 -->
-   <header>
+
+  <!-- [s]Header 영역 -->
+  <header>
     <!-- [s]Header_top 영역 -->
     <div class="header_top flex_area_rsb">
         <!--[s]메인메뉴 영역 -->
         <div>
             <ul class="mainmenu flex_area_rsb">
-                <li class="main" title="메인페이지로 이동" onclick="location.href='../index.html'"></li>
-                <li><a href="../index.html" class="a_community">커뮤니티</a></li>
-                <li><a href="../shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+                <li class="main" title="메인페이지로 이동" onclick="location.href='../index.jsp'"></li>
+                <li><a href="../index.jsp" class="a_community">커뮤니티</a></li>
+                <li><a href="../shopping/shopping_index.jsp" class="a_shopping">쇼핑</a></li>
             </ul>
         </div>
         <!--[e]메인메뉴 영역 -->
@@ -57,7 +61,7 @@
                 <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
 
                 <li><a href="#" class="login">로그인</a></li>
-                <li><a href="../join.html">회원가입</a></li>
+                <li><a href="../join.jsp">회원가입</a></li>
                 <li><a href="" class="login">고객센터</a></li>
                 <li><button class="btn_write">글쓰기
                         <i class="fa-solid fa-chevron-down"></i>
@@ -67,7 +71,7 @@
         <!--[e]서브 영역 -->
         <!--[s]글쓰기 하위메뉴 영역 -->
         <div class="btn_write_sub" hidden>
-            <a class="a_btn_write" href="insert.html">
+            <a class="a_btn_write" href="insert.jsp">
                 <div class="btn_write_icon">
                     <i class="fa-solid fa-book"></i>
                 </div>
@@ -76,7 +80,7 @@
                     <div class="btn_write_c">나만의 레시피를 공유해보세요.</div>
                 </div>
             </a>
-            <a class="a_btn_write" href="notice_write.html">
+            <a class="a_btn_write" href="notice_write.jsp">
                 <div class="btn_write_icon">
                     <i class="fa-solid fa-clipboard-list"></i>
                 </div>
@@ -107,9 +111,9 @@
         <!--[s]카테고리 영역 -->
         <div class="flex_area_rsb">
             <ul class="category">
-                <li><a href="recipe.html" class="a_community">레시피</a></li>
-                <li><a href="best.html" class="a_community">베스트</a></li>
-                <li><a href="free_board.html" class="a_community">자유게시판</a></li>
+                <li><a href="recipe.jsp" class="a_community">레시피</a></li>
+                <li><a href="best.jsp" class="a_community">베스트</a></li>
+                <li><a href="free_board.jsp" class="a_community">자유게시판</a></li>
             </ul>
         </div>
         <!--[e]카테고리 영역 -->
@@ -130,138 +134,69 @@
 </header>
 <!-- [s]Header 영역 -->
 
-
-    <!-- [s]main_content 영역 -->
-    <div id="main_content">
-
-        <!-- [s]레시피 바로가기 영역-->
-        <section class="direct_recipe">
-            <div class="direct_menu_area flex_area_rsb">
-                <div class="direct_menu">
-                    <img src="../images/disah_ko.png" alt="한식">
-                    <p>한식</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="../images/dish_ch.png" alt="중식">
-                    <p>중식</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="../images/dish_us.png" alt="양식">
-                    <p>양식</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="../images/dish_ja.png" alt="일식">
-                    <p>일식</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="../images/dish_bun.png" alt="분식">
-                    <p>분식</p>
-                </div>
-                <div class="direct_menu">
-                    <img src="../images/dish_ba.png" alt="베이커리">
-                    <p>베이커리</p>
-                </div>
-            </div>
-        </section>
-        <!-- [e]레시피 바로가기 영역 -->
-
-        <!-- [s]레시피 검색 영역 -->
-        <section class="r_search_area ">
-            <form action="">
-                <fieldset class="flex_area_rsb">
-                    <div class="select_searchbox flex_area_rsb">
-                        <select name="" id="">
-                            <option value="">제목</option>
-                            <option value="">셰프</option>
-                        </select>
-                        <div class="r_input_btn flex_area_rsb">
-                            <input id="" name="" type="search" title="검색어 입력" maxlength="255" class="">
-                            <div class="r_btn_search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn_category_area">
-                        <button>최신순</button>
-                        <button>좋아요순</button>
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-        <!-- [e]레시피 검색 영역 -->
-
-
-        <!-- [s]레시피 리스트 영역 -->
-        <section class="r_list">
-            <ul class="r_content_area flex_area_rsb">
-                <li class="r_content">
-                    <div class="r_thumb">
-                    </div>
-                    <div class="r_title_area">
-                        <p class="r_title">글 제목</p>
-                        <div class="cnt_like_area">
-                            <span class="cnt_like">좋아요 수 </span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <p class="r_id">닉네임</p>
-                    </div>
-                </li>
-                <li class="r_content">
-                    <div class="r_thumb">
-                    </div>
-                    <div class="r_title_area">
-                        <p class="r_title">글 제목</p>
-                        <div class="cnt_like_area">
-                            <span class="cnt_like">좋아요 수 </span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <p class="r_id">닉네임</p>
-                    </div>
-                </li>
-                <li class="r_content">
-                    <div class="r_thumb">
-                    </div>
-                    <div class="r_title_area">
-                        <p class="r_title">글 제목</p>
-                        <div class="cnt_like_area">
-                            <span class="cnt_like">좋아요 수 </span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <p class="r_id">닉네임</p>
-                    </div>
-                </li>
-                <li class="r_content">
-                    <div class="r_thumb">
-                    </div>
-                    <div class="r_title_area">
-                        <p class="r_title">글 제목</p>
-                        <div class="cnt_like_area">
-                            <span class="cnt_like">좋아요 수&nbsp;</span>
-                            <i class="fa-regular fa-heart"></i> &nbsp;&nbsp;&nbsp;
-                        </div>
-                        <p class="r_id">닉네임</p>
-                    </div>
-                </li>
-            </ul>
-            <div class="pagnation_area">
-                <ul class="pagnation">
-                    <li>
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- [e]레시피 리스트 영역 -->
-
-
-
+    <div class="free_board_area">
+        <!--[s] 자유게시판 타이틀-->
+        <div class="title_free_board">
+            <h1>자유게시판 <i class="fa-regular fa-pen-to-square"></i></h1>
+        </div>
+        <div class="title_sub">
+            <h4>자유롭게 회원들과 소통합시다</h4>
+            <h4>*폭언 욕설은 블랙리스트를 당할 수 있습니다.*</h4>
+        </div>
     </div>
-    <!-- [e]main_content 영역 -->
-    <!-- [s]footer 영역 -->
+
+    <div class="view_area">
+        <div class="title_top">
+            <h1>글의 제목</h1>
+        </div>
+        <div class="more_information">
+            <div class="more_area">
+                <div class="writer_s">작성자닉네임</div>
+                <div class="date">
+                    <p>2023-05-17</p>
+                </div>
+            </div>
+            <div class="btn_fow">
+                <div class="fal"><button class="fow_btn">+ 팔로우</button></div>
+            </div>
+        </div>
+        <div class="view_area_see">
+            <div class="view_article">
+                <p>글을 읽는 공간입니다.</p>
+            </div>
+        </div>
+        <div class="Several_area">
+            <div class="Several_good">좋아요<span>9</span></div>
+            <div class="Several_comment">댓글<span>2</span></div>
+            <div class="Several_num">조회<span>33</span></div>
+        </div>
+
+        <div class="comment_area">
+            <div class="comment_write_area">
+                <div class="comment_title_area">
+                    <div class="comment_title">
+                        <h3>댓글</h3>
+                    </div>
+                    <div class="btn_area">
+                        <button class="recomment1" type="button">
+                            <span><a href=""><i class="fa-regular fa-heart"></i></a></span>
+                        </button>
+                        <button class="recomment2" type="button">
+                            <span><a href="free_board.jsp">목록보기</a></span>
+                        </button>
+                    </div>
+                </div>
+                <form class="comment_write">
+                    <i class="fa-solid fa-user"></i> <input type="text" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :D">
+                    <button type="submit" disabled>입력</button><!--text 입력시 disabled해제-->
+                </form>
+            </div>
+            <div class="anser">
+                <h3></h3><!--댓글 영역 남겨둠-->
+            </div>
+        </div>
+    </div>
+
     <footer>
         <!--[s]푸터 컨테이너 영역 -->
         <div class="f_container flex_area_rsb">
@@ -352,6 +287,7 @@
         <!--[e]푸터 컨테이너 영역 -->
     </footer>
     <!-- [e]footer 영역 -->
+    <!--로그인 영역-->
     <div id="modal">
         <div class="loginArea">
             <form action="member.js" method="post">
@@ -376,7 +312,7 @@
                                 alt="카카오 로그인 버튼" />
                             </a>
                             <p id="token-result"></p>
-                            <a href="../join.html">회원가입</a>
+                            <a href="../join.jsp">회원가입</a>
                             <a href="#">계정찾기</a>
                             <a href="#">비밀번호 찾기</a>
                     </div>
@@ -389,7 +325,6 @@
     <script src="../js/kakao_login.js"></script>
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/common.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
 </body>
-
 </html>

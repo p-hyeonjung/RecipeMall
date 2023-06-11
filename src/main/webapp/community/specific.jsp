@@ -1,8 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
@@ -18,7 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
-
 <body>
     <!--[s]전체 컨텐츠 영역  -->
     <!--[s]건너뛰기 링크-->
@@ -38,9 +38,9 @@
         <!--[s]메인메뉴 영역 -->
         <div>
             <ul class="mainmenu flex_area_rsb">
-                <li class="main" title="메인페이지로 이동" onclick="location.href='../index.html'"></li>
-                <li><a href="../index.html" class="a_community">커뮤니티</a></li>
-                <li><a href="../shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+                <li class="main" title="메인페이지로 이동" onclick="location.href='../index.jsp'"></li>
+                <li><a href="../index.jsp" class="a_community">커뮤니티</a></li>
+                <li><a href="../shopping/shopping_index.jsp" class="a_shopping">쇼핑</a></li>
             </ul>
         </div>
         <!--[e]메인메뉴 영역 -->
@@ -63,7 +63,7 @@
                 <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
 
                 <li><a href="#" class="login">로그인</a></li>
-                <li><a href="../join.html">회원가입</a></li>
+                <li><a href="../join.jsp">회원가입</a></li>
                 <li><a href="" class="login">고객센터</a></li>
                 <li><button class="btn_write">글쓰기
                         <i class="fa-solid fa-chevron-down"></i>
@@ -73,7 +73,7 @@
         <!--[e]서브 영역 -->
         <!--[s]글쓰기 하위메뉴 영역 -->
         <div class="btn_write_sub" hidden>
-            <a class="a_btn_write" href="insert.html">
+            <a class="a_btn_write" href="insert.jsp">
                 <div class="btn_write_icon">
                     <i class="fa-solid fa-book"></i>
                 </div>
@@ -82,7 +82,7 @@
                     <div class="btn_write_c">나만의 레시피를 공유해보세요.</div>
                 </div>
             </a>
-            <a class="a_btn_write" href="notice_write.html">
+            <a class="a_btn_write" href="notice_write.jsp">
                 <div class="btn_write_icon">
                     <i class="fa-solid fa-clipboard-list"></i>
                 </div>
@@ -113,9 +113,9 @@
         <!--[s]카테고리 영역 -->
         <div class="flex_area_rsb">
             <ul class="category">
-                <li><a href="recipe.html" class="a_community">레시피</a></li>
-                <li><a href="best.html" class="a_community">베스트</a></li>
-                <li><a href="free_board.html" class="a_community">자유게시판</a></li>
+                <li><a href="recipe.jsp" class="a_community">레시피</a></li>
+                <li><a href="best.jsp" class="a_community">베스트</a></li>
+                <li><a href="free_board.jsp" class="a_community">자유게시판</a></li>
             </ul>
         </div>
         <!--[e]카테고리 영역 -->
@@ -502,7 +502,7 @@
                                 alt="카카오 로그인 버튼" />
                             </a>
                             <p id="token-result"></p>
-                            <a href="../join.html">회원가입</a>
+                            <a href="../join.jsp">회원가입</a>
                             <a href="#">계정찾기</a>
                             <a href="#">비밀번호 찾기</a>
                     </div>
@@ -517,5 +517,4 @@
     <script src="../js/common.js"></script>
     <script src="js/recipe_spe.js"></script>
 </body>
-
 </html>

@@ -1,8 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
@@ -10,15 +11,15 @@
     <script src="../js/jquery-3.6.4.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/notice.js"></script>
-    <link rel="stylesheet" href="../css/notice_write.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/notice_write.css">
     <link rel="shortcut icon" href="images/smalllogo.png" />
     <link rel="stylesheet" href="../ckeditor5/sample/styles.css">
 </head>
-
 <body>
     <header class="top_menu">
         <div class="recipe_mall">
-            <h1><a href="../index.html">레시피몰</a></h1>
+            <h1><a href="../index.jsp">레시피몰</a></h1>
         </div>
         <div class="tool">
             <!-- <div><i class="fa-regular fa-image"></i></div>
