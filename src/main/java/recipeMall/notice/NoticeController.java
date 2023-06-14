@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mypage/notice/*")
+@WebServlet("/notice/*")
 public class NoticeController extends HttpServlet {
 	NoticeVO noticeVO;
 	NoticeDAO dao;
@@ -39,13 +39,13 @@ public class NoticeController extends HttpServlet {
 		if(action==null || action.equals("/noticeList.do")) {
 			List<NoticeVO> noticeList=dao.selectNoticeList();
 			request.setAttribute("noticeList", noticeList);
-			nextPage="/mypage/mypage_main_6_3.jsp";
+			nextPage="/views/mypage/mypage_main_6_3.jsp";
 			
 		} else if(action.equals("/noticeView.do")) {
 			int noticeNo=Integer.parseInt(request.getParameter("noticeNo"));
 			noticeVO=dao.selectNoticeView(noticeNo);
 			request.setAttribute("notice", noticeVO);
-			nextPage="/mypage/noticeView.jsp";
+			nextPage="/views/mypage/noticeView.jsp";
 		}
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(nextPage);

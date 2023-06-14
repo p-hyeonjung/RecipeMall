@@ -15,14 +15,14 @@ session.getAttribute("log_id");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>recipeMall</title>
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-<script src="${contextPath}/js/jquery-3.6.4.min.js"></script>
-<script src="${contextPath}/js/jquery-ui.min.js"></script>
-<script src="${contextPath}/mypage/js/mypage.js"></script>
-<link rel="stylesheet" href="${contextPath}/mypage/css/mypage.css">
-<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_common.css">
-<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_6.css">
-<link rel="stylesheet" href="${contextPath}/mypage/css/mypage_6_3.css">
-<link rel="shortcut icon" href="${contextPath}/images/smalllogo.png" />
+<script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
+<script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/views/mypage/js/mypage.js"></script>
+<link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage.css">
+<link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_common.css">
+<link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_6.css">
+<link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_6_3.css">
+<link rel="shortcut icon" href="${contextPath}/views/images/smalllogo.png" />
 </head>
 <body>
 	<!--[s]전체 컨텐츠 영역  -->
@@ -30,7 +30,7 @@ session.getAttribute("log_id");
 	<a id="skipNav" href="">본문 바로가기</a>
 	<!--[e]건너뛰기 링크-->
 	<!-- [s]Header 영역 -->
-	<jsp:include page="/fix/mypageHeader.jsp" />
+	<jsp:include page="/views/fix/mypageHeader.jsp" />
 	<!-- [e]Header 영역 -->
 
 	<!-- [s]main_content 영역 -->
@@ -41,7 +41,7 @@ session.getAttribute("log_id");
 				<a href="${contextPath}/mypage/service/main.do?id=${log_id}">마이페이지</a>
 			</h2>
 			<!-- sidebar -->
-			<jsp:include page="/fix/mypageSidebar.jsp" />
+			<jsp:include page="/views/fix/mypageSidebar.jsp" />
 			<!-- sidebar -->
 			<!--[s]공지사항 영역-->
 			<div class="mypage_content">
@@ -84,16 +84,16 @@ session.getAttribute("log_id");
 	<!-- [e]main_content 영역 -->
 
 	<!-- [s]footer 영역 -->
-	<jsp:include page="/fix/footer.jsp" />
+	<jsp:include page="/views/fix/footer.jsp" />
 	<!-- [e]footer 영역 -->
 	<!--로그인 영역-->
-	<jsp:include page="/fix/login.jsp"/>
+	<jsp:include page="/views/fix/login.jsp"/>
 	<!--로그인 영역-->
 	
-	<script src="${contextPath}/js/login.js"></script>
-	<script src="${contextPath}/js/naver_login.js"></script>
-	<script src="${contextPath}/js/kakao_login.js"></script>
-	<link rel="stylesheet" href="${contextPath}/css/login.css">
-	<link rel="stylesheet" href="${contextPath}/js/common.js">
+	<script src="${contextPath}/views/js/login.js"></script>
+	<script src="${contextPath}/views/js/naver_login.js"></script>
+	<script src="${contextPath}/views/js/kakao_login.js"></script>
+	<link rel="stylesheet" href="${contextPath}/views/css/login.css">
+	<link rel="stylesheet" href="${contextPath}/views/js/common.js">
 </body>
 </html>
