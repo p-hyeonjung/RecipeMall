@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* form */
+.frm_insert {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* form table */
+.insert_tbl th, .insert_tbl td {
+    padding: 9px 0;
+    border-bottom: 1px solid #aaa;
+}
+.insert_tbl td {
+    text-align: left;
+}
+.subject {
+    width: 95%;
+    height: 20px;
+    padding-left: 10px;
+}
+.content {
+    width: 95%;
+    height: 300px;
+    padding-left: 10px;
+}
+
+/* 등록 취소 버튼 */
+.sc_btn {
+    margin: 25px auto;
+    width: 100%;
+}
+.sc {
+    height: 30px;
+    text-align: center;
+}
+.sc li{
+    margin-right: 10px;
+    display: inline-block;
+}
+.sc li a {
+    /* border: 1px solid #aaa; */
+    border-radius: 3px;
+    padding: 4px 9px;
+}
+.in {
+    background-color: #2ebaf1;
+    color: white;
+}
+.cancle {
+    background-color: #aaa;
+    color: white;
+}
