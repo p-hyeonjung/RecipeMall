@@ -38,36 +38,36 @@ public class LoginController extends HttpServlet {
 		String action=request.getPathInfo();
 		PrintWriter out=response.getWriter();
 		
-		try {
-			if(action.equals("/login")) {
-				String id=request.getParameter("id");
-				String pw=request.getParameter("pw");
+		if(action.equals("/login")) {
+			String id=request.getParameter("id");
+			String pw=request.getParameter("pass");
+			
+			dao=new UserDAO();
+			boolean result=dao.loginCheck(id,pw);
+			if(result) {
+				//out.print("true");
+				userVO=new UserVO();
+				userVO.setId(id);
+				userVO.setPw(pw);
 				
-				dao=new UserDAO();
-				boolean result=dao.loginCheck(id,pw);
-				if(result) {
-					out.print("true");
-					userVO=new UserVO();
-					userVO.setId(id);
-					userVO.setPw(pw);
-					
-					session=request.getSession();
-					session.setAttribute("isLogon", result); // or result
-					session.setAttribute("log_id", id);
-					System.out.println("세션 유지 시간 : "+session.getMaxInactiveInterval());
-				} else {
-					out.print("false");
-				}
-			} else if(action.equals("/logout")) {
 				session=request.getSession();
-				session.removeAttribute("isLogon");
-				session.removeAttribute("log_id");
-				session.invalidate();
-				response.sendRedirect(ContextPath+"/index.jsp");
+				session.setAttribute("isLogon", result); // or result
+				session.setAttribute("log_id", id);
+				System.out.println("세션 유지 시간 : "+session.getMaxInactiveInterval());
+				response.sendRedirect(ContextPath+"/views/index.jsp");
+			} else {
+				response.sendRedirect(ContextPath+"/views/index.jsp");
 			}
-		} catch (Exception e) {
-			System.out.println("로그인 처리 중 오류 발생");
-			e.printStackTrace();
+		} else if(action.equals("/kakao/oauth")) {
+			
+		} else if(action.equals("/naver/login")) {
+			
+		} else if(action.equals("/logout")) {
+			session=request.getSession(false);
+			session.removeAttribute("isLogon");
+			session.removeAttribute("log_id");
+			session.invalidate();
+			response.sendRedirect(ContextPath+"/views/index.jsp");
 		}
 	}
 }
