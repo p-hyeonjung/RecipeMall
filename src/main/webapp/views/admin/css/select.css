@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+#box {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+#sidebar {
+    box-sizing: border-box;
+    width: 14%;
+    background-color: #c3d2cb;
+}
+#content {
+    box-sizing: border-box;
+    width: 86%;
+    background-color: #f7f7f7;
+}
+.header {
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+}
+.side {
+    border-bottom: 1px solid #66766e;
+    font-size: 1.6em;
+}
+.move {
+    padding: 8px 30px;
+    border-bottom: 1px solid #66766e;
+}
+.manage {
+    padding: 15px;
+}
+.title {}
+.menu {
+    padding: 10px 0 0 20px;
+}
+.main_menu>li {
+    margin-bottom: 5px;
+}
+.sub {
+    padding-left: 18px;
+    margin: 5px 0;
+}
+.sub>li {
+    margin: 5px 0;
+}
+.cont {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #666;
+    text-align: right;
+}
+.home {
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+    padding: 5px 20px;
+    border-radius: 4px;
+}
+.log {
+    margin: 5px 10px 6px 0;
+    padding: 5px 10px;
+    width: 100px;
+    height: 30px;
+    background-color: #208aad;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+.container {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+}
+.new {
+    box-sizing: border-box;
+    padding: 6px;
+}
+.c_title {
+    font-size: 0.9em;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+}
+.s_box {
+
+}
+.new_today {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+}
+.today {
+
+}
+.today li {
+    
+    margin: 3px;
+}
+.new_inquery {
+    position: absolute;
+    left: 15px;
+    width: 48%;
+    margin-right: 10px;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+}
+.inq {
+
+}
+.new_board {
+    position: absolute;
+    right: 15px;
+    width: 48%;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+}
+.post {
+
+}
+
+/* main content div */
+.list {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* 테이블 */
+.tbl {
+    width: 100%;
+    border-top: 3px solid #444;
+    border-bottom: 1px solid #444;
+    border-spacing: 0;
+}
+.tbl>caption {
+    display: none;
+}
+.tbl tr {
+    text-align: center;
+}
+.tbl th, .tbl td {
+    padding: 5px 0;
+    border-bottom: 1px solid #aaa;
+}
+.tbl th:nth-child(1), .tbl td:nth-child(1) {
+    width: 9%;
+}
+.tbl th:nth-child(2), .tbl td:nth-child(2) {
+    width: 70%;
+}
+.tbl th:nth-child(3), .tbl td:nth-child(3) {
+    width: 9%;
+}
+.tbl th:nth-child(4), .tbl td:nth-child(4) {
+    width: 9%;
+}
+.tbl th:nth-child(5), .tbl td:nth-child(5) {
+    width: 3%;
+}
+/* 테이블 */
+
+/* search form */
+.search {
+    margin-bottom: 15px;
+    text-align: right;
+}
+/* search form */
+
+/* faq 등록 수정 삭제 버튼 */
+.cud {
+    margin: 20px 10px;
+    float: right;
+}
+.mi li{
+    float: left;
+    margin-right: 10px;
+}
+.mi li a {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 4px 9px;
+}
+
+/* paging */
+.paging {
+    margin-top: 15px;
+    clear: both;
+    text-align: center;
+}
+/* paging */
