@@ -42,7 +42,7 @@ public class UserController extends HttpServlet {
 		
 		
 		if(action.equals("/joinForm.do")) {
-			nextPage="/join.jsp";
+			nextPage="/views/join.jsp";
 		} else if(action.equals("/idExisted.do")) {
 			String id=request.getParameter("id");
 			boolean result=dao.idExisted(id);
@@ -73,13 +73,13 @@ public class UserController extends HttpServlet {
 			out.print("<script>");
 			out.print("alert('회원가입이 완료되었습니다.');");
 			out.print("</script>");
-			nextPage="/index.jsp";
+			nextPage="/views/index.jsp";
 		
 		} else if(action.equals("/userInfo.do")) {
 			String id=request.getParameter("id");
 			userVO=dao.userInfo(id);
 			request.setAttribute("user", userVO);
-			nextPage="/mypage/mypage_user_info.jsp";
+			nextPage="/views/mypage/mypage_user_info.jsp";
 			
 		} else if(action.equals("/updateUser.do")) {
 			String id=request.getParameter("id");
@@ -104,7 +104,7 @@ public class UserController extends HttpServlet {
 			session.removeAttribute("isLogon");
 			session.removeAttribute("log_id");
 			session.invalidate();
-			nextPage="/index.jsp";
+			nextPage="/views/index.jsp";
 		} else if(action.equals("/findID.do")) {
 			
 		} else if(action.equals("/findPW.do")) {

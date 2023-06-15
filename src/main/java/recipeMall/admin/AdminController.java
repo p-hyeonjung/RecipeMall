@@ -1,7 +1,9 @@
 package recipeMall.admin;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import recipeMall.user.UserDAO;
+import recipeMall.user.UserVO;
 
 @WebServlet("/admin/*")
 public class AdminController extends HttpServlet {
@@ -36,12 +41,13 @@ public class AdminController extends HttpServlet {
 		ServletContext context=getServletContext();
 		String contextPath=context.getContextPath();
 		String action=request.getPathInfo();
-		System.out.println("action : "+action);
+		String nextPage="";
+		
 		adminVO=new AdminVO();
 		adminDAO=new AdminDAO();
 		
 		if(action.equals("/") || action.equals("/admLoginForm.do")) {
-			response.sendRedirect(contextPath+"/views/admin/adminLogin.jsp");
+			nextPage="/views/admin/adminLogin.jsp";
 		} else if(action.equals("/login.do")) {
 			String id=request.getParameter("adminId");
 			String pw=request.getParameter("adminPw");
@@ -51,15 +57,27 @@ public class AdminController extends HttpServlet {
 				session=request.getSession();
 				session.setAttribute("isLogon", result);
 				session.setAttribute("log_adminId", id);
-				response.sendRedirect(contextPath+"/views/admin/main.jsp");
+				nextPage="/views/admin/main.jsp";
 			} else {
 				response.sendRedirect("/admLoginForm.do");
 			}
 		} else if(action.equals("/logout.do")) {
 			session.removeAttribute("isLogon");
 			session.removeAttribute("log_adminId");
-			response.sendRedirect("/admin/admLoginForm.do");
+			nextPage="/admin/admLoginForm.do";
 		}
+		
+		
+		if(action.equals("/userList.do")) {
+			UserDAO userDAO=new UserDAO();
+			List<UserVO> userList=userDAO.selectAllUsers();
+			request.setAttribute("userList", userList);
+			nextPage="/views/admin/user.jsp";
+		}
+		 
+		
+		RequestDispatcher dispatcher=request.getRequestDispatcher(nextPage);
+		dispatcher.forward(request, response);
 	}
 
 }

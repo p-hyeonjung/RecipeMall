@@ -1,8 +1,11 @@
 package recipeMall.user;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -112,6 +115,44 @@ public class UserDAO {
 			System.out.println("회원 등록 중 오류 발생!!");
 			e.printStackTrace();
 		}
+	}
+	
+	// 모든 회원 정보 조회
+	public List<UserVO> selectAllUsers() {
+		List<UserVO> userList=new ArrayList<>();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select * from usertbl";
+			pstmt=conn.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			while (rs.next()) {
+				String id=rs.getNString("id");
+				String pw=rs.getNString("pw");
+				String name=rs.getNString("name");
+				String nikName=rs.getNString("nikName");
+				String phone=rs.getNString("phone");
+				String userAddr=rs.getNString("userAddr");
+				String userAddr2=rs.getNString("userAddr2");
+				Date joinDate=rs.getDate("joinDate");
+				String rcmd;
+				if(rs.getInt("hasRcmd")==1) {	// 추천인 있을 경우
+					rcmd=rs.getString("rcmd");
+					UserVO userVO=new UserVO(id, pw, name, nikName, rcmd, phone, userAddr, userAddr2);
+				}
+				// 추천인 없을 경우
+				UserVO userVO=new UserVO(id, pw, name, nikName, phone, userAddr, userAddr2);
+				userVO.setJoinDate(joinDate);
+				
+				userList.add(userVO);
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("모든 회원 정보 조회 중 오류 발생!!");
+			e.printStackTrace();
+		}
+		return userList;
 	}
 	
 	// 회원 정보 조회

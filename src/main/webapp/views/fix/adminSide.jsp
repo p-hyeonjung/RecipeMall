@@ -13,7 +13,7 @@
                <div class="title">사이트 관리</div>
                <div class="menu">
                    <ul class="main_menu">
-					<li><a href="${contextPath}/views/admin/user.jsp">회원 관리</a></li>
+					<li><a href="${contextPath}/admin/userList.do">회원 관리</a></li>
 					<li><a href="${contextPath}/views/admin/product.jsp">상품 관리</a></li>
 					<li><a href="${contextPath}/views/admin/order.jsp">주문 관리</a></li>
 					<li><a href="${contextPath}/views/admin/shipping.jsp">배송 관리</a></li>
