@@ -7,6 +7,19 @@ session.getAttribute("isLogon");
 session.getAttribute("log_id");
 %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="noticeList" value="${noticeMap.noticeList}"/>
+<c:set var="totArticles" value="${noticeMap.totArticles}"/>
+<c:set var="section" value="${noticeMap.section}"/>
+<c:set var="pageNum" value="${noticeMap.pageNum}"/>
+<c:set var="ep" value="${(totArticles mod 100)}"/>
+<c:choose>
+	<c:when test="${section > totArticles/100}">
+		<c:set var="endPage" value="${(ep%10)==0?ep/10:ep/10+1}"/>
+	</c:when>
+	<c:otherwise>
+		<c:set var="endPage" value="10"/>
+	</c:otherwise>
+</c:choose>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,7 +30,9 @@ session.getAttribute("log_id");
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
 <script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
 <script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/views/js/common.js"></script>
 <script src="${contextPath}/views/mypage/js/mypage.js"></script>
+
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage.css">
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_common.css">
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_6.css">
@@ -67,21 +82,72 @@ session.getAttribute("log_id");
 							<div class="title">제목</div>
 							<div class="date">작성일</div>
 						</div>
-					<c:forEach var="notice" items="${noticeList}">
-						<div>
-							<div class="num">${notice.noticeNo}</div>
-							<div class="title">
-								<a href="${contextPath}/notice/noticeView.do?noticeNo=${notice.noticeNo}">${notice.noticeTitle}</a>
-							</div>
-							<div class="date">${notice.noticeDate}</div>
-						</div>
-					</c:forEach>
+						<c:choose>
+							<c:when test="${empty noticeList}">
+								등록된 공지사항이 없습니다.
+							</c:when>
+							<c:when test="${!empty noticeList}">
+								<c:forEach var="notice" items="${noticeList}">
+									<div>
+										<div class="num">${notice.noticeNo}</div>
+										<div class="title">
+											<a href="${contextPath}/notice/noticeView.do?noticeNo=${notice.noticeNo}">${notice.noticeTitle}</a>
+										</div>
+										<div class="date">${notice.noticeDate}</div>
+									</div>
+								</c:forEach>
+							</c:when>
+						</c:choose>
+					</div>
+					<div class="page">
+						<c:set var="lastPage" value="${(totArticles mod 100)}"/>
+						<c:if test="${totArticles != 0}">
+							<c:choose>
+								<c:when test="${totArticles > 100}">
+									<c:forEach var="page" begin="1" end="${endPage}" step="1">
+										<c:if test="${section > 1 && page == 1}">
+											<!-- <a href="${contextPath}/board/listArticles.do?section=${section-1}&pageNum=10"> prev</a> -->
+											<a href="${contextPath}/notice/noticeView.do?section=${section-1}&pageNum=${currentPage}"> prev</a>
+										</c:if>
+										<c:choose>
+											<c:when test="${pageNum==page}">
+												<a class="selPage" href="${contextPath}/notice/noticeView.do?section=${section}&pageNum=${page}">${(section-1)*10+page}</a>
+												<c:set var="currentPage" value="${pageNum}" scope="application"/>
+											</c:when>
+											<c:otherwise>
+												<a class="noLine" href="${contextPath}/notice/noticeView.do?section=${section}&pageNum=${page}">${(section-1)*10+page}</a>
+											</c:otherwise>
+										</c:choose>
+										<c:if test="${page == 10 && totArticles/100>section}">
+											<!-- <a href="${contextPath}/board/listArticles.do?section=${section+1}&pageNum=1"> next</a> -->
+											<a href="${contextPath}/notice/noticeView.do?section=${section+1}&pageNum=${currentPage}"> next</a>
+										</c:if>
+									</c:forEach>
+								</c:when>
+								<c:when test="${totArticles <= 100}">
+									<c:if test="${(totArticles mod 10) == 0}">
+										<c:set var="totArticles" value="${totArticles-1}"/>
+									</c:if>
+									<c:forEach var="page" begin="1" end="${totArticles/10+1}" step="1">
+										<c:choose>
+											<c:when test="${page == pageNum}">
+												<a class="selPage" href="${contextPath}/notice/noticeView.do?section=${section}&pageNum=${page}">${page}</a>
+											</c:when>
+											<c:otherwise>
+												<a class="noLine" href="${contextPath}/notice/noticeView.do?section=${section}&pageNum=${page}">${page}</a>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+							</c:choose>
+						</c:if>
+					</div>
 				</div>
+				<!--[e]공지사항 영역-->
 			</div>
-			<!--[e]공지사항 영역-->
-		</div>
 		<!-- [s]content_mypage_e -->
-	</div>
+		</div>
+	</div>	
 	<!-- [e]main_content 영역 -->
 
 	<!-- [s]footer 영역 -->

@@ -111,3 +111,17 @@ a:hover, a:focus {
 .status {
     display: none;
 }
+
+/* 페이징 */
+.page {
+	text-align: center;
+	margin-top: 10px;
+}
+.selPage {
+	color: blue;
+	font-weight: bold;
+}
+.noLine {
+	color: black;
+	font-weight: normal;
+}

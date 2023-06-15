@@ -17,7 +17,9 @@ session.getAttribute("log_id");
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
 <script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
 <script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/views/js/common.js"></script>
 <script src="${contextPath}/views/mypage/js/mypage.js"></script>
+
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage.css">
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_common.css">
 <link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage_6.css">
