@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -54,13 +55,42 @@ public class ServiceDAO {
 		return faqList;
 	}
 	
-	public List<InqueryVO> userInqueryList(String id) {
-		List<InqueryVO> inqueryList=new ArrayList<InqueryVO>();
+	// 유저 일대일 문의 전체 개수
+	public int selectToInqueries(String id) {
+		int totCount=0;
 		try {
 			conn=dataFactory.getConnection();
-			String query="select inqNo,id,inqTitle,hasRe,inqCate,inqDate from inquerytbl where id=? order by inqDate Desc";
+			String query="select count(*) from inquerytbl where id=?";
 			pstmt=conn.prepareStatement(query);
 			pstmt.setString(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()) {	// 자료가 있을 경우
+				totCount=rs.getInt(1);	// 첫 번째 컬럼 값				
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저의 일대일 문의 전체 개수 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return totCount;
+	}
+	
+	public List<InqueryVO> seleteAllUserInquery(Map<String, Integer> pagingMap, String id) {
+		List<InqueryVO> inqueryList=new ArrayList<InqueryVO>();
+		int section=pagingMap.get("section");	// 1
+		int pageNum=pagingMap.get("pageNum");	// 1
+		try {
+			conn=dataFactory.getConnection();
+			String query="SELECT * FROM (select ROWNUM AS recNum,inqNo,id,inqTitle,hasRe,inqCate,inqDate from inquerytbl where id=? order by inqDate Desc) "+
+						 "WHERE recNum BETWEEN (?-1)*100+(?-1)*10+1 AND (?-1)*100+?*10";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, section);
+			pstmt.setInt(3, pageNum);
+			pstmt.setInt(4, section);
+			pstmt.setInt(5, pageNum);
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
 				int inqNo=rs.getInt("inqNo");
@@ -79,11 +109,12 @@ public class ServiceDAO {
 				
 				inqueryList.add(inqueryVO);
 			}
+			
 			rs.close();
 			pstmt.close();
 			conn.close();
 		} catch (Exception e) {
-			System.out.println("유저 일대일 문의 목록 조회 중 오류 발생");
+			System.out.println("유저 일대일 문의 목록 + 페이징 조회 중 오류 발생");
 			e.printStackTrace();
 		}
 		return inqueryList;
