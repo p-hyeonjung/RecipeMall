@@ -47,12 +47,6 @@
 							</tbody>
 						</table>
 					</div>
-					<dl class="prevNext">
-						<dt class="prev">이전글</dt>
-						<dd class="listx"><a href="${contextPath}/admin/noticeView.do?noticeNo=${notice.noticeNo-1}">이전글이 없습니다.</a></dd>
-						<dt class="next">다음글</dt>
-						<dd class="listx"><a href="${contextPath}/admin/noticeView.do?noticeNo=${notice.noticeNo+1}" onclick="fnDetail('');" >다음글이 없습니다.</a></dd>
-					</dl>
 					<div class="btn_a">
 						<button type="button" class="btn list_btn" onclick="location.href='${contextPath}/admin/noticeList.do'">목록</button>
 						<button type="button" class="btn update_btn">
