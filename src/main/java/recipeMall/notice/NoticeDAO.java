@@ -77,7 +77,7 @@ public class NoticeDAO {
 			pstmt.close();
 			conn.close();
 		} catch (Exception e) {
-			System.out.println("전체 글 개수 조회 중 오류 발생");
+			System.out.println("전체 공지사항 개수 조회 중 오류 발생");
 			e.printStackTrace();
 		}
 		return totCount;
@@ -96,6 +96,7 @@ public class NoticeDAO {
 			rs.next();
 			
 			noticeVO.setNoticeNo(rs.getInt("noticeNo"));
+			noticeVO.setAdminId(rs.getString("adminId"));
 			noticeVO.setNoticeTitle(rs.getString("noticeTitle"));
 			noticeVO.setNoticeContent(rs.getString("noticeContent"));
 			noticeVO.setNoticeDate(rs.getDate("noticeDate"));
@@ -108,5 +109,69 @@ public class NoticeDAO {
 			e.printStackTrace();
 		}
 		return noticeVO;
+	}
+	
+	// 공지사항 추가
+	public void addNotice(NoticeVO noticeVO) {
+		String adminId=noticeVO.getAdminId();
+		String noticeTitle=noticeVO.getNoticeTitle();
+		String noticeContent=noticeVO.getNoticeContent();
+		try {
+			conn=dataFactory.getConnection();
+			String query="insert into noticetbl(noticeNo, adminId, noticeTitle, noticeContent) values(noticeNo_seq.nextval, ?,?,?)";
+			System.out.println(query);
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, adminId);
+			pstmt.setString(2, noticeTitle);
+			pstmt.setString(3, noticeContent);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("공지사항 등록 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	// 공지사항 수정
+	public void updateNotice(NoticeVO noticeVO) {
+		int noticeNo=noticeVO.getNoticeNo();
+		String adminId=noticeVO.getAdminId();
+		String title=noticeVO.getNoticeTitle();
+		String content=noticeVO.getNoticeContent();
+		try {
+			conn=dataFactory.getConnection();
+			String query="update noticetbl set adminId=?, noticeTitle=?, noticeContent=? where noticeNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, adminId);
+			pstmt.setString(2, title);
+			pstmt.setString(3, content);
+			pstmt.setInt(4, noticeNo);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("공지사항 수정 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	// 공지사항 삭제
+	public void deleteNotice(int noticeNo) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="delete from noticetbl where noticeNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, noticeNo);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("공지사항 삭제 중 오류 발생");
+			e.printStackTrace();
+		}
 	}
 }

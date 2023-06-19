@@ -44,7 +44,9 @@ public class NoticeController extends HttpServlet {
 			if(action==null || action.equals("/noticeList.do")) {
 				// 페이지, 섹션 최초 요청시 null값
 				String _section=request.getParameter("section");
+				System.out.println("section: "+_section);
 				String _pageNum=request.getParameter("pageNum");
+				System.out.println("pageNum: "+_pageNum);
 				// _section=null일 경우 1반환_초기값 1 세팅. 10->11로 페이지 넘어가면 2를 받음
 				int section=Integer.parseInt((_section == null)?"1":_section);
 				// _pageNum=null일 경우 1반환_초기값 1 세팅. 2페이지 누르면 2를 받음
@@ -61,14 +63,14 @@ public class NoticeController extends HttpServlet {
 				noticeMap.put("pageNum", pageNum);
 				
 				request.setAttribute("noticeMap", noticeMap);
-				nextPage="/views/mypage/mypage_main_6_3.jsp";
+				nextPage="/views/mypage/noticeList.jsp";
 				
 			} else if(action.equals("/noticeView.do")) {
 				int noticeNo=Integer.parseInt(request.getParameter("noticeNo"));
 				noticeVO=noticeService.selectNoticeView(noticeNo);
 				request.setAttribute("notice", noticeVO);
 				nextPage="/views/mypage/noticeView.jsp";
-			}
+			} 
 			
 		} catch (Exception e) {
 			System.out.println("요청 처리 중 오류 발생");

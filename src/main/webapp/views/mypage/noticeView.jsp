@@ -40,7 +40,7 @@ session.getAttribute("log_id");
 		<!--[s]content_mypage_e -->
 		<div id="mypage">
 			<h2 class="mypage_title">
-				<a href="${contextPath}/mypage/service/main.do?id=${log_id}">마이페이지</a>
+				<a href="${contextPath}/service/main.do?id=${log_id}">마이페이지</a>
 			</h2>
 			<!-- sidebar -->
 			<jsp:include page="/views/fix/mypageSidebar.jsp" />
@@ -70,14 +70,13 @@ session.getAttribute("log_id");
 				</div>
 				<dl class="prevNext">
 					<dt class="prev">이전글</dt>
-					<dd class="listx"><a href="">이전글이 없습니다.</a></dd>
+					<dd class="listx"><a href="${contextPath}/notice/noticeView.do?noticeNo=${notice.noticeNo-1}">이전글이 없습니다.</a></dd>
 					<dt class="next">다음글</dt>
-					<dd class="listx"><a href="" onclick="fnDetail('');" >다음글이 없습니다.</a></dd>
+					<dd class="listx"><a href="${contextPath}/notice/noticeView.do?noticeNo=${notice.noticeNo+1}" onclick="fnDetail('');" >다음글이 없습니다.</a></dd>
 				</dl>
 				<div class="btn_a">
 					<button type="button" class="btn_c list_btn" onclick="location.href='${contextPath}/mypage/notice/noticeList.do'">목록</button>
 				</div>
-			</div>
 			</div>
 			<!--[e]공지사항 영역-->
 		</div>

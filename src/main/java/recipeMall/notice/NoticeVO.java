@@ -13,16 +13,10 @@ public class NoticeVO {
 		
 	}
 
-	public NoticeVO(int noticeNo, String adminId, String noticeTitle, String noticeContent) {
-		this.noticeNo = noticeNo;
-		this.adminId = adminId;
-		this.noticeTitle = noticeTitle;
-		this.noticeContent = noticeContent;
-	}
-	
-	public NoticeVO(int noticeNo, String adminId, String noticeTitle, String noticeContent, Date noticeDate) {
-		this(noticeNo, adminId, noticeTitle, noticeContent);
-		this.noticeDate=noticeDate;
+	public NoticeVO(String adminId, String noticeTitle, String noticeContent) {
+		this.adminId=adminId;
+		this.noticeTitle=noticeTitle;
+		this.noticeContent=noticeContent;
 	}
 
 	public int getNoticeNo() {

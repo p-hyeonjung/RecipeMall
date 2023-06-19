@@ -26,24 +26,25 @@
         <jsp:include page="/views/fix/adminSide.jsp"/>
             <!-- main content -->
 			<div class="container">
-                <h2>자주하는 질문 관리 > 등록</h2>
+                <h2>자주하는 질문 관리 > 수정</h2>
 				<div class="list">
-					<form id="frm_notice" action="${contextPath}/admin/addNotice.do" method="post">
+					<form id="frm_notice" action="${contextPath}/admin/updateNotice.do" method="post">
 						<input type="hidden" name="adminId" id="" value="${log_adminId}">
+						<input type="hidden" name="noticeNo" value="${notice.noticeNo}">
 						<table class="notice_in_tbl">
 							<tbody>
 								<tr>
 									<th>제목</th>
-									<td><input type="text" name="noticeTitle"></td>
+									<td><input type="text" name="noticeTitle" value="${notice.noticeTitle}"></td>
 								</tr>
 								<tr>
 									<th>내용</th>
-									<td><textarea from="frm_notice" name="noticeContent"></textarea></td>
+									<td><textarea from="frm_notice" name="noticeContent">${notice.noticeContent}</textarea></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="form_btn">
-							<input type="submit" value="등록">
+							<input type="submit" value="수정">
 							<input type="button" value="취소" onclick="history.back(-1);">
 						</div>
 					</form>

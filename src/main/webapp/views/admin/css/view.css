@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+.notice_v {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.notice_d {
+	width: 100%;
+}
+.notice_t {
+	margin: 20px 0;
+    padding-bottom: 8px;
+}
+.notice_v_tbl {
+	width: 100%;
+	margin-top: 10px;
+	border-top: 3px solid #666;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+table caption {
+	display: none;
+}
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #888;
+}
+.n_v_tr1 th {
+    width: 13%;
+}
+.n_v_tr1 td {
+    width: 43%;
+}
+.notice_c {
+    width: 100%;
+    padding: 10px 10px;
+}
+.min {
+    width: 100%;
+    min-height: 300px;
+    white-space: pre-line;
+    text-align: left;
+}
+.prevNext {
+    overflow: hidden;
+    position: relative;
+    padding-left: 100px;
+    border-bottom: 1px solid #ddd;
+}
+.prevNext dt.prev, .prevNext dt.prev + dd.listx {
+    border-bottom: 1px solid #c9c9c9;
+}
+.prevNext dt {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    padding: 10px 0;
+    color: #555;
+    text-align: center;
+    background-color: #fbfbfb;
+}
+.prevNext dd {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+}
+.btn_a {
+	margin: 20px;
+	text-align: center;
+}
+.btn {
+	width: 80px;
+	height: 30px;
+}

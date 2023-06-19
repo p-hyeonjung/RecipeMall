@@ -26,4 +26,16 @@ public class NoticeService {
 	public NoticeVO selectNoticeView(int noticeNo) {
 		return noticeDAO.selectNoticeView(noticeNo);
 	}
+	
+	public void addNotice(NoticeVO noticeVO) {
+		noticeDAO.addNotice(noticeVO);
+	}
+	
+	public void updateNotice(NoticeVO noticeVO) {
+		noticeDAO.updateNotice(noticeVO);
+	}
+	
+	public void deleteNotice(int noticeNo) {
+		noticeDAO.deleteNotice(noticeNo);
+	}
 }
