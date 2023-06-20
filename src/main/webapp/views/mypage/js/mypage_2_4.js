@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     function updateTotalPrice() {
         total_goods_price = 0;
-        $('input[name=proudct_chk]:checked').each(function() {
+        $('input[name=prodName]:checked').each(function() {
             var product_count = parseInt($(this).closest('tr').find('.count').val());
             var product_price = parseInt($(this).closest('tr').find('.product_sangpum_price').text());
             total_goods_price += product_count * product_price;
@@ -17,26 +17,26 @@ $(document).ready(function() {
     }
       
     $('#product_chk_all').click(function() {
-        $('input[name=proudct_chk]').prop('checked', this.checked);
+        $('input[name=prodName]').prop('checked', this.checked);
         updateTotalPrice();
     });
 
-    $('input[name=proudct_chk]').change(function() {
+    $('input[name=prodName]').change(function() {
         updateTotalPrice();
     });
 
     function updateProductChooseCount() {
-        var count = $('input[name=proudct_chk]:checked').length;
+        var count = $('input[name=prodName]:checked').length;
         $('.product_choose_count').text(count);
     }
 
     $('#product_chk_all').click(function() {
-        $('input[name=proudct_chk]').prop('checked', this.checked);
+        $('input[name=prodName]').prop('checked', this.checked);
         updateProductChooseCount();
         updateTotalPrice();
     });
 
-    $('input[name=proudct_chk]').change(function() {
+    $('input[name=prodName]').change(function() {
         updateProductChooseCount();
         updateTotalPrice();
     });
