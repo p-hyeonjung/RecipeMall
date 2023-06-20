@@ -20,9 +20,9 @@
 <body>
     <div id="box">
     <c:choose>
-    	<c:when test="${isLogon == true}">
+    	<c:when test="${isAdmLogon == true}">
 	        <jsp:include page="/views/fix/adminSide.jsp"/>
-				<div class="container">
+				<div class="container main_c">
 					<div class="new_today new">
 						<div class="c_title">
 							오늘 올라온 것
@@ -35,15 +35,15 @@
 							</ul>
 						</div>
 					</div>
-					<div class="new_inquery new">
+					<div class="new_review new">
 						<div class="c_title">
-							문의/리뷰
+							리뷰
 						</div>
 						<div class="s_box inq">
 							<ul>
-								<li>문의1</li>
 								<li>리뷰1</li>
-								<li>문의2</li>
+								<li>리뷰2</li>
+								<li>리뷰3</li>
 							</ul>
 						</div>
 					</div>
@@ -59,6 +59,29 @@
 								<li>댓글2</li>
 								<li>글3</li>
 								<li>댓글3</li>
+							</ul>
+						</div>
+					</div>
+					<div class="new_inquery new">
+						<div class="c_title">
+							문의
+						</div>
+						<div class="s_box inq">
+							<ul>
+							<c:set var="inqList" value="${indexMap.inqList}"/>
+							<c:forEach var="inquery" items="${inqList}">
+								<li>
+									<div class="inql m_list">
+										<div class="inq_title">
+											<a href="${contextPath}/admin/userInqAnswer.do?inqNo=${inquery.inqNo}">${inquery.inqTitle}</a>
+										</div>
+										<div class="inq_info">
+											<span>${inquery.id}</span>
+											<span>${inquery.inqDate}</span>
+										</div>
+									</div>
+								</li>
+							</c:forEach>
 							</ul>
 						</div>
 					</div>

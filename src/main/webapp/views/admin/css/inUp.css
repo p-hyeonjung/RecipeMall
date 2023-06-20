@@ -25,6 +25,46 @@
     padding-left: 10px;
 }
 
+/* notice Form */
+#frm_notice {
+    width: 90%;
+    margin: 0 auto;
+}
+.notice_in_tbl {
+    width: 100%;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+.notice_in_tbl tr {
+    height: 20px;
+}
+.notice_in_tbl th {
+    width: 10%;
+}
+.notice_in_tbl td {
+    width: 90%;
+    text-align: center;
+}
+.notice_in_tbl th, .notice_in_tbl td {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+.notice_in_tbl input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 35px;
+    padding: 5px 10px;
+    font-size: 1.3em;
+}
+.notice_in_tbl textarea {
+    box-sizing: border-box;
+    width: 90%;
+    height: 280px;
+    padding: 10px;
+    font-size: 1.2em;
+    resize: none;
+}
+
 /* 등록 취소 버튼 */
 .sc_btn {
     margin: 25px auto;

@@ -20,7 +20,7 @@
 <body>
     <div id="box">
     <c:choose>
-    	<c:when test="${isLogon == true}">
+    	<c:when test="${isAdmLogon == true}">
         <jsp:include page="/views/fix/adminSide.jsp"/>
             <!-- main content -->
 			<div class="container">
@@ -44,79 +44,22 @@
                                 <th>번호</th>
                                 <th>아이디</th>
                                 <th>닉네임</th>
+                                <th>주소</th>
+                                <th></th>
                                 <th>가입일</th>
                                 <th><input type="checkbox" name="ud_check" id=""></th>
                             </tr>
+                    <c:forEach var="user" items="${userList}">
                             <tr>
-                                <td>4</td>
-                                <td><a href="">질문4</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
+                                <td></td>
+                                <td><a href="">${user.id}</a></td>
+                                <td>${user.nikName}</td>
+                                <td>${user.userAddr}</td>
+                                <td>${user.userAddr}</td>
+                                <td>${user.joinDate }</td>
                                 <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><a href="">질문1</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><a href="">질문4</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><a href="">질문1</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
+                            </tr>                    
+                    </c:forEach>
                         </tbody>
                     </table>
                     <div class="cud">

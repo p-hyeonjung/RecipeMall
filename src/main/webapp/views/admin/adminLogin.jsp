@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div id="content">
-        <div id="box">
+        <div id="login_box">
             <div class="logo_img">
                 <img src="${contextPath}/views/images/recipemall-logo-origin.svg" alt="logo">
             </div>
