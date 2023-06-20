@@ -8,9 +8,9 @@
             <!--[s]메인메뉴 영역 -->
             <div>
                 <ul class="mainmenu flex_area_rsb">
-                    <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/index.jsp'"></li>
-                    <li><a href="${contextPath}/index.jsp" class="a_community">커뮤니티</a></li>
-                    <li><a href="${contextPath}/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+                    <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/views/index.jsp'"></li>
+                    <li><a href="${contextPath}/views/index.jsp" class="a_community">커뮤니티</a></li>
+                    <li><a href="${contextPath}/views/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
                 </ul>
             </div>
             <!--[e]메인메뉴 영역 -->
@@ -34,7 +34,7 @@
 					<c:if test="${isLogon == true}">
 						<li><a href="">${log_id}님</a></li>
 	                    <li><a href="${contextPath}/loginProc/logout" class="logout">로그아웃</a></li>
-	                    <li><a href="${contextPath}/mypage/service/main.do?id=${log_id}" class="">마이페이지</a></li>
+	                    <li><a href="${contextPath}/service/main.do?id=${log_id}" class="">마이페이지</a></li>
 					</c:if>
 					<c:if test="${isLogon != true}">
 	                    <li><a href="" class="login">로그인</a></li>
@@ -49,7 +49,7 @@
             <!--[e]서브 영역 -->
             <!--[s]글쓰기 하위메뉴 영역 -->
             <div class="btn_write_sub" hidden>
-                <a class="a_btn_write" href="${contextPath}/community/insert.html">
+                <a class="a_btn_write" href="${contextPath}/recipe/insert.do">
                     <div class="btn_write_icon">
                         <i class="fa-solid fa-book"></i>
                     </div>
@@ -58,7 +58,7 @@
                         <div class="btn_write_c">나만의 레시피를 공유해보세요.</div>
                     </div>
                 </a>
-                <a class="a_btn_write" href="community/notice_write.html">
+                <a class="a_btn_write" href="${contextPath}/board/notice_write.do">
                     <div class="btn_write_icon">
                         <i class="fa-solid fa-clipboard-list"></i>
                     </div>
@@ -89,9 +89,9 @@
             <!--[s]카테고리 영역 -->
             <div class="flex_area_rsb">
                 <ul class="category">
-                    <li><a href="${contextPath}/community/recipe.html" class="a_community">레시피</a></li>
-                    <li><a href="${contextPath}/community/best.html" class="a_community">베스트</a></li>
-                    <li><a href="${contextPath}/community/free_board.html" class="a_community">자유게시판</a></li>
+                    <li><a href="${contextPath}/recipe/recipe.do" class="a_community">레시피</a></li>
+                    <li><a href="${contextPath}/recipe/best.do" class="a_community">베스트</a></li>
+                    <li><a href="${contextPath}/recipe/free_board.do" class="a_community">자유게시판</a></li>
                 </ul>
             </div>
             <!--[e]카테고리 영역 -->

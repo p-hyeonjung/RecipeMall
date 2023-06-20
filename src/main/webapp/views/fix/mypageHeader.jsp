@@ -9,9 +9,9 @@
 	    <!--[s]메인메뉴 영역 -->
 	    <div>
 	        <ul class="mainmenu flex_area_rsb">
-	            <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/index.jsp'"></li>
-	            <li><a href="${contextPath}/index.html" class="a_community">커뮤니티</a></li>
-	            <li><a href="${contextPath}/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+	            <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/views/index.jsp'"></li>
+	            <li><a href="${contextPath}/views/index.html" class="a_community">커뮤니티</a></li>
+	            <li><a href="${contextPath}/views/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
 	        </ul>
 	    </div>
 	    <!--[e]메인메뉴 영역 -->
@@ -33,17 +33,19 @@
 	            <!-- <li><a href="#"><i class="fa-sharp fa-regular fa-cart-shopping"></i></a></li> -->
 	            <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
 			<c:if test="${isLogon == true}">
-				<li><a href="${contextPath}/mypage/mypage.html">${log_id}님</a></li>
+				<li><a href="${contextPath}/views/mypage/mypage.jsp">${log_id}님</a></li>
                 <li><a href="${contextPath}/loginProc/logout" class="logout">로그아웃</a></li>
+				<li>
+					<button class="btn_write">글쓰기
+						<i class="fa-solid fa-chevron-down"></i>
+					</button>
+				</li>
 			</c:if>
 			<c:if test="${isLogon != true}">
                 <li><a href="#" class="login">로그인</a></li>
                 <li><a href="${contextPath}/user/joinForm.do">회원가입</a></li>
 			</c:if>
 	            <!-- <li><a href="#">고객센터</a></li> -->
-	            <li><button class="btn_write">글쓰기
-	                    <i class="fa-solid fa-chevron-down"></i>
-	                </button></li>
 	        </ul>
 	    </div>
 	    <!--[e]서브 영역 -->
@@ -88,9 +90,9 @@
 	    <!--[s]카테고리 영역 -->
 	    <div class="flex_area_rsb">
 	        <ul class="category">
-	            <li><a href="../community/recipe.html" class="a_community">레시피</a></li>
-	            <li><a href="../community/best.html" class="a_community">베스트</a></li>
-	            <li><a href="../community/free_board.html" class="a_community">자유게시판</a></li>
+	            <li><a href="${contextPath}/views/community/recipe.html" class="a_community">레시피</a></li>
+	            <li><a href="${contextPath}/views/community/best.html" class="a_community">베스트</a></li>
+	            <li><a href="${contextPath}/views/community/free_board.html" class="a_community">자유게시판</a></li>
 	        </ul>
 	    </div>
 	    <!--[e]카테고리 영역 -->

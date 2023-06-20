@@ -5,34 +5,6 @@ function close_div() {
 
 }
 
-// 로그인
-function fn_loginCheck() {
-	let _id=$('#id').val();
-	let _pw=$('#pass').val();
-	if(_id == "" || _pw == "") {
-			alert('아이디 혹은 비밀번호를 입력해주세요.');
-			return;
-	} else {
-		$.ajax({
-			type: "post",
-			async: true,
-			dataType: "text",
-			url: "${contextPath}/loginProc/login",
-			data: {id:_id, pw:_pw},
-			success: function(data, textStatus) {
-				if(data=="true") {
-					alert("로그인 성공");
-				} else {
-					$('.login_check').html('<p>아이디 혹은 비밀번호를 잘못 입력했습니다.</p>').css('color','red');
-				}
-			},
-			error: function(data, textStatus, error) {
-				alert('오류가 발생했습니다 => '+error);
-			}
-		});
-	}
-}
-
 $(".top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;

@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 request.setCharacterEncoding("utf-8");
-session = request.getSession(false);
 session.getAttribute("isLogon");
 session.getAttribute("log_id");
 %>
@@ -16,49 +15,24 @@ session.getAttribute("log_id");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>recipeMall</title>
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-<script src="${contextPath}/js/jquery-3.6.4.min.js"></script>
-<script src="${contextPath}/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
+<script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+
+<!-- 간편 로그인 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js"
+  integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 
 <!-- bx슬라이더 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-<link rel="stylesheet" href="${contextPath}/css/common.css">
-<link rel="stylesheet" href="${contextPath}/css/index.css">
-<link rel="shortcut icon" href="${contextPath}/images/smalllogo.png" />
+<link rel="stylesheet" href="${contextPath}/views/css/common.css">
+<link rel="stylesheet" href="${contextPath}/views/css/index.css">
+<link rel="shortcut icon" href="${contextPath}/views/images/smalllogo.png">
 </head>
-<script type="text/javascript">
-function fn_loginCheck() {
-	let _id = $('#id').val();
-	let _pw = $('#pass').val();
-	if (_id == "" || _pw == "") {
-		alert('아이디 혹은 비밀번호를 입력해주세요.');
-		return;
-	} else {
-		$.ajax({
-			type : "post",
-			async : true,
-			dataType : "text",
-			url : "${contextPath}/loginProc/login",
-			data : {
-				id : _id,
-				pw : _pw
-			},
-			success : function(data, textStatus) {
-				if (data == "true") {
-					alert("로그인 성공");
-				} else {
-					$('.login_check').html('<p>아이디 혹은 비밀번호를 잘못 입력했습니다.</p>').css('color', 'red');
-				}
-			},
-			error : function(data, textStatus, error) {
-				alert('오류가 발생했습니다 => ' + error);
-			}
-		});
-	}
-}
-</script>
 <body>
 	<!--[s]전체 컨텐츠 영역  -->
 	<!--[s]건너뛰기 링크-->
@@ -78,7 +52,7 @@ function fn_loginCheck() {
 	<!--[e]광고배너 영역 -->
 
 	<!-- [s]Header 영역 -->
-	<jsp:include page="/fix/indexHeader.jsp"/>
+	<jsp:include page="/views/fix/indexHeader.jsp"/>
 	<!-- [s]Header 영역 -->
 
 	<!-- [s]main_content 영역 -->
@@ -87,7 +61,7 @@ function fn_loginCheck() {
 		<section class="main_imageslider flex_area_rsb">
 			<div class="fix_banner">
 				<a href="#"> <img class="banner_img"
-					src="${contextPath}/images/fix_banner_img.jpg" alt="레시피이미지">
+					src="${contextPath}/views/images/fix_banner_img.jpg" alt="레시피이미지">
 					<div class="b_txt_area">
 						<div class="b_txt">감자 한박스 뽀개기 가능한 감자요리-☆</div>
 						<div class="id_img"></div>
@@ -97,11 +71,11 @@ function fn_loginCheck() {
 			</div>
 			<div class="img_slide_area">
 				<div class="img_slide">
-					<img class="slide_img" src="${contextPath}/images/banner_slide1.PNG" alt="슬라이더1">
-					<img class="slide_img" src="${contextPath}/images/banner_slide2.PNG" alt="슬라이더2">
-					<img class="slide_img" src="${contextPath}/images/banner_slide3.PNG" alt="슬라이더3">
-					<img class="slide_img" src="${contextPath}/images/banner_slide4.PNG" alt="슬라이더4">
-					<img class="slide_img" src="${contextPath}/images/banner_slide5.PNG" alt="슬라이더5">
+					<img class="slide_img" src="${contextPath}/views/images/banner_slide1.PNG" alt="슬라이더1">
+					<img class="slide_img" src="${contextPath}/views/images/banner_slide2.PNG" alt="슬라이더2">
+					<img class="slide_img" src="${contextPath}/views/images/banner_slide3.PNG" alt="슬라이더3">
+					<img class="slide_img" src="${contextPath}/views/images/banner_slide4.PNG" alt="슬라이더4">
+					<img class="slide_img" src="${contextPath}/views/images/banner_slide5.PNG" alt="슬라이더5">
 				</div>
 				<div class="slide_num">1 / 5</div>
 			</div>
@@ -111,27 +85,27 @@ function fn_loginCheck() {
 		<section class="direct_recipe">
 			<div class="direct_menu_area flex_area_rsb">
 				<div class="direct_menu">
-					<img src="${contextPath}/images/disah_ko.png" alt="한식">
+					<img src="${contextPath}/views/images/disah_ko.png" alt="한식">
 					<p>한식</p>
 				</div>
 				<div class="direct_menu">
-					<img src="${contextPath}/images/dish_ch.png" alt="중식">
+					<img src="${contextPath}/views/images/dish_ch.png" alt="중식">
 					<p>중식</p>
 				</div>
 				<div class="direct_menu">
-					<img src="${contextPath}/images/dish_us.png" alt="양식">
+					<img src="${contextPath}/views/images/dish_us.png" alt="양식">
 					<p>양식</p>
 				</div>
 				<div class="direct_menu">
-					<img src="${contextPath}/images/dish_ja.png" alt="일식">
+					<img src="${contextPath}/views/images/dish_ja.png" alt="일식">
 					<p>일식</p>
 				</div>
 				<div class="direct_menu">
-					<img src="${contextPath}/images/dish_bun.png" alt="분식">
+					<img src="${contextPath}/views/images/dish_bun.png" alt="분식">
 					<p>분식</p>
 				</div>
 				<div class="direct_menu">
-					<img src="${contextPath}/images/dish_ba.png" alt="베이커리">
+					<img src="${contextPath}/views/images/dish_ba.png" alt="베이커리">
 					<p>베이커리</p>
 				</div>
 			</div>
@@ -610,17 +584,16 @@ function fn_loginCheck() {
 	</div>
 	<!-- [e]main_content 영역 -->
 	<!-- [s]footer 영역 -->
-	<jsp:include page="/fix/footer.jsp"/>
+	<jsp:include page="/views/fix/footer.jsp"/>
 	<!-- [e]footer 영역 -->
 	<!--로그인 영역-->
-	<jsp:include page="/fix/login.jsp" />
+	<jsp:include page="/views/fix/login.jsp" />
 	<!--로그인 영역-->
-	<script src="${contextPath}/js/login.js"></script>
-	<script src="${contextPath}/js/naver_login.js"></script>
-	<script src="${contextPath}/js/kakao_login.js"></script>
-	<link rel="stylesheet" href="${contextPath}/css/login.css">
-	<script src="${contextPath}/js/common.js"></script>
-	<script src="${contextPath}/js/index.js"></script>
+	<script src="${contextPath}/views/js/login.js"></script>
+	<script src="${contextPath}/views/js/naver_login.js"></script>
+	<script src="${contextPath}/views/js/kakao_login.js"></script>
+	<link rel="stylesheet" href="${contextPath}/views/css/login.css">
+	<script src="${contextPath}/views/js/common.js"></script>
+	<script src="${contextPath}/views/js/index.js"></script>
 </body>
-
 </html>

@@ -13,13 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RecipeMall-마이페이지</title>
 <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-<script src="${contextPath}/js/jquery-3.6.4.min.js"></script>
-<script src="${contextPath}/js/jquery-ui.min.js"></script>
-<script src="${contextPath}/js/find-doro-name.js"></script>
-<link rel="stylesheet" href="${contextPath}/css/join.css">
-<link rel="stylesheet" href="${contextPath}/mypage/css/mypage.css">
-<link rel="stylesheet" href="${contextPath}/css/common.css">
-<link rel="shortcut icon" href="${contextPath}/images/smalllogo.png" />
+<script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
+<script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+<script src="${contextPath}/views/js/find-doro-name.js"></script>
+<link rel="stylesheet" href="${contextPath}/views/css/join.css">
+<link rel="stylesheet" href="${contextPath}/views/mypage/css/mypage.css">
+<link rel="stylesheet" href="${contextPath}/views/css/common.css">
+<link rel="shortcut icon" href="${contextPath}/views/images/smalllogo.png" />
 <script type="text/javascript">
 /* 아이디 중복 확인 */
 function fn_idExisted() {
