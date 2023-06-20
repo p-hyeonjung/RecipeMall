@@ -27,6 +27,28 @@ public class ServiceDAO {
 		}
 	}
 	
+	// 문의 번호 최대갓
+	public int selectInqNo(String id) {
+		int maxInqNo=0;
+		try {
+			conn=dataFactory.getConnection();
+			String query="select max(inqNo) from inquerytbl where id=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			maxInqNo=rs.getInt(1);
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("해당 유저의 최근 문의 번호 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return maxInqNo;
+	}
+	
 	public List<FaqVO> selectFaqList() {
 		List<FaqVO> faqList=new ArrayList<FaqVO>();
 		try {
@@ -77,7 +99,29 @@ public class ServiceDAO {
 		return totCount;
 	}
 	
-	public List<InqueryVO> seleteAllUserInquery(Map<String, Integer> pagingMap, String id) {
+	// 관리자 - 모든 유저 문의 개수
+	public int selectToInqueries() {
+		int totCount=0;
+		try {
+			conn=dataFactory.getConnection();
+			String query="select count(*) from inquerytbl";
+			pstmt=conn.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()) {	// 자료가 있을 경우
+				totCount=rs.getInt(1);	// 첫 번째 컬럼 값				
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("모든 유저의 일대일 문의 전체 개수 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return totCount;
+	}
+	
+	// 유저 일대일 문의 목록 페이징
+	public List<InqueryVO> selectUserInquery(Map<String, Integer> pagingMap, String id) {
 		List<InqueryVO> inqueryList=new ArrayList<InqueryVO>();
 		int section=pagingMap.get("section");	// 1
 		int pageNum=pagingMap.get("pageNum");	// 1
@@ -120,6 +164,51 @@ public class ServiceDAO {
 		return inqueryList;
 	}
 	
+	// 관리자 - 모든 유저 일대일 문의 목록 페이징
+	public List<InqueryVO> seleteAllUserInquery(Map<String, Integer> pagingMap) {
+		List<InqueryVO> inqueryList=new ArrayList<InqueryVO>();
+		int section=pagingMap.get("section");	// 1
+		int pageNum=pagingMap.get("pageNum");	// 1
+		try {
+			conn=dataFactory.getConnection();
+			String query="SELECT * FROM (select ROWNUM AS recNum,inqNo,id,inqTitle,hasRe,inqCate,inqDate from inquerytbl order by inqDate Desc) "+
+						 "WHERE recNum BETWEEN (?-1)*100+(?-1)*10+1 AND (?-1)*100+?*10";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, section);
+			pstmt.setInt(2, pageNum);
+			pstmt.setInt(3, section);
+			pstmt.setInt(4, pageNum);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()) {
+				int inqNo=rs.getInt("inqNo");
+				String id=rs.getString("id");
+				String inqTitle=rs.getString("inqTitle");
+				int hasRe=rs.getInt("hasRe");
+				int inqCate=rs.getInt("inqCate");
+				Date inqDate=rs.getDate("inqDate");
+				
+				InqueryVO inqueryVO=new InqueryVO();
+				inqueryVO.setInqNo(inqNo);
+				inqueryVO.setId(id);
+				inqueryVO.setInqTitle(inqTitle);
+				inqueryVO.setHasRe(hasRe);
+				inqueryVO.setInqCate(inqCate);
+				inqueryVO.setInqDate(inqDate);
+				
+				inqueryList.add(inqueryVO);
+			}
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 일대일 문의 목록 + 페이징 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return inqueryList;
+	}
+	
+	// 유저 문의 등록
 	public void addInquery(InqueryVO inqVO) {
 		try {
 			conn=dataFactory.getConnection();
@@ -139,6 +228,7 @@ public class ServiceDAO {
 		}
 	}
 	
+	// 유저 문의 상세보기
 	public InqueryVO inqView(String id, int inqNo) {
 		InqueryVO inqVO=new InqueryVO();
 		try {
@@ -149,19 +239,21 @@ public class ServiceDAO {
 			pstmt.setString(1, id);
 			pstmt.setInt(2, inqNo);
 			ResultSet rs=pstmt.executeQuery();
-			rs.next();
 			
-			String inqTitle=rs.getString("inqTitle");
-			String inqContent=rs.getString("inqContent");
-			int hasRe=rs.getInt("hasRe");
-			int inqCate=rs.getInt("inqCate");
-			Date inqDate=rs.getDate("inqDate");
-			
-			inqVO.setInqTitle(inqTitle);
-			inqVO.setInqContent(inqContent);
-			inqVO.setHasRe(hasRe);
-			inqVO.setInqCate(inqCate);
-			inqVO.setInqDate(inqDate);
+			if(rs.next()) {
+				String inqTitle=rs.getString("inqTitle");
+				String inqContent=rs.getString("inqContent");
+				int hasRe=rs.getInt("hasRe");
+				int inqCate=rs.getInt("inqCate");
+				Date inqDate=rs.getDate("inqDate");
+				
+				inqVO.setInqTitle(inqTitle);
+				inqVO.setInqContent(inqContent);
+				inqVO.setHasRe(hasRe);
+				inqVO.setInqReply(rs.getString("inqReply"));
+				inqVO.setInqCate(inqCate);
+				inqVO.setInqDate(inqDate);
+			}
 			
 			rs.close();
 			pstmt.close();
@@ -171,5 +263,81 @@ public class ServiceDAO {
 			e.printStackTrace();
 		}
 		return inqVO;
+	}
+	
+	// 관리자 - 메인에 출력될 최신 문의글
+	public List<InqueryVO> recentInqList() {
+		List<InqueryVO> inqList=new ArrayList<>();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select inqNo, inqTitle, id, inqDate from (select inqNo, inqTitle, id, inqDate from inquerytbl order by inqDate desc) where ROWNUM <= 5";
+			pstmt=conn.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()) {
+				InqueryVO inqVO=new InqueryVO();
+				inqVO.setInqNo(rs.getInt("inqNo"));
+				inqVO.setId(rs.getString("id"));
+				inqVO.setInqTitle(rs.getString("inqTitle"));
+				inqVO.setInqDate(rs.getDate("inqDate"));
+				
+				inqList.add(inqVO);
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("관리자 메인 화면에 출력할 최신 문의 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return inqList;
+	}
+	
+	// 관리자 - 선택한 유저 문의 가져옴
+	public InqueryVO selectInquery(int inqNo) {
+		InqueryVO inqVO=new InqueryVO();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select * from inquerytbl where inqNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, inqNo);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			
+			inqVO.setInqNo(inqNo);
+			inqVO.setId(rs.getString("id"));
+			inqVO.setInqCate(rs.getInt("inqCate"));
+			inqVO.setInqTitle(rs.getString("inqTitle"));
+			inqVO.setInqContent(rs.getString("inqContent"));
+			inqVO.setHasRe(rs.getInt("hasRe"));
+			inqVO.setInqReply(rs.getString("inqReply"));
+			inqVO.setInqDate(rs.getDate("inqDate"));
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 문의 개별 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return inqVO;
+	}
+	
+	// 관리자 - 유저 문의 답변 등록
+	public void inqReply(int inqNo, String adminId, String inqReply) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="update inquerytbl set adminId=?, inqReply=?, hasre=1 where inqNO=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, adminId);
+			pstmt.setString(2, inqReply);
+			pstmt.setInt(3, inqNo);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("유저 문의 답변 중 오류 발생");
+			e.printStackTrace();
+		}
 	}
 }
