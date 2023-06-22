@@ -136,6 +136,9 @@ span.fa{
     width: 100px;
     height: 35px;
 }
+.inq_img_file {
+	display: bolck;
+}
 /* 일대일 문의{e} */
 
 /* 문의 목록 {s} */
@@ -245,9 +248,13 @@ span.fa{
 .inquering {
     position: absolute;
     right: 100px;
-    cursor: pointer;
     width: 80px;
     height: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    color: white !important;
 }
 .inq_view_btn {
     margin-top: 10px;
