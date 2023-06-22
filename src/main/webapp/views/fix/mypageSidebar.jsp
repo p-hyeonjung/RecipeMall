@@ -21,7 +21,7 @@ request.setCharacterEncoding("utf-8");
 						<li><a href="#">주문/배송</a>
 							<ul class="sub_menu">
 								<li><a href="${contextPath}/mypage/mypage_main_2_1.do">- 주문목록/배송조회</a></li>
-								<li><a href="${contextPath}/mypage/listShippingAddr.do">- 배송지 등록</a></li>
+								<li><a href="${contextPath}/mypage/listShippingAddr.do?id=${log_id}">- 배송지 등록</a></li>
                               <li><a href="${contextPath}/mypage/mypage_main_2_4.do">- 장바구니</a></li>
 							</ul>
 						</li>

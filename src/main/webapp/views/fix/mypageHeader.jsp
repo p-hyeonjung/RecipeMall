@@ -11,7 +11,7 @@
 	        <ul class="mainmenu flex_area_rsb">
 	            <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/views/index.jsp'"></li>
 	            <li><a href="${contextPath}/views/index.html" class="a_community">커뮤니티</a></li>
-	            <li><a href="${contextPath}/views/shopping/shopping_index.html" class="a_shopping">쇼핑</a></li>
+	            <li><a href="${contextPath}/shopping/shopping_index.do" class="a_shopping">쇼핑</a></li>
 	        </ul>
 	    </div>
 	    <!--[e]메인메뉴 영역 -->
