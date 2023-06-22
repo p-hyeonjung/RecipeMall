@@ -21,7 +21,7 @@
 <body>
 	<div id="box">
 	<c:choose>
-    	<c:when test="${isLogon == true}">
+    	<c:when test="${isAdmLogon == true}">
         <jsp:include page="/views/fix/adminSide.jsp"/>
     	</c:when>
     	<c:otherwise>

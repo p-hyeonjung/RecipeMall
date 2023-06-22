@@ -35,13 +35,20 @@ li {
 #box {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+#login_box{
+    display: flex;
+    flex-direction: row;
 }
 #sidebar {
     box-sizing: border-box;
     width: 14%;
     background-color: #c3d2cb;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 #content {
     box-sizing: border-box;

@@ -20,6 +20,7 @@ import oracle.net.aso.n;
 import recipeMall.notice.NoticeService;
 import recipeMall.notice.NoticeVO;
 import recipeMall.service.CenterService;
+import recipeMall.service.FaqVO;
 import recipeMall.service.InqueryVO;
 import recipeMall.user.UserDAO;
 import recipeMall.user.UserVO;
@@ -29,6 +30,7 @@ public class AdminController extends HttpServlet {
 	NoticeVO noticeVO;
 	InqueryVO inqVO;
 	AdminVO adminVO;
+	FaqVO faqVO;
 	AdminDAO adminDAO;
 	NoticeService noticeService;
 	CenterService csService;
@@ -75,6 +77,7 @@ public class AdminController extends HttpServlet {
 				session=request.getSession();
 				session.setAttribute("isAdmLogon", result);
 				session.setAttribute("log_adminId", id);
+				System.out.println("세션 유지 시간 : "+session.getMaxInactiveInterval());
 				nextPage="/admin/main.do";
 			} else {
 				response.sendRedirect("/admLoginForm.do");
@@ -193,9 +196,71 @@ public class AdminController extends HttpServlet {
 			String inqReply=request.getParameter("inq_reply");
 			csService.inqReply(inqNo, adminId, inqReply);
 			nextPage="/admin/userInqAnswer.do?inqNo="+request.getParameter("inqNo");
+		} else if(action.equals("/faqList.do")) {
+			
+			String _section=request.getParameter("section");
+			System.out.println("section: "+_section);
+			String _pageNum=request.getParameter("pageNum");
+			System.out.println("pageNum: "+_pageNum);
+			// _section=null일 경우 1반환_초기값 1 세팅. 10->11로 페이지 넘어가면 2를 받음
+			int section=Integer.parseInt((_section == null)?"1":_section);
+			// _pageNum=null일 경우 1반환_초기값 1 세팅. 2페이지 누르면 2를 받음
+			int pageNum=Integer.parseInt((_pageNum == null)?"1":_pageNum);
+			
+			Map<String, Integer> pagingMap=new HashMap<String, Integer>();
+			// page set
+			pagingMap.put("section", section);	// 1
+			pagingMap.put("pageNum", pageNum);	// 1
+			// articlesList, totArticles 받음
+			Map faqMap=csService.admFaqList(pagingMap);
+			
+			faqMap.put("section", section);
+			faqMap.put("pageNum", pageNum);
+			
+			request.setAttribute("faqMap", faqMap);
+			nextPage="/views/admin/faqList.jsp";
+		} else if(action.equals("/faqView.do")) {
+			int faqNo=Integer.parseInt(request.getParameter("faqNo"));
+			faqVO=new FaqVO();
+			faqVO=csService.selectFaq(faqNo);
+			request.setAttribute("faq", faqVO);
+			nextPage="/views/admin/faqView.jsp";
+			
+		} else if(action.equals("/faqForm.do")) {
+			nextPage="/views/admin/faqForm.jsp";
+			
+		} else if(action.equals("/addFaq.do")) {
+			String adminId=request.getParameter("adminId");
+			String faqTitle=request.getParameter("faqTitle");
+			String faqContent=request.getParameter("faqContent");
+			FaqVO faqVO=new FaqVO();
+			faqVO.setAdminId(adminId);
+			faqVO.setFaqTitle(faqTitle);
+			faqVO.setFaqContent(faqContent);
+			csService.addFaq(faqVO);
+			nextPage="/admin/faqList.do";
+		} else if(action.equals("/modFaqForm.do")) {
+			int faqNo=Integer.parseInt(request.getParameter("faqNo"));
+			faqVO=csService.selectFaq(faqNo);
+			request.setAttribute("faq", faqVO);
+			nextPage="/views/admin/modFaqForm.jsp";
+		} else if(action.equals("/modFaq.do")) {
+			int faqNo=Integer.parseInt(request.getParameter("faqNo"));
+			String adminId=request.getParameter("adminId");
+			String faqTitle=request.getParameter("faqTitle");
+			String faqContent=request.getParameter("faqContent");
+			FaqVO faqVO=new FaqVO();
+			faqVO.setAdminId(adminId);
+			faqVO.setFaqTitle(faqTitle);
+			faqVO.setFaqContent(faqContent);
+			csService.updateFaq(faqVO,faqNo);
+			nextPage="/admin/faqView.do?faqNo="+faqNo;
+		} else if(action.equals("/deleteFaq.do")) {
+			int faqNo=Integer.parseInt(request.getParameter("faqNo"));
+			csService.deleteFaq(faqNo);
+			nextPage="/admin/faqList.do";
 		}
 		 
-		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);
 	}

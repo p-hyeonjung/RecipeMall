@@ -56,7 +56,17 @@
     padding: 5px 10px;
     font-size: 1.3em;
 }
-.notice_in_tbl textarea {
+
+/* faqForm */
+.faq_tbl input {
+    box-sizing: border-box;
+    width: 90%;
+    height: 35px;
+    padding: 5px 10px;
+    font-size: 1.3em;
+}
+
+.tbl textarea {
     box-sizing: border-box;
     width: 90%;
     height: 280px;

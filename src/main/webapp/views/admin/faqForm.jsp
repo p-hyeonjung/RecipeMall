@@ -16,6 +16,7 @@
 	<!-- <script src="js/admin.js"></script> -->
     <link rel="stylesheet" href="${contextPath}/views/admin/css/admin.css">
     <link rel="stylesheet" href="${contextPath}/views/admin/css/select.css">
+    <link rel="stylesheet" href="${contextPath}/views/admin/css/inUp.css">
 </head>
 <body>
     <div id="box">
@@ -26,9 +27,9 @@
 			<div class="container">
                 <h2>자주하는 질문 관리 > 등록</h2>
                 <div class="faq_insert list">
-                    <form class="frm_insert" action="" method="post">
-                        <input type="hidden" name="" id="">
-                        <table class="insert_tbl tbl">
+                    <form class="frm_insert" action="${contextPath}/admin/addFaq.do" method="post">
+                        <input type="hidden" name="adminId" value="${log_adminId}">
+                        <table class="faq_tbl tbl">
                             <tbody>
                                 <tr>
                                     <th>제목</th>
@@ -36,15 +37,13 @@
                                 </tr>
                                 <tr>
                                     <th>내용</th>
-                                    <td><input type="text" name="faqContent" id="" class="content"></td>
+                                    <td><textarea from="frm_insert" name="faqContent"></textarea></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="sc_btn">
-                            <ul class="sc">
-                                <li><a href="" class="in">등록하기</a></li>
-                                <li><a href="" class="cancle">취소</a></li>
-                            </ul>
+                        <div class="form_btn">
+                           <input type="submit" value="등록">
+                           <input type="button" value="취소" onclick="history.back(-1);">
                         </div>
                     </form>
                 </div>

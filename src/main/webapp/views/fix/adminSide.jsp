@@ -20,7 +20,7 @@
 					<li><span class="lnb">문의 관리</span>
 						<ul class="sub">
 							<li><a href="${contextPath}/admin/noticeList.do">공지사항</a></li>
-							<li><a href="${contextPath}/views/admin/faq.jsp">자주하는 질문</a></li>
+							<li><a href="${contextPath}/admin/faqList.do">자주하는 질문</a></li>
 							<li><a href="${contextPath}/views/admin/prodInquery.jsp">상품 문의</a></li>
 							<li><a href="${contextPath}/admin/userInqList.do">일대일문의</a></li>
 						</ul>

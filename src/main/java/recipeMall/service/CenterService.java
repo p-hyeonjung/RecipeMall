@@ -47,6 +47,19 @@ public class CenterService {
 		return faqList;
 	}
 	
+	public Map admFaqList(Map<String, Integer> pagingMap) {
+		Map faqMap=new HashMap();
+		// 1페이지 개수인 10개만 목록 가져옴
+		List<FaqVO> faqList=serviceDAO.admFaqList(pagingMap);
+		// 전체 글 개수 가져와서 페에지 개수 만듬
+		int totFaq=serviceDAO.selectToFaq();
+		System.out.println("문의 개수: "+totFaq);
+		faqMap.put("faqList", faqList);
+		faqMap.put("totFaq", totFaq);
+		
+		return faqMap;
+	}
+	
 	public int addInquery(Map<String, Object> inqMap, String[] imgFileNames) {
 		InqueryVO inqVO=(InqueryVO)inqMap.get("inqVO");
 		serviceDAO.addInquery(inqVO);
@@ -72,5 +85,24 @@ public class CenterService {
 	// 관리자 - 답변 등록
 	public void inqReply(int inqNo, String adminId, String inqReply) {
 		serviceDAO.inqReply(inqNo, adminId, inqReply);
+	}
+	
+	// 관리자 - 자주하는 질문 등록
+	public void addFaq(FaqVO faqVO) {
+		serviceDAO.addFaq(faqVO);
+	}
+	
+	// 관리자 - faq 보기
+	public FaqVO selectFaq(int faqNo) {
+		FaqVO faqVO=serviceDAO.selectFaq(faqNo);
+		return faqVO;
+	}
+	
+	public void updateFaq(FaqVO faqVO, int faqNo) {
+		serviceDAO.updateFaq(faqVO, faqNo);
+	}
+	
+	public void deleteFaq(int faqNo) {
+		serviceDAO.deleteFaq(faqNo);
 	}
 }
