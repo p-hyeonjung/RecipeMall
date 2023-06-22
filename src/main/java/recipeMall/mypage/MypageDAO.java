@@ -210,7 +210,7 @@ public class MypageDAO {
       List<OrderDVO> orderList2=new ArrayList();
       int orderCode = 0;
       if(orderList1.size() !=0) {
-    	  orderCode=orderList1.get(0).getOrderCode();
+         orderCode=orderList1.get(0).getOrderCode();
       }
       try {
          conn=dataFactory.getConnection();
@@ -240,15 +240,21 @@ public class MypageDAO {
    //상품가격조회
    public List<ProductVO> selectOrder3(List<OrderDVO> orderList2) {
       List<ProductVO> orderList3=new ArrayList();
-      int prodCode=0;
-      if(orderList2.size() !=0) { 
-    	  prodCode=orderList2.get(0).getProdCode();
+      int[] prodCode =new int[orderList2.size()];
+      for(int i=0; i<prodCode.length; i++) {
+         prodCode[i] = orderList2.get(i).getProdCode();
       }
       try {
          conn=dataFactory.getConnection();
          String query="select prodPrice,prodName from producttbl where prodCode=?";
+         for(int i=1; i<prodCode.length; i++) {
+            query += " or prodCode=?";
+         }
          pstmt=conn.prepareStatement(query);
-         pstmt.setInt(1, prodCode);
+         pstmt.setInt(1, prodCode[0]);
+         for(int i=1; i<prodCode.length; i++) {
+            pstmt.setInt(i+1, prodCode[i]);
+         }
          ResultSet rs= pstmt.executeQuery();
          while(rs.next()) {
             int prodPrice=rs.getInt("prodPrice");

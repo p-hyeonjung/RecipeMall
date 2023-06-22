@@ -40,7 +40,7 @@ public class MypageController extends HttpServlet {
       
       try {
          if(action ==null || action.equals("/listShippingAddr.do")) {
-            String id="hong";
+            String id=request.getParameter("id");
             List<ShippingAddrVO> shippingAddrList=dao.listShippingAddr(id);
             request.setAttribute("shippingAddrList", shippingAddrList);
             nextPage="/views/mypage/listShippingAddr.jsp";
@@ -66,13 +66,13 @@ public class MypageController extends HttpServlet {
             request.setAttribute("msg", "deleted");
             nextPage="/mypage/listShippingAddr.do";
          }else if(action.equals("/mypage_main_2_4.do")) {    
-            String id="hong";
+            String id=request.getParameter("id");
             List<CartVO> cartList=dao.cartSelect(id);
             request.setAttribute("cartList", cartList);
             nextPage="/views/mypage/mypage_main_2_4.jsp";
          }else if(action.equals("/delCart.do")) {
             int prodCode = Integer.parseInt(request.getParameter("prodCode"));
-            String id="hong";
+            String id=request.getParameter("id");
             dao.deleteCart(prodCode,id);
             request.setAttribute("msg", "deleted");
             nextPage="/mypage/mypage_main_2_4.do";
@@ -89,10 +89,10 @@ public class MypageController extends HttpServlet {
                  nextPage = "/order/payment.do";
              }
          }else if(action.equals("/selectOrder.do")) {
-            String id="hong";
-	            Map orderMap= service.selectServiceOrder(id);
-	            request.setAttribute("orderMap", orderMap);
-            nextPage="/views/mypage/mypage_main_2_1.jsp";
+        	 String id=request.getParameter("id");
+	         Map orderMap= service.selectServiceOrder(id);
+	         request.setAttribute("orderMap", orderMap);
+             nextPage="/views/mypage/mypage_main_2_1.jsp";
          }else if(action.equals("/mypage_main_2_1.do")) {
         	 nextPage="/views/mypage/mypage_main_2_1.jsp";
          }

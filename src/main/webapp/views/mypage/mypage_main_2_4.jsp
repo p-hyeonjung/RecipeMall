@@ -86,7 +86,7 @@ session.getAttribute("log_id");
 												<tr>
 													<td><input type="checkbox" name="prodName"
 														id="proudct_chk" value="${cartList.prodName }"></td>
-													<td><img src="" alt="" id="product_img">
+													<td><img src="${contextPath}/views/images/${cartList.prodImage}" alt="" id="product_img">
 													<p class="product_market_name">${cartList.prodName }</p></td>
 													<td><p class="product_count_minus">-</p> <span
 														class="product_sangpum_count"><input type="text"

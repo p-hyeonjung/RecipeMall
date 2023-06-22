@@ -47,7 +47,7 @@ session.getAttribute("log_id");
 					<h4>배송지 등록</h4>
 				</div>
 				<div class="mypage_content_address">
-					<form action="${contextPath}/mypage/addShipping.do" method="get">
+					<form action="${contextPath}/mypage/addShipping.do" method="post">
 						<table>
 							<colgroup>
 								<col style="width: 20%;">
@@ -61,7 +61,6 @@ session.getAttribute("log_id");
 								<th><span class="important">받으실 분</span></th>
 								<td><input type="hidden" name="id" value="${log_id }">
 									<input type="text" name="shippingName" maxlength="20">
-
 								</td>
 							</tr>
 							<tr>
