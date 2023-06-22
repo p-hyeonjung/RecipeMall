@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>   
+<%
+   request.setCharacterEncoding("utf-8");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.6.4.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="css/best.css">
     <link rel="shortcut icon" href="../images/smalllogo.png" />
+    <link rel="stylesheet" href="${contextPath}/views/css/common.css">
+    <link rel="stylesheet" href="${contextPath}/views/community/css/best.css">
+    
+    <!-- 공통 -->
+    <script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
+    <script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/views/js/login.js"></script>
+    <script src="${contextPath}/views/js/naver_login.js"></script>
+    <script src="${contextPath}/views/js/kakao_login.js"></script>
+    <link rel="stylesheet" href="${contextPath}/views/css/login.css">
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!--[s]전체 컨텐츠 영역  -->
@@ -36,8 +52,8 @@
             <!--[s]메인메뉴 영역 -->
             <div>
                 <ul class="mainmenu flex_area_rsb">
-                    <li class="main" title="메인페이지로 이동" onclick="location.href='../index.jsp'"></li>
-                    <li><a href="../index.jsp" class="a_community">커뮤니티</a></li>
+                    <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/views/index.jsp'"></li>
+                    <li><a href="${contextPath}/views/index.jsp" class="a_community">커뮤니티</a></li>
                     <li><a href="../shopping/shopping_index.jsp" class="a_shopping">쇼핑</a></li>
                 </ul>
             </div>
@@ -71,7 +87,7 @@
             <!--[e]서브 영역 -->
             <!--[s]글쓰기 하위메뉴 영역 -->
             <div class="btn_write_sub" hidden>
-                <a class="a_btn_write" href="insert.jsp">
+                <a class="a_btn_write" href="${contextPath}/recipe/insert.do">
                     <div class="btn_write_icon">
                         <i class="fa-solid fa-book"></i>
                     </div>
@@ -111,9 +127,9 @@
             <!--[s]카테고리 영역 -->
             <div class="flex_area_rsb">
                 <ul class="category">
-                    <li><a href="recipe.jsp" class="a_community">레시피</a></li>
-                    <li><a href="best.jsp" class="a_community">베스트</a></li>
-                    <li><a href="free_board.jsp" class="a_community">자유게시판</a></li>
+                    <li><a href="${contextPath}/recipe/recipe.do" class="a_community">레시피</a></li>
+                    <li><a href="${contextPath}/recipe/best.do" class="a_community">베스트</a></li>
+                    <li><a href="${contextPath}/recipe/free_board.do" class="a_community">자유게시판</a></li>
                 </ul>
             </div>
             <!--[e]카테고리 영역 -->
@@ -155,7 +171,7 @@
             <ul class="r_content_area flex_area_rsb">
                 <li class="r_content">
                     <div class="medal_area">
-                        <img src="../images/medal1.png" alt="메달이미지">
+                        <img src="${contextPath}/views/images/medal1.png" alt="메달이미지">
                     </div>
                     <div class="r_thumb r_thumb1">
                         
@@ -171,7 +187,7 @@
                 </li>
                 <li class="r_content">
                     <div class="medal_area">
-                        <img src="../images/medal2.png" alt="메달이미지">
+                        <img src="${contextPath}/views/images/medal2.png" alt="메달이미지">
                     </div>
                     <div class="r_thumb r_thumb2">
                     </div>
@@ -185,7 +201,7 @@
                 </li>
                 <li class="r_content">
                     <div class="medal_area">
-                        <img src="../images/medal3.png" alt="메달이미지">
+                        <img src="${contextPath}/views/images/medal3.png" alt="메달이미지">
                     </div>
                     <div class="r_thumb">
 
@@ -372,7 +388,8 @@
     <script src="../js/naver_login.js"></script>
     <script src="../js/kakao_login.js"></script>
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/common.js"></script>
+    <script src="${contextPath}/views/js/common.js"></script>
+    <script src="${contextPath}/views/community/js/insert.js"></script>
     <script src="js/best.js"></script>
 </body>
 </html>

@@ -94,7 +94,7 @@ section {
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 50%;
-    background: url(../../images/idimg.jpg)center no-repeat;
+    background: url(../../images/idimg.jpg) center no-repeat;
     background-size: cover;
     vertical-align: middle;
     margin-right: 5px;
@@ -120,28 +120,23 @@ section {
 }
 
 /* 재료 영역 */
+.r_ing_con{
+    display: flex;
+    justify-content: flex-start;
+}
+.r_ings{
+    margin-left: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
 .r_ing{
     box-sizing: border-box;
-    display: inline-block;
-    width: 49%;
+    width: calc(50% - 20px);
     padding: 0 40px 15px 40px;
 }
-.btn_total_area{
-    display: block;
-    text-align: right;
-    height: 60px;
-}
-.btn_total{
-    font-family: "NotoSansM";
-    font-size: 1.5em;
-    margin-right: 40px;
-    background-color: #036c44;
-    color: #fffdf7;
-    padding: 5px 10px;
-}
-.btn_total:hover{
-    font-size: 1.7em;
-}
+
 .txt_al_r{
     text-align: right;
 }
@@ -153,6 +148,7 @@ section {
     
 }
 .r_ing_c{
+	width: 335px;
     margin: 10px 0;
 }
 .r_ing_name{
@@ -162,15 +158,6 @@ section {
 .r_ing_amount{
     font-size: 1.5em;
     margin-right: 30px;
-}
-.btn_pur{
-    background-color: rgba(0, 0, 0, 0);
-    color: #036c44;
-    width: 60px;
-    font-size: 1.5em;
-}
-.btn_pur:hover{
-    color: #8bb0a3;
 }
 /* 동영상 영역 */ 
 /* js로 사용자가 업로드한 동영상이 없으면 display:none */
@@ -194,12 +181,13 @@ section {
     font-family: "malssami";
     font-size: 2.5em;
     color: #036c44;
-    margin: 0 30px 20px 0;
+    margin: 15px 30px 20px 0;
     vertical-align: top;
 }
 .seq_txt{
     font-family: "NotoSansR";
-    font-size: 1.4em;
+    font-size: 1.7em;
+    margin-top:15px;
     
 }
 .seq_img{
@@ -214,59 +202,6 @@ section {
     overflow: hidden;
 
   }
-  /*이미지 슬라이더 영역 - 완성사진   */
-.seq_pho_area {
-    position: relative;
-}  
-.seq_pho{
-position: relative;
-width: 3000px;
-}
-.seq_slider_img{
-width: 600px;
-height: 400px;
-float: left;
-}
-    /* 버튼영역 */
-    .control_panel{
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100000;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 8px 30px;
-        border-radius: 20px;
-        
-    }
-    .control_panel .active{
-        background: #fff;
-    }
-    .control_panel .control_btn{
-        float: left;
-        height: 8px;
-        width: 8px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        margin: 0 8px;
-        cursor: pointer;
-        
-        
-    }
-    .left_right_control_panel i{
-        position:absolute;
-        font-size: 5em;
-        color: #fffdf7;
-        bottom: 40%;
-        cursor: pointer;
-    }
-    .left_control{ 
-        left: 15px;   
-      }
-      .right_control{
-        right: 15px;
-      }
-
 
 
 
@@ -278,6 +213,6 @@ float: left;
     color: #DE4830; 
 }
 .r_ect_content{
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 /* 댓글영역 */

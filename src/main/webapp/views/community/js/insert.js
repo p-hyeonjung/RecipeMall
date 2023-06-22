@@ -29,8 +29,8 @@
  //재료영역 추가기능
  $('.btn_add_s').click(function() {
      let newInputArea = $('<div class="ing_input_area">' +
-         '<input type="text" placeholder="예)재료">' +
-         '<input type="text" placeholder="예)양">' +
+         '<input type="text" name="mate_name" placeholder="예)재료">' +
+         '<input type="text" name="mate_amount" placeholder="예)양">' +
          '<div class="btn_del">'+
          '<button >' +
          '<i class="fa-solid fa-circle-xmark"></i>' +
@@ -41,13 +41,13 @@
      btn_del();
  });
  
- 
+ //재료영역 묶음추가
  $('.r_ing_container .btn_add').on('click',function() {
      let newRIng2=newRIng.clone();
     newRIng2.find('.btn_add_s').click(function() {
          let newInputArea = $('<p class="ing_input_area">' +
-             '<input type="text" placeholder="예)재료">' +
-             '<input type="text" placeholder="예)양">' +
+             '<input type="text" name="mate_name" placeholder="예)재료">' +
+             '<input type="text"  name="mate_amount" placeholder="예)양">' +
              '<button class="btn_del">' +
              '<i class="fa-solid fa-circle-xmark"></i>' +
              '</button>' +
@@ -72,6 +72,7 @@ function ing_del_all() {
     }
   });  
 }
+
 function ing_r_txt_reload() {
   $('.r_ing_container').first().find('.r_ing:first .r_txt').html('재료등록');
 }
@@ -83,14 +84,14 @@ $('.r_seq .btn_add').click(function() {
     let newStep = '<div class="seq_content_area flex_area_rsb">' +
     '<div class="r_txt"></div>' +
     '<h2>Step <span class="stepNum">'+stepNumber+'</span> </h2>'+
-    '<textarea name="" id="" cols="30" rows="10" placeholder="예)소고기는 기름기를 떼어내고 적당한크기로 썰어주세요."></textarea>' +
+    '<textarea name="step_ex" id="step_ex" cols="30" rows="10" placeholder="예)소고기는 기름기를 떼어내고 적당한크기로 썰어주세요."></textarea>' +
     '<div class="seq_step_pho seq_step_pho'+ stepNumber +'">'+
-    '<label for="inq_file_step'+stepNumber +'">'+
+    '<label for="rec_file_step'+stepNumber +'">'+
     '<div class="file_upload_btn">'+
     '<i class="fa-solid fa-plus"></i>'+
     '</div>'+
     '</label>'+
-    '<input type="file" data-ax-path="file" name="inq_file_step'+stepNumber +'" id="inq_file_step'+stepNumber+'" multiple="multiple">'+
+    '<input type="file" data-ax-path="file" name="rec_file_step'+stepNumber +'" id="rec_file_step'+stepNumber+'" multiple="multiple">'+
     '</div>'+
     ' <div class="btn_del_seq">'+
     '<button type="button">'+
@@ -145,38 +146,30 @@ delFile();
 removeImage();
 
 function removeImage() {
-  $('.r_in_photo, .seq_step_pho, .seq_pho').on('click', '.remove_img_btn', function() {
-    let $targetDiv = $(this).closest('.r_in_photo, .seq_step_pho, .seq_pho'); 
+  $('.r_in_photo, .seq_step_pho').on('click', '.remove_img_btn', function() {
+    let $targetDiv = $(this).closest('.r_in_photo, .seq_step_pho '); 
     $targetDiv.find('.preview_img').remove();
     $(this).remove();
     let re_photo;
 
     if ($targetDiv.hasClass('r_in_photo')) {
-      re_photo = $('<label for="inq_file">' +
+      re_photo = $('<label for="rec_file">' +
         '<div class="file_upload_btn">' +
         '요리 대표사진을 등록해주세요 <br>' +
         '<i class="fa-solid fa-image"></i>' +
         '</div>' +
         '</label>' +
-        '<input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">'
+        '<input type="file" data-ax-path="file" name="rec_file" id="rec_file" multiple="multiple">'
       );
     } else if ($targetDiv.hasClass('seq_step_pho')) { 
-      re_photo = $('<label for="inq_file_step'+stepNumber+'">' + 
+      re_photo = $('<label for="rec_file_step'+stepNumber+'">' + 
       '<div class="file_upload_btn">' +
       '<i class="fa-solid fa-plus"></i>' +
       '</div>' +
       '</label>' +
-      '<input type="file" data-ax-path="file" name="inq_file_step'+stepNumber+'" id="inq_file_step'+stepNumber+'" multiple="multiple">'
+      '<input type="file" data-ax-path="file" name="rec_file_step'+stepNumber+'" id="rec_file_step'+stepNumber+'" multiple="multiple">'
       );
-    } else if ($targetDiv.hasClass('seq_pho')) {
-      re_photo = $('<label for="inq_file_seq">' +
-        '<div class="file_upload_btn">' +
-        '<i class="fa-solid fa-plus"></i>' +
-        '</div>' +
-        '</label>' +
-        '<input type="file" data-ax-path="file" name="inq_file_seq" id="inq_file_seq" multiple="multiple"> '
-      );
-    }
+    } 
 
     $targetDiv.empty();
     $targetDiv.append(re_photo);
@@ -185,13 +178,16 @@ function removeImage() {
 }
 
 function addFile() {
-  $('.r_in_photo, .seq_step_pho, .seq_pho').each(function() { 
+  $('.r_in_photo, .seq_step_pho').each(function() { 
     let $targetDiv = $(this);
     $targetDiv.find('input[type="file"]').change(function(e) {
       let file = e.target.files[0];
       let reader = new FileReader();
       reader.onload = function(e) {
-        $targetDiv.empty();
+		//input태그까지 지워져서 수정함 -아래 두줄
+        $targetDiv.find('label').remove();
+        $targetDiv.find('img').remove();
+        
         let image = $('<img class="preview_img">').attr('src', e.target.result).attr('alt', '레시피 대표 이미지');
         $targetDiv.append(image);
         delFile();
@@ -202,7 +198,7 @@ function addFile() {
 }
 
 function delFile() {
-  $('.r_in_photo, .seq_step_pho, .seq_pho').mouseenter(function() {
+  $('.r_in_photo, .seq_step_pho').mouseenter(function() {
     if ($(this).find('.preview_img').length > 0) {
       if ($(this).find('.remove_img_btn').length === 0) {
         $(this).append('<div class="remove_img_btn"><i class="fa-solid fa-circle-xmark"></i></div>');
@@ -216,23 +212,20 @@ function delFile() {
 // 파일 다시 업로드
 file_reload();
 function file_reload() {
-  $('.r_in_photo, .seq_step_pho, .seq_pho').on('click', '.preview_img', function() { 
-    let $targetDiv = $(this).parent('.r_in_photo, .seq_step_pho, .seq_pho'); 
+  $('.r_in_photo, .seq_step_pho').on('click', '.preview_img', function() { 
+    let $targetDiv = $(this).parent('.r_in_photo, .seq_step_pho '); 
     $targetDiv.find('input[type="file"]').remove();
+   
     if ($targetDiv.hasClass('r_in_photo')) {
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file" id="inq_file" multiple="multiple">');
+      $targetDiv.append('<input type="file" data-ax-path="file" name="rec_file" id="rec_file" multiple="multiple">');
       addFile();
-      $("#inq_file").click();
+      $("#rec_file").click();
     } else if ($targetDiv.hasClass('seq_step_pho')) { 
       stepNum = parseInt($targetDiv.siblings('h2').find('.stepNum').text());
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file_step'+stepNum+'" id="inq_file_step'+stepNum+'" multiple="multiple">');
+      $targetDiv.append('<input type="file" data-ax-path="file" name="rec_file_step'+stepNum+'" id="rec_file_step'+stepNum+'" multiple="multiple">');
       addFile();
-      $("#inq_file_step"+stepNum).click();
-    } else {
-      $targetDiv.append('<input type="file" data-ax-path="file" name="inq_file_seq" id="inq_file_seq" multiple="multiple">');
-      addFile();
-      $("#inq_file_seq").click();
-    } 
+      $("#rec_file_step"+stepNum).click();
+    }
   });
 }
 

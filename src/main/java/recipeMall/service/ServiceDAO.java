@@ -53,7 +53,7 @@ public class ServiceDAO {
 		List<FaqVO> faqList=new ArrayList<FaqVO>();
 		try {
 			conn=dataFactory.getConnection();
-			String query="select faqTitle,faqContent from faqtbl order by faqDate Desc";
+			String query="select faqNo,adminId,faqTitle,faqContent,faqDate from faqtbl order by faqDate Desc";
 			System.out.println(query);
 			pstmt=conn.prepareStatement(query);
 			ResultSet rs=pstmt.executeQuery();
@@ -62,8 +62,11 @@ public class ServiceDAO {
 				String content=rs.getString("faqContent");
 				
 				FaqVO faqVO=new FaqVO();
+				faqVO.setFaqNo(rs.getInt("faqNo"));
+				faqVO.setAdminId(rs.getString("adminId"));
 				faqVO.setFaqTitle(title);
 				faqVO.setFaqContent(content);
+				faqVO.setFaqDate(rs.getDate("faqDate"));
 				
 				faqList.add(faqVO);
 			}
@@ -75,6 +78,65 @@ public class ServiceDAO {
 			e.printStackTrace();
 		}
 		return faqList;
+	}
+	
+	// 관리자 - faq리스트 페이징
+	public List<FaqVO> admFaqList(Map<String, Integer> pagingMap) {
+		List<FaqVO> faqList=new ArrayList<FaqVO>();
+		int section=pagingMap.get("section");	// 1
+		int pageNum=pagingMap.get("pageNum");	// 1
+		try {
+			conn=dataFactory.getConnection();
+			String query="SELECT * FROM (select ROWNUM AS recNum,faqNo,adminId,faqTitle,faqContent,faqDate from faqtbl order by faqDate Desc) "+
+					 "WHERE recNum BETWEEN (?-1)*100+(?-1)*10+1 AND (?-1)*100+?*10";
+			System.out.println(query);
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, section);
+			pstmt.setInt(2, pageNum);
+			pstmt.setInt(3, section);
+			pstmt.setInt(4, pageNum);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()) {
+				String title=rs.getString("faqTitle");
+				String content=rs.getString("faqContent");
+				
+				FaqVO faqVO=new FaqVO();
+				faqVO.setFaqNo(rs.getInt("faqNo"));
+				faqVO.setAdminId(rs.getString("adminId"));
+				faqVO.setFaqTitle(title);
+				faqVO.setFaqContent(content);
+				faqVO.setFaqDate(rs.getDate("faqDate"));
+				
+				faqList.add(faqVO);
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("자주하는 질문 목록 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return faqList;
+	}
+	
+	public int selectToFaq() {
+		int totCount=0;
+		try {
+			conn=dataFactory.getConnection();
+			String query="select count(*) from faqtbl";
+			pstmt=conn.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()) {	// 자료가 있을 경우
+				totCount=rs.getInt(1);	// 첫 번째 컬럼 값				
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("관리자 faq 전체 개수 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return totCount;
 	}
 	
 	// 유저 일대일 문의 전체 개수
@@ -337,6 +399,91 @@ public class ServiceDAO {
 			conn.close();
 		} catch (Exception e) {
 			System.out.println("유저 문의 답변 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	// 관리자 - 자주하는 질문 등록
+	public void addFaq(FaqVO faqVO) {
+		String adminId=faqVO.getAdminId();
+		String faqTitle=faqVO.getFaqTitle();
+		String faqContent=faqVO.getFaqContent();
+		try {
+			conn=dataFactory.getConnection();
+			String query="insert into faqtbl values(faqno_seq.nextval,?,?,?,sysdate)";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, adminId);
+			pstmt.setString(2, faqTitle);
+			pstmt.setString(3, faqContent);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("자주하는 질문 등록 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	// 관리자 - faq 보기
+	public FaqVO selectFaq(int faqNo) {
+		FaqVO faqVO=new FaqVO();
+		try {
+			conn=dataFactory.getConnection();
+			String query="select * from faqtbl where faqNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, faqNo);
+			ResultSet rs=pstmt.executeQuery();
+			rs.next();
+			faqVO.setFaqNo(faqNo);
+			faqVO.setAdminId(rs.getString("adminId"));
+			faqVO.setFaqTitle(rs.getString("faqTitle"));
+			faqVO.setFaqContent(rs.getString("faqContent"));
+			faqVO.setFaqDate(rs.getDate("faqDate"));
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("선택한 faq 조회 중 오류 발생");
+			e.printStackTrace();
+		}
+		return faqVO;
+	}
+	
+	public void updateFaq(FaqVO faqVO, int faqNo) {
+		String adminId=faqVO.getAdminId();
+		String faqTitle=faqVO.getFaqTitle();
+		String faqContent=faqVO.getFaqContent();
+		try {
+			conn=dataFactory.getConnection();
+			String query="update faqtbl set adminId=?, faqTitle=?, faqContent=? where faqNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setString(1, adminId);
+			pstmt.setString(2, faqTitle);
+			pstmt.setString(3, faqContent);
+			pstmt.setInt(4, faqNo);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("선택한 faq 수정 중 오류 발생");
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteFaq(int faqNo) {
+		try {
+			conn=dataFactory.getConnection();
+			String query="delete from faqtbl where faqNo=?";
+			pstmt=conn.prepareStatement(query);
+			pstmt.setInt(1, faqNo);
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println("선택한 faq 삭제 중 오류 발생");
 			e.printStackTrace();
 		}
 	}

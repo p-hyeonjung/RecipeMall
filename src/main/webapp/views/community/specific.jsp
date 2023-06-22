@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>   
+<%
+   request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recipeMall</title>
     <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.6.4.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="css/recipe_spe.css">
-    <link rel="shortcut icon" href="../images/disah_ko.png" />
+    <script src="${contextPath}/views/community/js/jquery-3.6.4.min.js"></script>
+    <script src="${contextPath}/views/community/js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="${contextPath}/views/css/common.css">
+    <link rel="stylesheet" href="${contextPath}/views/community/css/recipe_spe.css">
+    <link rel="shortcut icon" href="${contextPath}/views/images/disah_ko.png" />
 
     <!-- bx슬라이더 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
@@ -38,8 +44,8 @@
         <!--[s]메인메뉴 영역 -->
         <div>
             <ul class="mainmenu flex_area_rsb">
-                <li class="main" title="메인페이지로 이동" onclick="location.href='../index.jsp'"></li>
-                <li><a href="../index.jsp" class="a_community">커뮤니티</a></li>
+                <li class="main" title="메인페이지로 이동" onclick="location.href='${contextPath}/views/index.jsp'"></li>
+                <li><a href="${contextPath}/views/index.jsp" class="a_community">커뮤니티</a></li>
                 <li><a href="../shopping/shopping_index.jsp" class="a_shopping">쇼핑</a></li>
             </ul>
         </div>
@@ -149,35 +155,85 @@
             </div>
         <!-- [e] 좋아요 영역 -->
             <!-- [s]레시피 소개 영역 -->
+            <input type="hidden" name="recipeNo" value="${recipe.recipeNo}">
             <section class="r_info">
                 <div class="r_info_img">
                 </div>
                 <div class="r_info_ex_area">
-                        <h1 class="r_info_ex_title">달래장 훈제오리 비빔밥 만들기</h1>
+                        <h1 class="r_info_ex_title">${recipe.recipeTitle}</h1>
                         <div class="r_info_ex_in" id="recipe_explain">
-                            봄 제철 채소인 달래로 만든 양념장은 고소한 오리고기와 잘 어울려요.
+                            ${recipe.recipeIntro} 
                         </div>
                         <div class="r_info_sum flex_area_rsb">
                             <span class="r_in_num">
                                 <i class="fa-solid fa-user-group"></i><br>
-                                <span>1인분</span>
+                                <span>
+                                <c:choose>
+                                	<c:when test="${recipe.infoVO.infoServ eq 'num1'}">
+                                		1인분
+                                	</c:when>
+                                	<c:when test="${recipe.infoVO.infoServ eq 'num2'}">
+                                		2인분
+                                	</c:when>
+                                	<c:when test="${recipe.infoVO.infoServ eq 'num3'} ">
+                                		3인분
+                                	</c:when>
+                                	<c:when test="${recipe.infoVO.infoServ eq 'num4'} ">
+                                		4인분 이상
+                                	</c:when>
+                                </c:choose>
+                                </span>
                             </span>
                             <span class="r_in_time">
                                 
                                 <i class="fa-solid fa-clock"></i><br>
-                                <span>5분이내</span>
+                                <span>
+                                	<c:choose>
+	                                	<c:when test="${recipe.infoVO.infoTime eq '5m'}">
+	                                		5분
+	                                	</c:when>
+	                                	<c:when test="${recipe.infoVO.infoTime  eq '10m'}">
+	                                		10분
+	                                	</c:when>
+	                                	<c:when test="${recipe.infoVO.infoTime eq '20m'} ">
+	                                		20분
+	                                	</c:when>
+	                                	<c:when test="${recipe.infoVO.infoTime eq '30m'} ">
+	                                		30분
+                                		</c:when>
+                                		<c:when test="${recipe.infoVO.infoTime  eq '1h'}">
+	                                		1시간
+                                		</c:when>
+                                		<c:when test="${recipe.infoVO.infoTime  eq '2h'}">
+	                                		2시간 이상
+                                		</c:when>
+                               		</c:choose>
+                                </span>
                             </span>
                             <span class="r_in_lev">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br>
-                                <span>초급</span>
+                                <c:choose>
+								    <c:when test="${recipe.infoVO.infoDiff eq 'lev1'}">
+								        아무나
+								    </c:when>
+								    <c:when test="${recipe.infoVO.infoDiff eq 'lev2'}">
+								        초급
+								    </c:when>
+								    <c:when test="${recipe.infoVO.infoDiff eq 'lev3'}">
+								        중급
+								    </c:when>
+								    <c:when test="${recipe.infoVO.infoDiff eq 'lev4'}">
+								        고수
+								    </c:when>
+								</c:choose>
                             </span>
                         </div>
                 </div>
                 <div class="writer_area">
                     <!-- background로 이미지 들어감 -->
                     <span class="writer_img"></span>
-                    <span class="writer_id">수은맘</span>
-                    <span class="write_date">23.07.07</span>
+                    <span class="writer_id">${recipe.userVO.id}</span>
+                    <span class="write_date">${recipe.writeDate}</span>
                     <span class="writer_block">
                         <i class="fa-solid fa-ban"></i>
                         차단하기
@@ -189,116 +245,29 @@
             <!-- [e]레시피 소개 영역 -->
             <!-- [s]재료 영역 -->
             <section class="r_ing_area">
-                <div class="btn_total_area">
-                    <button class="btn_total">모두 장바구니 담기</button>
-                </div>
                 <!-- recipe ingredient container -->
-                <div class="r_ing_con flex_area_rsb">
+                <div class="r_ing_con">
                     <div class="r_txt">
                         <i class="fa-solid fa-utensils"></i>
                         재료
                     </div>
-                    <div class="r_ings ">
-                        <ul class="r_ing">
-                                <h3 class="ing_t">[재료]</h3>
-                                <!-- recipe ingredient content -->
-                                <li class="r_ing_c flex_area_rsb">
-                                    <span class="r_ing_name">다진마늘</span>
-                                    <div class="txt_al_r">
-                                        <span  class="r_ing_amount">1작은술</span>
-                                        <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                    </div>
-                                    
-                                </li>
-                                <li class="r_ing_c flex_area_rsb">
-                                    <span class="r_ing_name">다진마늘</span>
-                                    <div class="txt_al_r">
-                                        <span class="r_ing_amount">1작은술</span>
-                                        <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                    </div>
-                                </li>
-                                <li class="r_ing_c flex_area_rsb">
-                                    <span class="r_ing_name">다진마늘</span>
-                                    <div class="txt_al_r">
-                                        <span class="r_ing_amount">1작은술</span>
-                                        <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                    </div>
-                                </li>
-                                <li class="r_ing_c flex_area_rsb">
-                                    <span class="r_ing_name">다진마늘</span>
-                                    <div class="txt_al_r">
-                                        <span class="r_ing_amount">1작은술</span>
-                                        <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <ul  class="r_ing">
-                                <li class="r_ing_c flex_area_rsb">
-                                    <h3 class="ing_t">[고기밑간]</h3>
-                                    <li class="r_ing_c flex_area_rsb flex_area_rsb">
-                                        <span class="r_ing_name">다진마늘</span>
-                                        <div class="txt_al_r">
-                                            <span  class="r_ing_amount">1작은술</span>
-                                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                        </div>
-                                        
-                                    </li>
-                                    <li class="r_ing_c flex_area_rsb">
-                                        <span class="r_ing_name">다진마늘</span>
-                                        <div class="txt_al_r">
-                                            <span class="r_ing_amount">1작은술</span>
-                                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                        </div>
-                                    </li>
-                                    <li class="r_ing_c flex_area_rsb">
-                                        <span class="r_ing_name">다진마늘</span>
-                                        <div class="txt_al_r">
-                                            <span class="r_ing_amount">1작은술</span>
-                                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                        </div>
-                                    </li>
-                                    <li class="r_ing_c flex_area_rsb">
-                                        <span class="r_ing_name">다진마늘</span>
-                                        <div class="txt_al_r">
-                                            <span class="r_ing_amount">1작은술</span>
-                                            <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                        </div>
-                                    </li>
-                                </li>
-                        </ul>
-                        <ul class="r_ing">
-                            <h3 class="ing_t">[양념]</h3>
-                            <li class="r_ing_c flex_area_rsb flex_area_rsb">
-                                <span class="r_ing_name">다진마늘</span>
-                                <div class="txt_al_r">
-                                    <span  class="r_ing_amount">1작은술</span>
-                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                </div>
-                                
-                            </li>
-                            <li class="r_ing_c flex_area_rsb">
-                                <span class="r_ing_name">다진마늘</span>
-                                <div class="txt_al_r">
-                                    <span class="r_ing_amount">1작은술</span>
-                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                </div>
-                            </li>
-                            <li class="r_ing_c flex_area_rsb">
-                                <span class="r_ing_name">다진마늘</span>
-                                <div class="txt_al_r">
-                                    <span class="r_ing_amount">1작은술</span>
-                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                </div>
-                            </li>
-                            <li class="r_ing_c flex_area_rsb">
-                                <span class="r_ing_name">다진마늘</span>
-                                <div class="txt_al_r">
-                                    <span class="r_ing_amount">1작은술</span>
-                                    <button class="btn_pur" title="장바구니에 담기"><i class="fa-solid fa-cart-shopping"></i></button>
-                                </div>
-                            </li>
-                    </ul>
+                    <div class="r_ings">
+                    	 <!-- 재료영역에 있는 forEach문만 없으면 잘 수행됨 - 여기 수정하기 !!!  -->​
+						<c:forEach var="matetype" items="${mateTypeList}">
+	                    	<ul class="r_ing">
+	                            <h3 class="ing_t">[${matetype.matetypeName}]</h3>
+	                            <c:forEach var="mate" items="${materialList}">
+	                            <c:if test="${matetype.matetypeNo eq mate.matetypeNo}">
+                            	<li class="r_ing_c flex_area_rsb">
+                           			<span class="r_ing_name">${mate.mateName}</span>
+                                	<div class="txt_al_r">
+	                                    <span  class="r_ing_amount">${mate.mateAmount}</span>
+	                                </div>
+                           		</li>
+                           		</c:if>
+                           		</c:forEach> 
+	                        </ul>
+                   		</c:forEach>
                     </div>
                 </div>
             </section>
@@ -307,19 +276,21 @@
             
             
             <!-- [s]동영상 영역 -->
-            <section class="r_video">
-                <div class="r_video_container" >
-                    <div class="r_txt">
-                        <i class="fa-solid fa-video"></i>
-                         동영상
-                    </div>
-                    <div class="video_area">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6xocL617Hrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </div>   
-            </section>
-            <div class="textline videoLine"></div>
-            
+            <c:if test="${recipe.videoLink != null}">
+	            <section class="r_video">
+	                <div class="r_video_container" >
+	                    <div class="r_txt">
+	                        <i class="fa-solid fa-video"></i>
+	                         동영상
+	                    </div>
+	                    
+	                    <div class="video_area">
+	                        <iframe width="560" height="315" src="${recipe.videoLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	                    </div>
+	                </div>   
+	            </section>
+	            <div class="textline videoLine"></div>
+            </c:if>
             <!-- [e]동영상 영역 -->
             
             <!-- [s]순서 영역 -->
@@ -330,45 +301,19 @@
                 </div>
                 <div class="seq_content_area ">
                     <div class="seq_content">
-                        <h2 class="seq_num">Step1</h2>
-                        <span class="seq_txt">
-                            이는 김순기 작가가 올해 새롭게 선보인 6분 48초 분량의 멀티미디어 작품 ‘주석 정원-템플(Stock Garden Temple)’이다. 김 작가는 이 작품을 통해 자본주의적 가치에 의존하는 현대인들의 삶과 그 내면을 극대화시킨다. 우리를 집어삼키며 지우는 숫자들의 질주가, 나를 잊음으로써 나를 찾는 불교의 깨달음과 만나는 역설이 ‘주식 정원-템플’의 아이러니다. 이 둘은 단지 현저한 대조로도 동행하지 못한다는 것이 작업의 울림을 증폭시킨다.
-                        </span>
-                        <div  class="seq_img">
-                            <img src="../images/temp_imgslider.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="seq_content">
-                        <h2 class="seq_num">Step2</h2>
-                        <span class="seq_txt">음식을 볶아줍니다.</span>
-                        <div class="seq_img">
-                            <img src="../images/temp_imgslider.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="seq_content">
-                        <h2 class="seq_num">Step3</h2>
-                        <span class="seq_txt">음식을 볶아줍니다.</span>
-                        <div class="seq_img">
-                            <img src="../images/temp_imgslider.gif" alt="">
-                        </div>
+                    
+                    	<c:forEach var="stepEx" items="${stepExList}" varStatus="status" >
+						    <h2 class="seq_num">Step${status.index + 1}</h2>
+						    <span class="seq_txt">${stepEx.stepEx}</span>
+						    <!-- 이미지 나중에 만들기 
+						    <div class="seq_img">
+						        <img src="${contextPath}/views/images/temp_imgslider.gif" alt="">
+						    </div> -->
+						</c:forEach>  
+						
                     </div>
                 </div>
-                <div class="seq_pho_area ">
-                    <div class="r_txt cf">
-                        <i class="fa-solid fa-camera-retro"></i>
-                        요리 완성 사진
-                    </div>
-                    <!-- 이미지 슬라이더 영역 -->
-                    <div class="seq_phos">
-                        <!-- 슬라이더 패널  -->
-                        <div class="seq_pho">
-                            <img class="seq_slider_img" src="../images/temp_imgslider1.jpg" alt="temp">
-                            <img class="seq_slider_img" src="../images/temp_imgslider2.gif" alt="temp">
-                            <img class="seq_slider_img" src="../images/temp_imgslider3.gif" alt="temp">
-                            <img class="seq_slider_img" src="../images/temp_imgslider.gif" alt="temp">
-                        </div>
-                    </div>    
-                </div>
+               
             </section>
             <div class="textline"></div>
             <!-- [e]순서 영역 -->
@@ -379,7 +324,7 @@
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     팁/주의사항
                 </div>
-                <p class="r_ect_content">잡채를 볶을 때 센불에 볶지마세요</p>            
+                <p class="r_ect_content">${recipe.recipeTip}</p>            
             </section>
             <div class="textline"></div>
             <!--[e]기타 영역 -->
@@ -510,11 +455,8 @@
             </form>
         </div>
     </div>
-    <script src="../js/login.js"></script>
-    <script src="../js/naver_login.js"></script>
-    <script src="../js/kakao_login.js"></script>
-    <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/common.js"></script>
-    <script src="js/recipe_spe.js"></script>
+    
+    <script src="${contextPath}/views/js/common.js"></script>
+    <script src="${contextPath}/views/community/js/recipe_spe.js"></script>
 </body>
 </html>

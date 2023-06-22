@@ -322,67 +322,7 @@ section{
         color: #000;
         font-weight: bold;
     }   
-        /* 완성사진 등록 영역 */
-        .seq_pho_area{
-            justify-content: flex-start;
-            height: 150px;
-            padding: 20px 0;
-           
-            
-        }
-        .seq_phos{
-            width: 85%;
-            display: flex;
-            justify-content: flex-start;
-        }
-        .seq_pho{
-            
-            box-sizing: border-box;
-            position: relative;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-left: 30px;
-            width: 200px;
-            height: 150px;
-            text-align: center;
-            padding-top: 5%;
-        }
        
-        .seq_pho label{
-            font-family: "NotoSansR";
-            font-size: 3.5em;
-            
-            
-        }
-        .seq_pho label:hover{
-            color: #036c44;
-        }
-        .seq_pho input{
-            display: none;
-        }
-        .preview_img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .seq_pho .remove_img_btn{
-            position: absolute;
-            font-size: 1.7em;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #ccc;
-        }
-    .r_seq_ex{
-        color: red;
-        font-size: 0.7em;
-        margin-top: 5px;
-        font-family: "NotosansL";
-    }
-
     /* 기타 영역 */
     .r_ect{
        justify-content: flex-start; 
