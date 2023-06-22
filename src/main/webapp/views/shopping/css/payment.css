@@ -92,14 +92,50 @@
 }
 .shipping_address .reciver_address{
     width: 600px;
-    height: 24px;
     margin:0 0 10px 18px;
 }
-.shipping_address .reciver_address span {
-    font-size: 16px;
+#original_address{
+	width: 550px;
+	height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #616161;
+    text-indent: 15px;
+    margin:0 0 10px 45px;
+    outline: 0;
+    color: #222629;
+    font-weight: bold;
+}
+
+
+#original_address2{
+	width: 550px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #616161;
+    text-indent: 15px;
+    margin: 20px 0 30px 45px;
+    outline: 0;
+    color: #222629;
+    font-weight: bold;
+}
+#guide {
+	width: 550px;
+	margin:0 0 0 45px;
 }
 .shipping_address #deilvery_message {
-    width: 550px;
+    width: 556px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #616161;
+    text-indent: 15px;
+    margin:0 0 30px 45px;
+    outline: 0;
+}
+#custom_delivery_message {
+	width: 550px;
     height: 50px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -166,19 +202,6 @@
     background-color: rgba(204, 14, 14, 0.79);
     color: #fff;
 } 
-.card_payment {
-    width: 600px;
-    margin-bottom: 10px;
-}
-.card_payment select {
-    width: 90px;
-    height: 40px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    border-radius: 6px;
-    outline: 0;
-    margin-left: 50px;
-}
 .transfer_number {
     display: none;
     margin: 10px 50px;
@@ -241,9 +264,12 @@
     font-weight: bold;
 }
 /* 주문 상품 정보 영역 */
-.order_product {
-    width: 425px;
+order_product_form {
+	width: 425px;
     height: 100%;
+}
+
+.order_product {
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #fff;
@@ -251,6 +277,7 @@
     padding-bottom: 30px;
     margin-bottom: 50px;
 }
+
 .order_product .order_product_number h2 {
     width: 385px;
     margin: 20px 0 0 20px;

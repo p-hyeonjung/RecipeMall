@@ -1,32 +1,42 @@
+<%@page import="recipeMall.mypage.CartVO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+   isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="userList" value="${paymentMap.userList}"/>
+<c:set var="cartList" value="${paymentMap.cartList}"/>
+<%
+   request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recipeMall</title>
-    <script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.6.4.min.js"></script>
-    <script src="../js/jquery-ui.min.js"></script>
-    <script src="js/payment.js"></script>
-    <script src="js/address_change.js"></script>
-    <link rel="stylesheet" href="css/shopping_common.css">
-    <link rel="stylesheet" href="css/payment.css">
-    <link rel="shortcut icon" href="../images/smalllogo.png" />
-    <!-- <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
-    <script src="../js/login.js"></script>
-    <script src="../js/naver_login.js"></script>
-    <script src="../js/kakao_login.js"></script>
-    <link rel="stylesheet" href="../css/login.css">
+<meta charset="UTF-8">
+<title>recipeMall</title>
+<script src="https://kit.fontawesome.com/54880b83c5.js" crossorigin="anonymous"></script>
+    <script src="${contextPath}/views/js/jquery-3.6.4.min.js"></script>
+    <script src="${contextPath}/views/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/views/shopping/js/payment.js"></script>
+    <script src="${contextPath}/views/shopping/js/address_change.js"></script>
+    <script src="${contextPath}/views/shopping/js/kakaoPay.js"></script>
+    <link rel="stylesheet" href="${contextPath}/views/shopping/css/shopping_common.css">
+    <link rel="stylesheet" href="${contextPath}/views/shopping/css/payment.css">
+    <link rel="shortcut icon" href="${contextPath}/views/images/smalllogo.png" />
+    <!-- <script type="text/javascript" src="${contextPath}/views/js/doro.js"></script>-->
+     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="${contextPath}/views/js/login.js"></script>
+    <script src="${contextPath}/views/js/naver_login.js"></script>
+    <script src="${contextPath}/views/js/kakao_login.js"></script>
+    <link rel="stylesheet" href="${contextPath}/views/css/login.css">
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
     integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
-
 <body>
-   <!--[s]전체 컨텐츠 영역  -->
+<!--[s]전체 컨텐츠 영역  -->
     <!--[s]건너뛰기 링크-->
     <a id="skipNav" href="">본문 바로가기</a>
     <!--[e]건너뛰기 링크-->
@@ -41,105 +51,7 @@
 
 
     <!-- [s]Header 영역 -->
-    <header>
-        <!-- [s]Header_top 영역 -->
-        <div class="header_top flex_area_rsb">
-            <!--[s]메인메뉴 영역 -->
-            <div>
-                <ul class="mainmenu flex_area_rsb">
-                    <li class="main" title="메인페이지로 이동" onclick="location.href='../index.html'"></li>
-                    <li><a href="../index.html" class="a_community">커뮤니티</a></li>
-                    <li><a href="shopping_index.html" class="a_shopping">쇼핑</a></li>
-                </ul>
-            </div>
-            <!--[e]메인메뉴 영역 -->
-
-            <!--[s]검색 영역 -->
-            <form action="" class="search_form">
-                <div class="search_area  flex_area_rsb">
-                    <input id="" name="" type="search" title="검색어 입력" maxlength="255" class="" placeholder=" 통합검색">
-                    <div class="btn_search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div>
-            </form>
-            <!--[e]검색 영역-->
-
-            <!--[s]서브 영역 -->
-            <div>
-                <ul class="submenu">
-                    <!-- <li><a href="#"><i class="fa-sharp fa-regular fa-cart-shopping"></i></a></li> -->
-                    <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
-
-                    <li><a href="#" class="login">로그인</a></li>
-                    <li><a href="../join.html">회원가입</a></li>
-                    <li><a href="" class="login">고객센터</a></li>
-                    <li><button class="btn_write">글쓰기
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button></li>
-                </ul>
-            </div>
-            <!--[e]서브 영역 -->
-            <!--[s]글쓰기 하위메뉴 영역 -->
-            <div class="btn_write_sub" hidden>
-                <a class="a_btn_write" href="../community/insert.html">
-                    <div class="btn_write_icon">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
-                    <div class="btn_write_txt">
-                        <div class="btn_write_t">레시피 글쓰기</div>
-                        <div class="btn_write_c">나만의 레시피를 공유해보세요.</div>
-                    </div>
-                </a>
-                <a class="a_btn_write" href="../community/notice_write.html">
-                    <div class="btn_write_icon">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </div>
-                    <div class="btn_write_txt">
-                        <div class="btn_write_t">자유게시판 글쓰기</div>
-                        <div class="btn_write_c">레시피몰의 회원들과 자유롭게 이야기를 나눠보세요.</div>
-                    </div>
-                </a>
-                <a class="a_btn_write" href="">
-                    <div class="btn_write_icon">
-                        <i class="fa-regular fa-thumbs-up"></i>
-                    </div>
-                    <div class="btn_write_txt">
-                        <div class="btn_write_t">상품 리뷰하기</div>
-                        <div class="btn_write_c">상품 후기를 공유해보세요.</div>
-                    </div>
-                </a>
-
-            </div>
-            <!--[e]글쓰기 하위메뉴 영역 -->
-        </div>
-        <!-- [e]Header_top 영역 -->
-
-        <div class="textline"></div>
-
-        <!-- [s]Header_bottom 영역 -->
-        <div class="header_bottom flex_area_rsb">
-            <!--[s]카테고리 영역 -->
-            <div class="flex_area_rsb">
-                <ul class="category">
-                    <li><a href="matarial.html">재료</a></li>
-                    <li><a href="shopping_best.html">베스트</a></li>
-                    <li><a href="season.html">대표상품</a></li>
-                </ul>
-            </div>
-            <!--[e]카테고리 영역 -->
-
-            <!--[s]실시간차트 영역-->
-            <div class="rank">
-                <ul>
-                    <li><a href="#">1.레시피</a></li>
-                </ul>
-            </div>
-            <!--[e]실시간차트 영역 -->
-        </div>
-        <!-- [e]Header_bottom 영역 -->
-        <div class="textline cf"></div>
-    </header>
+    <jsp:include page="/views/fix/shopHeader.jsp"/>
     <!-- [e]Header 영역 -->
     
     <!-- [s]메인 컨텐츠 영역  -->
@@ -151,99 +63,79 @@
                     <h2>주문자 정보</h2>
                     <ul>
                         <li>
-                            <label for="orderer_name">주문자</label>
-                            <input type="text" id="orderer_name" name="orderer_name" required placeholder="이름을 입력해 주세요.">
+                            <label for="orderer_name">이름</label>
+                            <input type="text" id="orderer_name" name="orderer_name" value="${userList[0].name}" required>
                         </li>
                         <li>
                             <label for="orderer_phone">연락처</label>
-                            <input type="text" id="orderer_phone" name="orderer_phone" required placeholder="&quot;-&quot;없이 입력해 주세요.">
+                            <input type="text" id="orderer_phone" name="orderer_phone" value="${userList[0].phone}" required>
                         </li>
                     </ul>
                 </div>
                 <!-- [e] 주문자 영역 -->
 
                 <!-- [s] 배송지 영역 -->
+                <form action="#">
                 <div class="shipping_address">
+                
                     <h2><i class="fa-solid fa-location-dot"></i> 배송지</h2>
                     <button onclick="sample4_execDaumPostcode()">배송지 변경</button>              
                     <div class="reciver">
-                        <span>가나다</span>
-                        <span>010-1234-4567</span>
+                        <span>${userList[0].name}</span>
+                        <span>${userList[0].phone}</span>
                     </div>
                     <div class="safe_number">
                         <input type="checkbox" id="safe_phone" name="safe_phone">
                         <label for="safe_phone">안심번호 사용하기</label>
                     </div>             
-                    <div class="reciver_address">
-                        <span>서울시 종로구 100 (건물이름) 1000호</span>
+                                        
+                    <div id="inputContainer">
+                       <input id="original_address" type="text" readonly value="${userList[0].userAddr}"><input type="hidden" id="noUse" required> 
+                       <span id="guide" style="color:#999;"></span>
+                       <input id="original_address2" type="text" value="${userList[0].userAddr2}" placeholder="상세 주소를 입력해주세요." required>
                     </div>
+                    
+
                     <select name="deilvery_message" id="deilvery_message">
-                        <option value="0">배송시 요청사항을 선택해 주세요.</option>
-                        <option value="1">직접 수령하겠습니다.</option>
-                        <option value="2">배송 전 연락바랍니다.</option>
-                        <option value="3">부재 시 경비실에 맡겨주세요.</option>
-                        <option value="4">부재 시 문 앞에 놓아주세요.</option>
-                        <option value="5">부재 시 택배함에 넣어주세요.</option>
+                        <option value="배송시 요청사항을 선택해 주세요.">배송시 요청사항을 선택해 주세요.</option>
+                        <option value="직접 수령하겠습니다.">직접 수령하겠습니다.</option>
+                        <option value="배송 전 연락바랍니다.">배송 전 연락바랍니다.</option>
+                        <option value="부재 시 경비실에 맡겨주세요.">부재 시 경비실에 맡겨주세요.</option>
+                        <option value="부재 시 문 앞에 놓아주세요.">부재 시 문 앞에 놓아주세요.</option>
+                        <option value="부재 시 택배함에 넣어주세요.">부재 시 택배함에 넣어주세요.</option>
                         <option value="6">직접 입력</option>
                     </select>
+                    <div id="custom_delivery_message_container"></div>
                 </div>
+                </form>
                 <!-- [e] 배송지 영역 -->
-
                 <!-- [s] 결제하기 영역 -->
                 <div class="payment_area">
                     <h2>결제하기</h2>
                     <div class="product_amout">
                         <span>상품 금액</span>
-                        <span id="product_amount_value">57,080원</span>
+                        <span id="product_amount_value">${paymentMap.priceAll}원</span>
                     </div>
                     <div class="use_point">
-                        <span>사용 할 포인트</span>
-                        <input id="point_input" type="text" placeholder="현재 3000포인트 보유중">
+                        <span>배송비</span>
+                        <span id ="delivery_amount_value">2,500원</span>
                     </div>
                     <div class="payment_amout">
                         <span>결제 금액</span>
-                        <span id="payment_amount_value">57,080원</span>
+                        <span id="payment_amount_value">${paymentMap.paymentAll}원</span>
                     </div>
                     <div class="payment_type">
                         <ul>
-                            <li><button>카드결제</button></li>
-                            <li><button>계좌이체</button></li>
-                            <li><button>카카오페이</button></li>
+                            <li><button id="kakaoPayg">카카오페이</button></li>
+                            <li><button id="accountTransfer">계좌이체</button></li>
                         </ul>
-                    </div>
-                    <div class="card_payment payment_method">
-                        <select name="card_type" id="card_type">
-                            <option value="0">카드선택</option>
-                            <option value="1">신한카드</option>
-                            <option value="2">KB카드</option>
-                            <option value="3">삼성카드</option>
-                            <option value="4">농협카드</option>
-                            <option value="5">카카오카드</option>
-                            <option value="6">BC카드</option>
-                            <option value="7">하나카드</option>
-                            <option value="8">우리카드</option>
-                        </select>
-                        <select name="installment" id="installment">
-                            <option value="0">일시불</option>
-                            <option value="1">2개월</option>
-                            <option value="2">3개월</option>
-                            <option value="3">4개월</option>
-                            <option value="4">5개월</option>
-                            <option value="5">6개월</option>
-                            <option value="6">7개월</option>
-                            <option value="7">8개월</option>
-                            <option value="8">9개월</option>
-                            <option value="9">10개월</option>
-                            <option value="10">11개월</option>
-                            <option value="11">12개월</option>
-                        </select>
                     </div>
                     <div class="transfer_number payment_method">
                         <select name="transfer" id="transfer">
                             <option value="sinhan">신한은행 100-000-123456</option>
                             <option value="kakaobank">카카오뱅크 1234-1234-105454</option>
                         </select>
-                        <input type="text" name="transfer_name" placeholder="입금자명을 입력해주세요.">
+                        <input type="text" name="transfer_name" class="transfer_name" placeholder="입금자명을 입력해주세요.">
                     </div>
                     <div class="order_agree">
                         <span>주문자 동의</span>
@@ -516,176 +408,40 @@
                 <!-- [e] 결제하기 영역 -->
             </div>
             <!-- [s] 주문 상품 정보 영역 -->
-            <div class="order_product">
-                <div class="order_product_number">
-                    <h2>주문상품 3개</h2>
-                </div>
-                <div class="order_product_imp">
-                    <img src="../images/etc3.png" alt="chamyoe">
-                    <div>
-                        <span>성주 참외 1.5kg (4~7입)</span>
-                        <span>13,900원 / 3개</span>
-                        <span>41,700원</span>                   
-                    </div>
-                </div>
-                <div class="order_product_imp">
-                    <img src="../images/etc1.png" alt="blueberry">
-                    <div>
-                        <span>국산 블루베리 100g (특)</span>
-                        <span>7,900원 / 1개</span>
-                        <span>7,900원</span>
-                    </div>
-                </div>
-                <div class="order_product_imp">
-                    <img src="../images/etc4.png" alt="tomato">
-                    <div>
-                        <span>스테비아 토마토 500g</span>
-                        <span>7,480원 / 1개</span>
-                        <span>7,480원</span>
-                    </div>
-                </div>
-            </div>
-            <div class="go_payment">
-                <button>57,080원 결제하기</button>
-            </div>
+            <form action="${contextPath}/order/goPayment.do" method="POST" class="order_product_form" id="paymentForm">
+               <div class="order_product">
+                   <div class="order_product_number">
+                       <h2>주문상품 ${paymentMap.Cnt}개</h2>
+                   </div>         
+                      <c:forEach var="cart" items="${cartList}">
+                         <div class="order_product_imp">
+                            <img src="${contextPath}/views/images/${cart.prodImage}" alt="chamyoe">
+                             <div>
+                                 <span>${cart.prodName}</span>
+                                 <span>${cart.prodPrice}원 / ${cart.cartCount}개</span>
+                                 <span>${cart.prodPrice * cart.cartCount}원</span>                             
+                             </div>
+                        </div>
+                        <input type="hidden" name="prodCode" value="${cart.prodCode}" class="hidden_input">
+                        <input type="hidden" name="cartCount" value="${cart.cartCount}" class="hidden_input">
+                        <input type="hidden" name="prodName" value="${cart.prodName}" class="hidden_input">
+                      </c:forEach>                   
+                         <input type="hidden" name="allProdPrice" value="${paymentMap.paymentAll}" class="hidden_input">
+                        <input type="hidden" id="hiddenAddress" name="userAddr" value="${userList[0].userAddr}" class="hidden_input">
+                        <input type="hidden" name="userAddr2" value="${userList[0].userAddr2}" class="hidden_input">
+                        <input type="hidden" name="deliveryMSG" id="deliveryMSG" value="배송시 요청사항을 선택해 주세요." class="hidden_input">
+               </div>
+               </form>
+               <div class="go_payment">
+                  <button id="paymentButton" class="kakaoPayGoGo">${paymentMap.paymentAll}원 결제하기</button>
+               </div>
             <!-- [e] 주문 상품 정보 영역 -->
-        </div>
+           </div>
     </div>
     <!-- [e]메인 컨텐츠 영역  -->
-    
-     <!-- [s]사이드바 영역 -->
-     <div class="side_bar">
-        <div class="show_bar">
-            <ul>
-                <li class="side_cart">
-                    <img src="../images/cart.png" alt="장바구니">
-                    <p>장바구니</p>
-                </li>
-                <li class="side_seen">
-                    <img src="../images/recent.png" alt="최근 본 상품">
-                    <p>최근 본 상품</p>
-                </li>
-              </ul>
-        </div>
-        <div class="hidden_slide">
-            <div class="hidden_cart">
-                <ul>
-                    <li>
-                        <img src="../images/cart.png" alt="장바구니">
-                        <p>장바구니</p>
-                    </li>
-                    <li>
-                        <img src="../images/recent.png" alt="최근 본 상품">
-                        <p>최근 본 상품</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="hidden_seen">
-                <ul>
-                    <li>
-                        <img src="../images/cart.png" alt="장바구니">
-                        <p>장바구니</p>
-                    </li>
-                    <!--<li>
-                        <img src="../images/recent.png" alt="최근 본 상품">
-                        <p>최근 본 상품</p>
-                    </li>-->
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- [e]사이드바 영역 -->
 
     <!-- [s]footer 영역 -->
-    <footer>
-        <!--[s]푸터 컨테이너 영역 -->
-        <div class="f_container flex_area_rsb">
-            <!--[s] footer left & 안내 영역 -->
-            <div class="information f_left">
-                <p class="infor"><a href="#">고객센터</a></p>
-                <p class="infor">1670-0876</p>
-                <span>09:00 ~ 16:00</span>
-                <p class="inquiry">평일:전체 문의 상담 가능</p>
-                <p class="inquiry">주말,공휴일:영업종료</p>
-                <p class="kakao">카톡 상담(평일) 09:00 ~ 16:00</p>
-                <button class="emailbtn" onclick="">이메일문의</button>
-            </div>
-            <!--[e]footer left & 안내 영역-->
-            <!--[s]footer middle & 회사 소개 영역-->
-            <div class="company_introduction1 f_middle flex_area_rsb">
-                <ul>
-                    <li><a href="#">회사 소개</a></li>
-                    <li><a href="#">채용 정보</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#"><strong>개인정보 처리 방침</strong></a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">안전거래센터</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">입점신청</a></li>
-                    <li><a href="#">제휴/광고 문의</a></li>
-                    <li><a href="#">사업자구매 회원</a></li>
-                    <li><a href="#">파트너 안내</a></li>
-                    <li><a href="#">상품광고 소개</a></li>
-                    <li><a href="#">고객의 소리</a></li>
-                </ul>
-            </div>
-            <!--[e]footer middle & 회사 소개 영역-->
-            <!--[s]footer right 영역-->
-
-
-            <!--[e]footer right 영역-->
-            <div class="f_right">
-                <!--[e]회사 소개2 영역 -->
-                <div class="company_introduction2">
-                    <address>
-                        (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
-                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431<br>
-                            <Strong>사업자정보확인</Strong> <br>
-                            통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
-                    </address>
-                </div>
-                <!--[s]안전거래 영역 -->
-                <div class="save flex_area_rsb">
-                    <div class="save1">
-                        <i class="fa-brands fa-servicestack"></i>
-                        <span>레시피몰 운영</span><br>
-                        <p>2021-05-01 ~ 2026-07-09</p>
-                    </div>
-                    <div class="save2">
-                        <i class="fa-solid fa-helmet-safety"></i><span>고객님이 현금결재한 금액에 대해<br>
-                            우리은행과 채무지급 보증 계약을 체결하여 <br> 안전거래를
-                            보장 하고 있습니다.</span>
-                    </div>
-
-
-                </div>
-                <!--[e]안전거래 영역 -->
-                <!--[s]셀러 영역 -->
-                <div class="seller">
-                    <span>(주)이젠아카데미는 통신판매업중개자로 당사자가 아니므로,<br> 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.
-                        <br>단 (주)이젠아카데미가 판매자로 등록한 상품은 판매자로서 책임을 부담합니다.</span>
-                </div>
-                <!--[e]셀러 영역 -->
-
-                <!--[s]소셜네트워크 영역 -->
-                <div class="img_icon">
-                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-                <!--[e]소셜네트워크 영역 -->
-
-                <!--[s]카피라이터 영역 -->
-                <div class="copyright">
-                    <p>Copyright 2014. buketplace, Co.,Ltd All rights reserved</p>
-                </div>
-                <!--[e]카피라이터 영역 -->
-            </div>
-        </div>
-        <!--[e]푸터 컨테이너 영역 -->
-    </footer>
+    <jsp:include page="/views/fix/footer.jsp"/>
     <!-- [e]footer 영역 -->
     <div id="modal">
         <div class="loginArea">
@@ -720,5 +476,4 @@
         </div>
     </div>
 </body>
-<script src="js/shopping_common.js"></script>
 </html>

@@ -1,4 +1,67 @@
-$(function () {
+$(function () {	
+		
+		// 계좌이체 버튼 클릭 시 처리
+	  $("#accountTransfer").click(function() {
+	    $("#paymentButton").removeClass('kakaoPayGoGo').addClass("gogobutton");
+	  });
+	
+	  // 카카오페이 버튼 클릭 시 처리
+	  $("#kakaoPayg").click(function() {
+	    $("#paymentButton").removeClass('gogobutton').addClass("kakaoPayGoGo");
+	  });  
+	
+	
+	  $("#original_address2").on("input", function() {
+	    var newValue = $(this).val();
+	    $("input[name='userAddr2']").val(newValue);
+	  });
+
+		$('.gogobutton').click(function () {
+		   if ($('.input_check:not(:checked)').length !== 0) {
+		     alert('모든 동의 항목에 체크해주세요.');
+		   } else if($('#original_address2').val() === '') {
+			 alert('상세 주소를 입력해주세요.');
+			}else if($('.transfer_name').val() === '') {
+				alert('입금자를 입력해주세요.');
+			}else {
+	           $('#paymentForm').submit();
+	        }
+	  	});
+	  	
+	
+		 
+	
+	$('#deilvery_message').change(function() {
+    let selectedValue = $(this).val();
+
+    if (selectedValue === '6') {
+        var inputHtml = '<input type="text" name="custom_delivery_message" id="custom_delivery_message" placeholder="직접 입력한 내용">';
+        $('#custom_delivery_message_container').html(inputHtml);
+    } else {
+        $('#custom_delivery_message_container').empty();
+    }
+	});
+	
+	$('#deilvery_message').change(function() {
+        let selectedValue = $(this).val();
+        let deliveryMsgInput = $('#deliveryMSG');
+        
+        if (selectedValue === '6') {
+            var customDeliveryMessage = $('#custom_delivery_message').val();
+            deliveryMsgInput.val(customDeliveryMessage);
+            alert(deliveryMsgInput.val());
+        } else {
+            deliveryMsgInput.val(selectedValue);
+             alert(deliveryMsgInput.val());
+        }
+    });
+
+
+    $('#custom_delivery_message').keyup(function() {
+        var customDeliveryMessage = $(this).val();
+        $('#deliveryMSG').val(customDeliveryMessage);
+    });
+	
     $('.show_agree').click(function () {
         $(this).next().toggle();
     });
@@ -10,20 +73,6 @@ $(function () {
         $('.payment_type ul li button').eq(index).css('background','rgba(204, 14, 14, 0.79)').css('color','#fff');
     });
     
-    $("#point_input").on("input", function() {
-        let productPrice = parseFloat($("#product_amount_value").text().replace(",", "").replace("원", ""));
-        let pointInput = $(this).val();
-        
-        if (pointInput === "") {
-          $("#payment_amount_value").text(productPrice.toLocaleString() + "원");
-          $(".go_payment button").text(paymentPrice.toLocaleString() + "원 결제하기");
-        } else {
-          let pointUsed = parseFloat(pointInput);
-          let paymentPrice = productPrice - pointUsed;
-          $("#payment_amount_value").text(paymentPrice.toLocaleString() + "원");
-          $(".go_payment button").text(paymentPrice.toLocaleString() + "원 결제하기");
-        }
-      });
 
       $("#all_agree").click(function () {
         let checked = $(this).is(':checked');
@@ -57,3 +106,4 @@ $(function () {
         }
       });
 });
+

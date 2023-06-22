@@ -33,37 +33,37 @@ ul {
 /* 기본스타일 */
 @font-face {
     font-family: "NotoSansL";
-    src: url("../../font/NotoSansKR-Light.otf")format("truetype");
+    src: url("../../font/NotoSansKR-Light.otf") format("truetype");
 }
 
 @font-face {
     font-family: "NotoSansR";
-    src: url("../../font/NotoSansKR-Regular.otf")format("truetype");
+    src: url("../../font/NotoSansKR-Regular.otf") format("truetype");
 }
 
 @font-face {
     font-family: "NotoSansM";
-    src: url("../../font/NotoSansKR-Medium.otf")format("truetype");
+    src: url("../../font/NotoSansKR-Medium.otf") format("truetype");
 }
 
 @font-face {
     font-family: "NotoSansBl";
-    src: url("../../font/NotoSansKR-Black.otf")format("truetype");
+    src: url("../../font/NotoSansKR-Black.otf") format("truetype");
 }
 
 @font-face {
     font-family: "NotoSansBo";
-    src: url("../../font/NotoSansKR-Bold.otf")format("truetype");
-}
+    src: url("../../font/NotoSansKR-Bold.otf") format("truetype");
+} 
 
 @font-face {
     font-family: "NotoSansTh";
-    src: url("../../font/NotoSansKR-Thin.otf")format("truetype");
+    src: url("../../font/NotoSansKR-Thin.otf") format("truetype");
 }
 
 @font-face {
     font-family: "malssami";
-    src: url("../../font/malssami815.ttf")format("truetype");
+    src: url("../../font/malssami815.ttf") format("truetype");
 }
 
 a:link {
@@ -567,7 +567,7 @@ footer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     background-color: #eef3f1;
-    height: 350px;
+    height: auto;
     font-family: "NotoSansL";
     font-style: normal;
     color: #4d5250;

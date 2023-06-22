@@ -13,6 +13,12 @@ $(function(){
     $('.regular_order').change(function (){
         option3();
     });
+    let p_info=$('.product_info');
+    $('.product_info_title>ul>li').on('click',function(){
+	let index=$(this).index();
+	$(p_info).css('display','none');
+	$('.product_info').eq(index).css('display','block');
+	});
 });
 function minus(){
     let num=parseInt($('.product_count input').val());
@@ -26,11 +32,4 @@ function plus(){
 }
 function option1(){
     $('.option1').html($('.product_date_select').val());
-}
-function option3(){
-    if($('.regular_order').is(":checked")){
-        $('.option3').html("O");
-    }else{
-        $('.option3').html("X");
-    };
 }

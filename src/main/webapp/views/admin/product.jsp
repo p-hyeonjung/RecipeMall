@@ -20,7 +20,7 @@
 <body>
     <div id="box">
     <c:choose>
-    	<c:when test="${isLogon == true}">
+    	<c:when test="${isAdmLogon == true}">
         <jsp:include page="/views/fix/adminSide.jsp"/>
             <!-- main content -->
 			<div class="container">
@@ -41,89 +41,67 @@
                         <caption>자주하는 질문 목록</caption>
                         <tbody>
                             <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>등록일</th>
-                                <th><input type="checkbox" name="ud_check" id=""></th>
+                                <th>코드</th>
+                                <th>이름</th>
+                                <th>카테고리</th>
+                                <th>가격</th>
+                                <th>재고</th>
+                                <!-- <th>등록일</th> -->
+                                <th>수정</th>
+                                <th>삭제</th>
                             </tr>
                             <tr>
-                                <td>4</td>
-                                <td><a href="">질문4</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
+                                <td>4234</td>
+                                <td><a href="">당근</a></td>
+                                <td>채소</td>
+                                <td>1200원</td>
+                                <td>1923개</td>
+                                <td><a href="${contextPath}/product/modProduct.do">수정</a></td>
+                                <td><a href="${contextPath}/product/delProduct.do">삭제</a></td>
                             </tr>
                             <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
+                                <td>4234</td>
+                                <td><a href="">당근</a></td>
+                                <td>채소</td>
+                                <td>1200원</td>
+                                <td>1923개</td>
+                                <td><a href="${contextPath}/product/modProduct.do">수정</a></td>
+                                <td><a href="${contextPath}/product/delProduct.do">삭제</a></td>
                             </tr>
                             <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
+                                <td>4234</td>
+                                <td><a href="">당근</a></td>
+                                <td>채소</td>
+                                <td>1200원</td>
+                                <td>1923개</td>
+                                <td><a href="${contextPath}/product/modProduct.do">수정</a></td>
+                                <td><a href="${contextPath}/product/delProduct.do">삭제</a></td>
                             </tr>
                             <tr>
-                                <td>1</td>
-                                <td><a href="">질문1</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
+                                <td>4234</td>
+                                <td><a href="">당근</a></td>
+                                <td>채소</td>
+                                <td>1200원</td>
+                                <td>1923개</td>
+                                <td><a href="${contextPath}/product/modProduct.do">수정</a></td>
+                                <td><a href="${contextPath}/product/delProduct.do">삭제</a></td>
                             </tr>
                             <tr>
-                                <td>4</td>
-                                <td><a href="">질문4</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><a href="">질문1</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><a href="">질문3</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="">질문2</a></td>
-                                <td>admin</td>
-                                <td>2016.04.21</td>
-                                <td><input type="checkbox" name="ud_check" id=""></td>
+                                <td>4234</td>
+                                <td><a href="">당근</a></td>
+                                <td>채소</td>
+                                <td>1200원</td>
+                                <td>1923개</td>
+                                <td><a href="${contextPath}/product/modProduct.do">수정</a></td>
+                                <td><a href="${contextPath}/product/delProduct.do">삭제</a></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="cud">
                         <ul class="mi">
                             <li><a href="">등록</a></li>
-                            <li><a href="">수정</a></li>
-                            <li><a href="">삭제</a></li>
+                            <!-- <li><a href="">수정</a></li>
+                            <li><a href="">삭제</a></li> -->
                         </ul>
                     </div>
                     <div class="paging">
